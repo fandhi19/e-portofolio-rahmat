@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Guru PJOK | Rahmat Irnandi, S.Or. - PPG UNY</title>
+
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      .standalone-navbar-wrap {
+        padding: 1.5rem 0 0.5rem 0;
+      }
+      .profile-page-hero {
+        padding: 2.5rem 0 3rem 0;
+        text-align: center;
+      }
+      .profile-page-hero-title {
+        font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+        font-weight: 800;
+        color: #FFFFFF;
+        margin-bottom: 0.85rem;
+        letter-spacing: -0.02em;
+      }
+      .profile-page-hero-desc {
+        max-width: 740px;
+        margin: 0 auto 1.5rem auto;
+        color: #9CA3AF;
+        font-size: 1.02rem;
+        line-height: 1.7;
+      }
+      .profile-card-grid {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3.5rem;
+        align-items: center;
+      }
+      .profile-avatar-box {
+        width: 250px;
+        height: 290px;
+        border-radius: 36px 16px 36px 16px;
+        overflow: hidden;
+        border: 3px solid var(--color-yellow);
+        box-shadow: 0 15px 35px rgba(255, 201, 56, 0.25);
+        background: #111215;
+        margin: 0 auto 1.5rem auto;
+      }
+      .profile-avatar-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .profile-bio-grid-modern {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.15rem;
+        margin: 1.8rem 0;
+      }
+      .bio-card-modern {
+        background: #F9FAFB;
+        border: 1px solid #E5E7EB;
+        border-radius: var(--radius-md);
+        padding: 1rem 1.25rem;
+        transition: all var(--transition-fast);
+      }
+      .bio-card-modern:hover {
+        border-color: var(--color-yellow);
+        background: #FFFFFF;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      }
+      .bio-card-modern .label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #6B7280;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.25rem;
+      }
+      .bio-card-modern .val {
+        font-size: 0.96rem;
+        font-weight: 700;
+        color: #111215;
+      }
+      .philosophy-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+      }
+      .philosophy-card {
+        background: #16171B;
+        border: 1px solid var(--color-border-dark);
+        border-radius: var(--radius-lg);
+        padding: 2.2rem;
+        transition: all var(--transition-smooth);
+        box-shadow: var(--shadow-card-dark);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .philosophy-card:hover {
+        border-color: var(--color-yellow);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      }
+      .philosophy-icon-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.25rem;
+      }
+      .philosophy-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: #202228;
+        color: var(--color-yellow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.35rem;
+        border: 1px solid var(--color-border-dark);
+      }
+      .philosophy-card h3 {
+        color: #FFFFFF;
+        font-size: 1.25rem;
+        margin-bottom: 0.6rem;
+        font-weight: 800;
+      }
+      .philosophy-card p {
+        color: #9CA3AF;
+        font-size: 0.92rem;
+        line-height: 1.68;
+      }
+
+      @media (max-width: 900px) {
+        .profile-card-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .profile-bio-grid-modern {
+          grid-template-columns: 1fr;
+          text-align: left;
+        }
+        .philosophy-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =================================================================
+       1. STANDALONE NAVBAR (Exact Same Capsule Navbar as index.html)
+       ================================================================= -->
+    <header class="navbar container standalone-navbar-wrap">
+      <div class="navbar-capsule">
+        <a href="index.html" class="brand-nexis">
+          <img src="logo.png" alt="Logo UNY" class="brand-logo-img" onerror="this.src='logo navbar.png'" />
+          <span class="brand-nexis-text">
+            E-Porto
+            <span class="brand-nexis-sub">Rahmat Irnandi, S.Or.</span>
+          </span>
+        </a>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Beranda</a></li>
+            <li><a href="profil.html" class="nav-link active">Profil</a></li>
+
+            <!-- UTS Dropdown -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button">
+                UTS <i class="fa-solid fa-chevron-down chevron-icon"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="UTS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan Modul</a></li>
+                <li><a href="UTS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi Ajar</a></li>
+                <li><a href="UTS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media TPACK</a></li>
+                <li><a href="UTS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen Asesmen</a></li>
+                <li><a href="UTS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video Praktik</a></li>
+              </ul>
+            </li>
+
+            <!-- UAS Dropdown -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button">
+                UAS <i class="fa-solid fa-chevron-down chevron-icon"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="UAS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan Modul</a></li>
+                <li><a href="UAS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi Ajar</a></li>
+                <li><a href="UAS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media TPACK</a></li>
+                <li><a href="UAS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen Asesmen</a></li>
+                <li><a href="UAS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video Praktik</a></li>
+              </ul>
+            </li>
+
+            <li><a href="non-mengajar.html" class="nav-link">Non-Mengajar</a></li>
+            <li><a href="dokumentasi.html" class="nav-link">Dokumentasi</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="index.html" class="btn-nav-quote">
+            <i class="fa-solid fa-arrow-left" style="margin-right: 4px;"></i> Beranda
+          </a>
+          <button class="mobile-toggle" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =================================================================
+       2. PAGE HERO HEADER
+       ================================================================= -->
+    <section class="profile-page-hero reveal-init">
+      <div class="container">
+        <div class="badge-pill-group light">
+          <span class="twin-dot-icon"><span></span><span></span></span>
+          <span>BIODATA, KOMPETENSI & DEDIKASI GURU PJOK</span>
+        </div>
+
+        <h1 class="profile-page-hero-title">
+          Profil & Dedikasi Pedagogik PJOK
+        </h1>
+        <p class="profile-page-hero-desc">
+          Mengenal lebih dekat <strong>Rahmat Irnandi, S.Or.</strong>, Mahasiswa Program Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Jasmani, Olahraga, dan Kesehatan (PJOK) Universitas Negeri Yogyakarta (UNY) yang melaksanakan PPL Terbimbing di <strong>SMK N 3 Kasihan Yogyakarta</strong>.
+        </p>
+
+        <div class="subpage-breadcrumb" style="justify-content: center;">
+          <a href="index.html">Beranda</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span style="color: var(--color-yellow); font-weight: 700;">Profil Guru</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+       3. MAIN PROFILE CARD (White Island Container)
+       ================================================================= -->
+    <main>
+      <section class="island-white reveal-init">
+        <div class="profile-card-grid">
+          <!-- Left Column: Photo & Action -->
+          <div style="text-align: center;">
+            <div class="profile-avatar-box">
+              <img src="pas foto.jpeg" alt="Rahmat Irnandi, S.Or." onerror="this.src = 'IMG/rahmat.png'" />
+            </div>
+
+            <div class="badge-pill-group" style="justify-content: center; margin-bottom: 1.25rem;">
+              <span class="twin-dot-icon"><span></span><span></span></span>
+              <span>PPG Calon Guru PJOK • Gelombang 1</span>
+            </div>
+
+            <button class="btn btn-yellow btn-sm" style="width: 100%;" onclick="showToast('Curriculum Vitae Rahmat Irnandi, S.Or. siap diunduh!')">
+              <i class="fa-solid fa-file-arrow-down"></i> Unduh Biodata Lengkap
+            </button>
+          </div>
+
+          <!-- Right Column: Information Details -->
+          <div>
+            <div class="badge-pill-group" style="margin-bottom: 0.5rem;">
+              <span class="twin-dot-icon"><span></span><span></span></span>
+              <span>Fakultas Ilmu Keolahragaan dan Kesehatan • UNY</span>
+            </div>
+
+            <h2 style="font-size: clamp(2rem, 3.2vw, 2.5rem); color: #0F1012; margin-bottom: 0.4rem; font-weight: 800;">
+              Rahmat Irnandi, S.Or.
+            </h2>
+            <p style="color: #4A4D55; font-weight: 700; font-size: 1.05rem; margin-bottom: 1.25rem;">
+              Guru Pendidikan Jasmani, Olahraga, dan Kesehatan (PJOK) • Calon Guru Profesional
+            </p>
+
+            <p style="font-size: 0.98rem; line-height: 1.75; color: #4B5563; text-align: justify;">
+              Lulusan Sarjana Olahraga (S.Or.) dari <strong>Universitas Negeri Yogyakarta (UNY)</strong> yang saat ini menempuh <strong>Program Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi PJOK</strong>. Melaksanakan Praktik Pengalaman Lapangan (PPL) Terbimbing di <strong>SMK N 3 Kasihan Yogyakarta</strong> dengan dedikasi tinggi mengintegrasikan pembelajaran gerak berdiferensiasi, keselamatan olahraga (*sport safety*), kebugaran jasmani terukur, dan penguatan nilai Profil Pelajar Pancasila bagi peserta didik vokasi.
+            </p>
+
+            <!-- Bio Grid Modern -->
+            <div class="profile-bio-grid-modern">
+              <div class="bio-card-modern">
+                <div class="label">Nama Lengkap & Gelar</div>
+                <div class="val">Rahmat Irnandi, S.Or.</div>
+              </div>
+              <div class="bio-card-modern">
+                <div class="label">Bidang Studi PPG</div>
+                <div class="val">Pendidikan Jasmani (PJOK)</div>
+              </div>
+              <div class="bio-card-modern">
+                <div class="label">Perguruan Tinggi LPTK</div>
+                <div class="val">Universitas Negeri Yogyakarta (UNY)</div>
+              </div>
+              <div class="bio-card-modern">
+                <div class="label">Sekolah Lokasi PPL</div>
+                <div class="val">SMK N 3 Kasihan Yogyakarta</div>
+              </div>
+              <div class="bio-card-modern">
+                <div class="label">Jenjang Pembelajaran</div>
+                <div class="val">Fase E & F (Kelas X & XI SMK)</div>
+              </div>
+              <div class="bio-card-modern">
+                <div class="label">Fokus Pembelajaran</div>
+                <div class="val">Diferensiasi Gerak & Kebugaran Sirkuit</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+         4. FILOSOFI & PENDEKATAN PEMBELAJARAN PJOK (Dark Bento Cards)
+         ================================================================= -->
+      <section class="container reveal-init" style="padding: 2rem 0 3.5rem 0;">
+        <div class="section-header">
+          <div class="badge-pill-group light">
+            <span class="twin-dot-icon"><span></span><span></span></span>
+            <span>PRINSIP PEDAGOGIK OLAHRAGA</span>
+          </div>
+          <h2 class="section-title">4 Pilar Pembelajaran PJOK di SMK N 3 Kasihan</h2>
+          <p class="section-subtitle">
+            Fondasi filosofis dan metodologis yang diterapkan selama praktik pembelajaran terbimbing untuk memastikan keaktifan, keselamatan, dan kegembiraan gerak siswa.
+          </p>
+        </div>
+
+        <div class="philosophy-grid">
+          <!-- Pilar 1 -->
+          <div class="philosophy-card">
+            <div>
+              <div class="philosophy-icon-row">
+                <div class="philosophy-icon"><i class="fa-solid fa-person-running"></i></div>
+                <span class="nexis-pill dark">01 • Inklusif</span>
+              </div>
+              <h3>Diferensiasi Gerak & Sarana Modifikasi</h3>
+              <p>
+                Menyesuaikan kompleksitas gerak dan memodifikasi sarana prasarana olahraga (seperti penggunaan bola spon busa dalam bola voli) agar siswa pemula dapat belajar tanpa rasa takut cedera, sedangkan siswa mahir dapat mengembangkan variasi keterampilan yang lebih dinamis.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pilar 2 -->
+          <div class="philosophy-card">
+            <div>
+              <div class="philosophy-icon-row">
+                <div class="philosophy-icon"><i class="fa-solid fa-medal"></i></div>
+                <span class="nexis-pill dark">02 • Karakter</span>
+              </div>
+              <h3>Penanaman Sportivitas & Gotong Royong</h3>
+              <p>
+                Olahraga bukan sekadar aktivitas fisik, melainkan wahana pembentukan watak kesatria: kejujuran menerima kekalahan, kerjasama regu, disiplin waktu, dan kepemimpinan yang selaras dengan nilai-nilai Profil Pelajar Pancasila di lingkungan SMK.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pilar 3 -->
+          <div class="philosophy-card">
+            <div>
+              <div class="philosophy-icon-row">
+                <div class="philosophy-icon"><i class="fa-solid fa-laptop-medical"></i></div>
+                <span class="nexis-pill dark">03 • Digital</span>
+              </div>
+              <h3>Integrasi TPACK & Asesmen Kinestetik Digital</h3>
+              <p>
+                Pemanfaatan rekaman video untuk analisis biomekanika gerak mandiri siswa (*slow-motion playback*), sistem barcode pada pos sirkuit kebugaran jasmani, serta e-LKPD interaktif untuk mencatat frekuensi denyut nadi latihan (*Training Heart Rate*).
+              </p>
+            </div>
+          </div>
+
+          <!-- Pilar 4 -->
+          <div class="philosophy-card">
+            <div>
+              <div class="philosophy-icon-row">
+                <div class="philosophy-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                <span class="nexis-pill dark">04 • Kebugaran</span>
+              </div>
+              <h3>Kebugaran Jasmani Penunjang Vokasi</h3>
+              <p>
+                Siswa sekolah kejuruan membutuhkan stamina dan ketahanan fisik prima untuk mendukung aktivitas praktik bengkel dan studio. Metode *circuit training* 5 pos dirancang terstruktur melatih komponen daya tahan otot, kardiovaskular, dan kelincahan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+         5. TIMELINE PENDIDIKAN & PENGALAMAN PPL (Dark Island)
+         ================================================================= -->
+      <section class="island-dark reveal-init" style="padding: 4rem 3.5rem;">
+        <div style="text-align: center; max-width: 680px; margin: 0 auto 3rem auto;">
+          <div class="badge-pill-group light">
+            <span class="twin-dot-icon"><span></span><span></span></span>
+            <span>REKAM JEJAK AKADEMIK & PRAKTIK</span>
+          </div>
+          <h2 style="font-size: 2.2rem; color: #FFFFFF; font-weight: 800; margin-bottom: 0.5rem;">
+            Riwayat Pendidikan & Pengalaman Lapangan
+          </h2>
+          <p style="color: #9CA3AF; font-size: 0.95rem;">
+            Perjalanan dedikasi akademik dan pengabdian keolahragaan dari kampus LPTK UNY menuju sekolah mitra PPL.
+          </p>
+        </div>
+
+        <div class="timeline-agency-wrap" style="max-width: 880px; margin: 0 auto;">
+          <!-- Item 1 -->
+          <div class="timeline-agency-item">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--color-yellow); text-transform: uppercase; margin-bottom: 0.4rem;">
+              TAHUN 2024 - SEKARANG • UNIVERSITAS NEGERI YOGYAKARTA (UNY)
+            </div>
+            <h4 style="font-size: 1.25rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.5rem;">
+              Program Pendidikan Profesi Guru (PPG) Calon Guru PJOK
+            </h4>
+            <p style="font-size: 0.9rem; line-height: 1.7; color: #9CA3AF;">
+              Mendalami kompetensi pedagogik lanjut Kurikulum Merdeka, perencanaan pembelajaran berbasis Understanding by Design (UbD), asesmen otentik 3 ranah PJOK, dan supervisi klinis terbimbing bersama dosen LPTK UNY.
+            </p>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-agency-item">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--color-yellow); text-transform: uppercase; margin-bottom: 0.4rem;">
+              SEMESTER GASAL 2024/2025 • SMK N 3 KASIHAN YOGYAKARTA
+            </div>
+            <h4 style="font-size: 1.25rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.5rem;">
+              Praktik Pengalaman Lapangan (PPL) Terbimbing
+            </h4>
+            <p style="font-size: 0.9rem; line-height: 1.7; color: #9CA3AF;">
+              Mengajar tatap muka mata pelajaran PJOK pada Fase E dan F, mengawal kepanitiaan lomba peringatan kemerdekaan, pembinaan kesiswaan, pengawasan ujian evaluasi sumatif, dan penyusunan modul ajar siklus 1 & 2.
+            </p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-agency-item">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--color-yellow); text-transform: uppercase; margin-bottom: 0.4rem;">
+              FAKULTAS ILMU KEOLAHRAGAAN & KESEHATAN • UNIVERSITAS NEGERI YOGYAKARTA
+            </div>
+            <h4 style="font-size: 1.25rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.5rem;">
+              Sarjana Olahraga (S.Or.)
+            </h4>
+            <p style="font-size: 0.9rem; line-height: 1.7; color: #9CA3AF;">
+              Menyelesaikan studi keolahragaan dengan spesialisasi metodologi kepelatihan fisik, pedagogi jasmani, manajemen keolahragaan sekolah, dan fisiologi latihan kebugaran.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =================================================================
+       6. FOOTER (Exact Nexis Minimal Luxury Layout)
+       ================================================================= -->
+    <footer class="footer-nexis">
+      <div class="container">
+        <!-- Center Mega Brand -->
+        <div class="footer-nexis-brand-hero">
+          <a href="index.html" class="footer-brand-link">
+            <div class="footer-logo-mark">
+              <img src="logo.png" alt="Logo UNY" class="footer-logo-img" onerror="this.src='logo navbar.png'" />
+            </div>
+            <div class="footer-brand-title-wrap">
+              <span class="footer-brand-title">E-Porto</span>
+              <span class="footer-brand-badge">Rahmat Irnandi, S.Or.</span>
+            </div>
+          </a>
+          <p class="footer-brand-tagline">
+            Portofolio Digital Resmi PPL Terbimbing • Program Studi Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Jasmani, Olahraga, dan Kesehatan (PJOK) Universitas Negeri Yogyakarta (UNY) di SMK N 3 Kasihan Yogyakarta.
+          </p>
+        </div>
+
+        <!-- Horizontal Nav Links -->
+        <nav class="footer-nav-menu">
+          <a href="index.html" class="footer-nav-link">Beranda</a>
+          <a href="profil.html" class="footer-nav-link">Profil</a>
+          <a href="UTS/rancangan.html" class="footer-nav-link">Siklus 1 (UTS)</a>
+          <a href="UAS/rancangan.html" class="footer-nav-link">Siklus 2 (UAS)</a>
+          <a href="non-mengajar.html" class="footer-nav-link">Non-Mengajar</a>
+          <a href="dokumentasi.html" class="footer-nav-link">Dokumentasi</a>
+        </nav>
+
+        <!-- Divider Line -->
+        <div class="footer-nexis-divider"></div>
+
+        <!-- Bottom Flex Bar -->
+        <div class="footer-nexis-bottom-bar">
+          <div class="footer-copyright-text">
+            Copyright &copy; 2026 <strong>Rahmat Irnandi, S.Or.</strong> • LPTK Universitas Negeri Yogyakarta (UNY) & SMK N 3 Kasihan Yogyakarta. All Rights Reserved.
+          </div>
+
+          <!-- Social Icons on the Right -->
+          <div class="footer-social-cluster">
+            <a href="javascript:void(0)" onclick="showToast('YouTube Pembelajaran PJOK')" class="social-nexis-pill" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="javascript:void(0)" onclick="showToast('Instagram Rahmat Irnandi')" class="social-nexis-pill" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="javascript:void(0)" onclick="showToast('LinkedIn Rahmat Irnandi')" class="social-nexis-pill" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:rahmat.ppg@uny.ac.id" class="social-nexis-pill" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#" class="social-nexis-pill scroll-top-pill" aria-label="Kembali ke Atas" title="Kembali ke Atas"><i class="fa-solid fa-arrow-up"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

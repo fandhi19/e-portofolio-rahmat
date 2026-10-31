@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UAS - Instrumen & Rubrik Asesmen Otentik PJOK (Siklus 2 & 3) | Rahmat Irnandi, S.Or. - PPG PJOK UNY</title>
+
+    <link rel="icon" type="image/png" href="../logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <style>
+      .standalone-navbar-wrap {
+        padding: 1.5rem 0 0.5rem 0;
+        position: relative;
+        z-index: 1000;
+      }
+      .navbar-capsule {
+        overflow: visible !important;
+      }
+      .nav-item-dropdown {
+        position: relative;
+      }
+      .nav-item-dropdown::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 18px;
+      }
+
+      /* Modular Pure White Island for Instrumen UAS (<main>) */
+      .ut-page-island {
+        max-width: 1280px;
+        margin: 2.5rem auto 5rem auto;
+        padding: 3.75rem 3.25rem;
+        background: #FFFFFF;
+        border-radius: 42px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+        position: relative;
+        overflow: visible !important;
+      }
+
+      /* Subpage Hero Header */
+      .ut-hero-header {
+        padding: 2.75rem 0 3.25rem 0;
+        text-align: center;
+        position: relative;
+      }
+      .ut-hero-title {
+        font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+        font-weight: 800;
+        color: #FFFFFF;
+        margin-bottom: 0.85rem;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+      }
+      .ut-hero-desc {
+        max-width: 860px;
+        margin: 0 auto 1.75rem auto;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: #94A3B8;
+      }
+
+      /* Breadcrumb */
+      .ut-breadcrumb {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.55rem 1.4rem;
+        border-radius: 999px;
+        font-size: 0.88rem;
+      }
+      .ut-breadcrumb a {
+        color: #E2E8F0;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      .ut-breadcrumb a:hover {
+        color: #FFC938;
+      }
+      .ut-breadcrumb i {
+        font-size: 0.72rem;
+        color: #64748B;
+      }
+      .ut-breadcrumb .current {
+        color: #FFC938;
+        font-weight: 700;
+      }
+
+      /* Cycle Switcher Tabs for UAS */
+      .uas-tabs-wrapper {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+      .uas-tab-btn {
+        background: #F1F5F9;
+        border: 1px solid #E2E8F0;
+        color: #0C0D10;
+        padding: 0.95rem 1.75rem;
+        border-radius: 999px;
+        font-size: 0.92rem;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      }
+      .uas-tab-btn:hover {
+        background: #FFFFFF;
+        border-color: #FFC938;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      }
+      .uas-tab-btn.active {
+        background: #0C0D10;
+        color: #FFFFFF;
+        border-color: #0C0D10;
+        box-shadow: 0 8px 24px rgba(12, 13, 16, 0.25);
+      }
+      .uas-tab-badge {
+        background: rgba(255, 201, 56, 0.2);
+        color: #B45309;
+        font-size: 0.72rem;
+        padding: 3px 8px;
+        border-radius: 6px;
+        font-weight: 800;
+      }
+      .uas-tab-btn.active .uas-tab-badge {
+        background: #FFC938;
+        color: #0C0D10;
+      }
+
+      /* Custom High-Contrast PDF Viewer Card */
+      .pdf-viewer-card {
+        background: #0C0D10;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        margin-bottom: 4rem;
+      }
+      .pdf-viewer-toolbar {
+        background: #16171B;
+        padding: 1.25rem 1.85rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pdf-toolbar-info {
+        display: flex;
+        align-items: center;
+        gap: 1.1rem;
+      }
+      .pdf-toolbar-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(255, 201, 56, 0.15);
+        border: 1px solid rgba(255, 201, 56, 0.35);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFC938;
+        font-size: 1.35rem;
+        flex-shrink: 0;
+      }
+      .pdf-toolbar-title {
+        color: #FFFFFF;
+        font-size: 1.05rem;
+        font-weight: 800;
+        margin-bottom: 0.2rem;
+      }
+      .pdf-toolbar-sub {
+        color: #94A3B8;
+        font-size: 0.82rem;
+      }
+      .pdf-toolbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+      }
+      .btn-nexis-yellow {
+        background: #FFC938;
+        color: #0C0D10;
+        font-weight: 800;
+        padding: 0.55rem 1.25rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.2s ease;
+        border: none;
+      }
+      .btn-nexis-yellow:hover {
+        background: #F59E0B;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 201, 56, 0.35);
+      }
+      .btn-nexis-outline {
+        background: transparent;
+        color: #FFFFFF;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-weight: 600;
+        padding: 0.55rem 1.25rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.2s ease;
+      }
+      .btn-nexis-outline:hover {
+        border-color: #FFC938;
+        color: #FFC938;
+        background: rgba(255, 201, 56, 0.05);
+      }
+      .pdf-frame-wrapper {
+        width: 100%;
+        height: 740px;
+        background: #111215;
+        position: relative;
+      }
+      .pdf-frame-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      .pdf-metadata-bar {
+        background: #16171B;
+        padding: 1.15rem 1.85rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pdf-meta-item {
+        font-size: 0.84rem;
+        color: #94A3B8;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+      }
+      .pdf-meta-item strong {
+        color: #FFFFFF;
+      }
+
+      /* Cycle summary cards */
+      .uas-cycles-summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.85rem;
+        margin-top: 3.5rem;
+      }
+      .uas-cycle-summary-card {
+        background: #F8FAFC;
+        border: 1px solid #E2E8F0;
+        border-radius: 24px;
+        padding: 2.25rem 2rem;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.2s ease;
+      }
+      .uas-cycle-summary-card:hover {
+        transform: translateY(-4px);
+        border-color: #FFC938;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+      }
+      .uas-cycle-summary-card.active-card {
+        border-top: 5px solid #FFC938;
+        background: #FFFFFF;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      }
+
+      /* Analysis Cycle Switch Container */
+      .analysis-cycle-container {
+        display: none;
+        animation: fadeInAnalysis 0.35s ease;
+      }
+      .analysis-cycle-container.active {
+        display: block;
+      }
+      @keyframes fadeInAnalysis {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Academic Analysis Sections */
+      .analysis-module-card {
+        background: #F8FAFC;
+        border-radius: 28px;
+        border: 1px solid #E2E8F0;
+        padding: 2.75rem 2.5rem;
+        margin-bottom: 2.75rem;
+        transition: all 0.3s ease;
+      }
+      .analysis-module-card:hover {
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        border-color: #CBD5E1;
+      }
+      .analysis-module-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        margin-bottom: 2.25rem;
+        border-bottom: 1px solid #E2E8F0;
+        padding-bottom: 1.5rem;
+      }
+      .analysis-module-num {
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: #0C0D10;
+        line-height: 1;
+        background: #FFC938;
+        width: 58px;
+        height: 58px;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 8px 18px rgba(255, 201, 56, 0.3);
+      }
+      .analysis-module-title {
+        font-size: 1.55rem;
+        font-weight: 800;
+        color: #0C0D10;
+        margin-bottom: 0.35rem;
+      }
+      .analysis-module-desc {
+        font-size: 0.95rem;
+        color: #64748B;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* Theory Grid Inside Analysis */
+      .theory-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+      }
+      .theory-card {
+        background: #FFFFFF;
+        border-radius: 20px;
+        padding: 1.75rem;
+        border: 1px solid #E2E8F0;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .theory-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+        border-color: #FFC938;
+      }
+      .theory-badge {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(255, 201, 56, 0.18);
+        color: #92400E;
+        font-size: 0.75rem;
+        font-weight: 800;
+        padding: 4px 10px;
+        border-radius: 999px;
+        margin-bottom: 0.85rem;
+      }
+      .theory-title {
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: #0C0D10;
+        margin-bottom: 0.6rem;
+      }
+      .theory-desc {
+        font-size: 0.88rem;
+        color: #475569;
+        line-height: 1.65;
+        margin: 0;
+      }
+
+      @media (max-width: 860px) {
+        .ut-page-island {
+          padding: 2.25rem 1.25rem;
+          margin: 1.5rem auto 3rem auto;
+          border-radius: 28px;
+        }
+        .pdf-frame-wrapper {
+          height: 480px;
+        }
+        .analysis-module-card {
+          padding: 1.75rem 1.25rem;
+        }
+        .analysis-module-header {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =================================================================
+       1. STANDALONE CAPSULE NAVBAR (Matching index.html Exactly)
+       ================================================================= -->
+    <header class="navbar container standalone-navbar-wrap">
+      <div class="navbar-capsule">
+        <a href="../index.html" class="brand-nexis">
+          <img src="../logo.png" alt="Logo UNY" class="brand-logo-img" onerror="this.src='../logo navbar.png'" />
+          <span class="brand-nexis-text">
+            E-Porto
+            <span class="brand-nexis-sub">Rahmat Irnandi, S.Or.</span>
+          </span>
+        </a>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="../index.html" class="nav-link">Beranda</a></li>
+            <li><a href="../profil.html" class="nav-link">Profil</a></li>
+
+            <!-- UTS Dropdown -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button">
+                UTS <i class="fa-solid fa-chevron-down chevron-icon"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="../UTS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan Modul</a></li>
+                <li><a href="../UTS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi Ajar</a></li>
+                <li><a href="../UTS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media TPACK</a></li>
+                <li><a href="../UTS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen Asesmen</a></li>
+                <li><a href="../UTS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video Praktik</a></li>
+              </ul>
+            </li>
+
+            <!-- UAS Dropdown (Active) -->
+            <li class="nav-item-dropdown active">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle active" role="button">
+                UAS <i class="fa-solid fa-chevron-down chevron-icon"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan Modul</a></li>
+                <li><a href="materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi Ajar</a></li>
+                <li><a href="media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media TPACK</a></li>
+                <li><a href="instrumen.html" class="dropdown-item active"><i class="fa-solid fa-clipboard-check"></i> Instrumen Asesmen</a></li>
+                <li><a href="video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video Praktik</a></li>
+              </ul>
+            </li>
+
+            <li><a href="../non-mengajar.html" class="nav-link">Non-Mengajar</a></li>
+            <li><a href="../dokumentasi.html" class="nav-link">Dokumentasi</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="../profil.html" class="btn-nav-quote"> Profil </a>
+          <button class="mobile-toggle" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =================================================================
+       2. SUBPAGE HERO HEADER & BREADCRUMB
+       ================================================================= -->
+    <section class="ut-hero-header">
+      <div class="container">
+        <div class="badge-pill-group" style="justify-content: center; margin-bottom: 1.25rem;">
+          <span class="twin-dot-icon"> <span></span><span></span> </span>
+          <span style="font-weight: 700; letter-spacing: 0.05em;">UAS • SIKLUS 2 & 3 PPL TERBIMBING</span>
+        </div>
+
+        <h1 class="ut-hero-title">Instrumen & Rubrik Asesmen Otentik PJOK (Asesmen UAS)</h1>
+        <p class="ut-hero-desc">
+          Kompilasi Perangkat Asesmen Komprehensif Tiga Ranah Kurikulum Merdeka Fase E di SMK N 3 Kasihan Yogyakarta. Meliputi Siklus 2: Asesmen Kebugaran Jasmani (*Circuit Training*) & Siklus 3: Rubrik Unjuk Kerja Variasi & Taktik Bola Voli (*TGfU Game Performance*).
+        </p>
+
+        <div class="ut-breadcrumb">
+          <a href="../index.html"><i class="fa-solid fa-house" style="margin-right: 4px;"></i> Beranda</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Siklus Lanjutan (UAS)</span>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span class="current">Instrumen Penilaian</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+       3. MAIN MODULAR WHITE ISLAND (<main>)
+       ================================================================= -->
+    <main class="island-white ut-page-island reveal-init">
+      <!-- =============================================================
+         A. MULTI-SIKLUS INTERACTIVE PDF VIEWER SECTION
+         ============================================================= -->
+      <section style="margin-bottom: 4.5rem;">
+        <div class="section-agency-head" style="margin-bottom: 2.25rem;">
+          <div class="badge-pill-group">
+            <span class="twin-dot-icon"> <span></span><span></span> </span>
+            <span>DOKUMEN INSTRUMEN ASESMEN SIKLUS 2 & 3</span>
+          </div>
+          <h2 class="section-agency-title">Pratinjau Instrumen Penilaian Digital (Pilih Siklus)</h2>
+          <p class="section-agency-subtitle">
+            Klik tombol siklus di bawah untuk menampilkan dokumen PDF instrumen asesmen terkait dan secara otomatis membuka kajian analisis akademik mendalam khusus di bawah viewer.
+          </p>
+        </div>
+
+        <!-- Cycle Switcher Tab Navigation -->
+        <div class="uas-tabs-wrapper">
+          <button id="tab-btn-2" class="uas-tab-btn active" onclick="switchUASInstrumen(2)">
+            <i class="fa-solid fa-heart-pulse"></i> <span>Siklus 2: Asesmen Kebugaran Jasmani (Circuit Training)</span>
+            <span class="uas-tab-badge">TaRL & Nadi Latihan</span>
+          </button>
+
+          <button id="tab-btn-3" class="uas-tab-btn" onclick="switchUASInstrumen(3)">
+            <i class="fa-solid fa-volleyball"></i> <span>Siklus 3: Asesmen Variasi & Taktik Bola Voli</span>
+            <span class="uas-tab-badge">GPAI & Sportivitas</span>
+          </button>
+        </div>
+
+        <!-- PDF Viewer Container Card -->
+        <div class="pdf-viewer-card">
+          <!-- Toolbar -->
+          <div class="pdf-viewer-toolbar">
+            <div class="pdf-toolbar-info">
+              <div class="pdf-toolbar-icon">
+                <i class="fa-solid fa-clipboard-check"></i>
+              </div>
+              <div>
+                <div id="uas-doc-title" class="pdf-toolbar-title">
+                  Instrumen Penilaian PJOK Siklus 2: Aktivitas Kebugaran Jasmani (Circuit Training)
+                </div>
+                <div id="uas-doc-sub" class="pdf-toolbar-sub">
+                  Penyusun: <strong>Rahmat Irnandi, S.Or.</strong> • Fase E SMK N 3 Kasihan Yogyakarta • Tes Daya Tahan, Lembar Observasi 5 Pos & Portofolio Nadi
+                </div>
+              </div>
+            </div>
+
+            <div class="pdf-toolbar-actions">
+              <span id="uas-doc-badge" class="tag-pill" style="background: rgba(255, 201, 56, 0.15); color: #FFC938; font-weight: 700; border: 1px solid rgba(255, 201, 56, 0.4); padding: 6px 14px; font-size: 0.8rem; border-radius: 999px;">
+                <i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Terverifikasi LPTK UNY
+              </span>
+              <a id="uas-doc-download" href="../Dokumen/Instrumen Siklus 2.pdf" download="Instrumen_Penilaian_PJOK_Siklus2_KebugaranJasmani_RahmatIrnandi.pdf" class="btn-nexis-yellow">
+                <i class="fa-solid fa-file-arrow-down"></i> Unduh PDF Instrumen
+              </a>
+              <a id="uas-doc-fullscreen" href="../Dokumen/Instrumen Siklus 2.pdf" target="_blank" rel="noopener noreferrer" class="btn-nexis-outline">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Layar Penuh
+              </a>
+            </div>
+          </div>
+
+          <!-- Embedded Frame -->
+          <div class="pdf-frame-wrapper">
+            <iframe 
+              id="uas-doc-iframe"
+              src="../Dokumen/Instrumen Siklus 2.pdf#toolbar=1&navpanes=0&scrollbar=1" 
+              title="Instrumen Penilaian UAS Rahmat Irnandi, S.Or."
+              loading="lazy">
+              <p style="padding: 2.5rem; color: #FFFFFF; text-align: center;">
+                Peramban Anda tidak mendukung tampilan PDF langsung. Silakan 
+                <a id="uas-doc-fallback" href="../Dokumen/Instrumen Siklus 2.pdf" target="_blank" style="color: #FFC938; font-weight: bold; text-decoration: underline;">
+                  Klik di sini untuk mengunduh dokumen instrumen penilaian (.PDF)
+                </a>.
+              </p>
+            </iframe>
+          </div>
+
+          <!-- Footer Metadata Bar -->
+          <div class="pdf-metadata-bar">
+            <div style="display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap;">
+              <div class="pdf-meta-item">
+                <i class="fa-solid fa-school" style="color: #FFC938;"></i>
+                <span id="uas-meta-school"><strong>Sekolah Mitra:</strong> SMK N 3 Kasihan Yogyakarta</span>
+              </div>
+              <div class="pdf-meta-item">
+                <i class="fa-solid fa-clipboard-list" style="color: #FFC938;"></i>
+                <span id="uas-meta-weight"><strong>Struktur Asesmen:</strong> Diagnostik + Unjuk Kerja + Afektif</span>
+              </div>
+              <div class="pdf-meta-item">
+                <i class="fa-solid fa-chart-line" style="color: #FFC938;"></i>
+                <span id="uas-meta-kktp"><strong>Pendekatan:</strong> Circuit Training + TaRL Berdiferensiasi</span>
+              </div>
+              <div class="pdf-meta-item">
+                <i class="fa-solid fa-table-cells" style="color: #FFC938;"></i>
+                <span id="uas-meta-approach"><strong>Format:</strong> Rubrik 5 Pos Gerak & Jurnal Nadi</span>
+              </div>
+            </div>
+            <div>
+              <span style="font-size: 0.82rem; color: #FFC938; font-weight: 700;">
+                <i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Kurikulum Merdeka 2026
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 Summary Cards -->
+        <div class="uas-cycles-summary-grid">
+          <!-- Card Siklus 2 -->
+          <div id="summary-card-2" class="uas-cycle-summary-card active-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <span class="tag-pill" style="background: rgba(255, 201, 56, 0.2); color: #B45309; font-weight: 800; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">
+                SIKLUS 2 • ASESMEN KEBUGARAN
+              </span>
+              <span style="font-size: 0.8rem; color: #64748B; font-weight: 600;">Latihan Sirkuit 5 Pos</span>
+            </div>
+            <h4 style="font-size: 1.15rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.6rem;">
+              Instrumen Kebugaran Jasmani & Circuit Training
+            </h4>
+            <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin-bottom: 1.5rem; flex: 1;">
+              Instrumen komprehensif mengukur daya tahan otot, kapasitas aerobik, dan kelenturan tubuh: lembar observasi unjuk kerja gerak sirkuit, rubrik penilaian diri (*self-rating*), dan lembar logbook denyut nadi pemulihan.
+            </p>
+            <div style="display: flex; gap: 0.6rem;">
+              <button class="btn-nexis-yellow" style="flex: 1; justify-content: center;" onclick="switchUASInstrumen(2)">
+                <i class="fa-solid fa-eye"></i> Tampilkan & Analisis
+              </button>
+              <a href="../Dokumen/Instrumen Siklus 2.pdf" download="Instrumen_PJOK_Siklus2_KebugaranJasmani.pdf" class="btn-nexis-outline" style="color: #0C0D10; border-color: #CBD5E1;" aria-label="Unduh Instrumen Siklus 2">
+                <i class="fa-solid fa-download"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card Siklus 3 -->
+          <div id="summary-card-3" class="uas-cycle-summary-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <span class="tag-pill" style="background: rgba(59, 130, 246, 0.15); color: #1D4ED8; font-weight: 800; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;">
+                SIKLUS 3 • ASESMEN TAKTIK VOLI
+              </span>
+              <span style="font-size: 0.8rem; color: #64748B; font-weight: 600;">Instrumen GPAI & Sportivitas</span>
+            </div>
+            <h4 style="font-size: 1.15rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.6rem;">
+              Instrumen Variasi Gerak & Game-Play Bola Voli
+            </h4>
+            <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin-bottom: 1.5rem; flex: 1;">
+              Instrumen evaluasi berbasis *Game Performance Assessment Instrument (GPAI)* mengukur pengambilan keputusan taktis (*decision-making*), eksekusi keterampilan (*skill execution*), serta rubrik afektif sportivitas tim.
+            </p>
+            <div style="display: flex; gap: 0.6rem;">
+              <button class="btn-nexis-yellow" style="flex: 1; justify-content: center;" onclick="switchUASInstrumen(3)">
+                <i class="fa-solid fa-eye"></i> Tampilkan & Analisis
+              </button>
+              <a href="../Dokumen/Instrumen Siklus 3.pdf" download="Instrumen_PJOK_Siklus3_TaktikBolaVoli.pdf" class="btn-nexis-outline" style="color: #0C0D10; border-color: #CBD5E1;" aria-label="Unduh Instrumen Siklus 3">
+                <i class="fa-solid fa-download"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+         B. SEPARATE INDIVIDUAL ACADEMIC ANALYSES
+         ============================================================= -->
+      <section>
+        <div class="section-agency-head" style="margin-bottom: 3rem;">
+          <div class="badge-pill-group">
+            <span class="twin-dot-icon"> <span></span><span></span> </span>
+            <span id="analysis-instrumen-badge">ANALISIS KHUSUS ASESMEN: SIKLUS 2 (KEBUGARAN JASMANI)</span>
+          </div>
+          <h2 id="analysis-instrumen-main-title" class="section-agency-title">Analisis Instrumen Asesmen Siklus 2: Kebugaran Jasmani (Circuit Training)</h2>
+          <p id="analysis-instrumen-subtitle" class="section-agency-subtitle">
+            Kajian pedagogis dan evaluasi ilmiah terhadap perancangan instrumen penilaian kebugaran jasmani, membedah rubrik unjuk kerja 5 pos sirkuit, prinsip asesmen berkeadilan TaRL, dan evaluasi portofolio denyut nadi siswa di SMK N 3 Kasihan Yogyakarta.
+          </p>
+        </div>
+
+        <!-- =========================================================
+           CONTAINER ANALISIS INSTRUMEN SIKLUS 2
+           ========================================================= -->
+        <div id="analysis-siklus-2" class="analysis-cycle-container active">
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">01</div>
+              <div>
+                <h3 class="analysis-module-title">Konteks & Karakteristik Asesmen Kebugaran Jasmani</h3>
+                <p class="analysis-module-desc">
+                  Penilaian berbasis kemajuan individual (*self-referenced progress*), diferensiasi 3 Tier TaRL kemampuan kardiovaskular, dan rubrik observasi postur ergonomis 5 pos sirkuit.
+                </p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.15rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.8rem;">
+                  <i class="fa-solid fa-heart-pulse" style="color: #FFC938; margin-right: 6px;"></i> A. Paradigma Asesmen Berkeadilan (Bukan Perbandingan Mutlak)
+                </h4>
+                <p style="font-size: 0.95rem; color: #475569; line-height: 1.75; margin-bottom: 1.25rem;">
+                  Mengevaluasi kebugaran jasmani bagi siswa SMK seni menuntut kehati-hatian psikologis. Menggunakan standar repetisi mutlak yang kaku dapat menjatuhkan motivasi siswa yang memiliki berat badan lebih atau kurang aktif. Instrumen Siklus 2 dirancang dengan prinsip:
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+                  <div style="background: #FFFFFF; border-radius: 16px; padding: 1.4rem; border-left: 5px solid #FFC938; border: 1px solid #E2E8F0;">
+                    <strong style="color: #0C0D10; display: block; font-size: 0.95rem; margin-bottom: 0.35rem;">
+                      Kriteria Peningkatan Diri (*Self-Improvement Rate*)
+                    </strong>
+                    <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0;">
+                      Penilaian mengapresiasi persentase peningkatan daya tahan tubuh siswa dari tes awal (*pre-test*) menuju tes akhir (*post-test*), sehingga setiap siswa memiliki peluang meraih predikat tuntas.
+                    </p>
+                  </div>
+
+                  <div style="background: #FFFFFF; border-radius: 16px; padding: 1.4rem; border-left: 5px solid #10B981; border: 1px solid #E2E8F0;">
+                    <strong style="color: #0C0D10; display: block; font-size: 0.95rem; margin-bottom: 0.35rem;">
+                      Rubrik Kualitas Teknik Gerak (Form Over Speed)
+                    </strong>
+                    <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0;">
+                      Bobot penilaian lebih difokuskan pada ketepatan posisi sendi dan keamanan tulang belakang (misal: punggung rata saat push-up & plank) dibanding sekadar mengejar kecepatan repetisi yang ceroboh.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- =========================================================
+           CONTAINER ANALISIS INSTRUMEN SIKLUS 3
+           ========================================================= -->
+        <div id="analysis-siklus-3" class="analysis-cycle-container">
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">01</div>
+              <div>
+                <h3 class="analysis-module-title">Konteks & Karakteristik Asesmen Taktik Bola Voli (Siklus 3)</h3>
+                <p class="analysis-module-desc">
+                  Penerapan Game Performance Assessment Instrument (GPAI) dalam mini tournament 4 vs 4, penilaian keputusan servis terarah, dan rubrik sportivitas tim.
+                </p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.15rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.8rem;">
+                  <i class="fa-solid fa-volleyball" style="color: #FFC938; margin-right: 6px;"></i> A. Penilaian Berbasis Kinerja Permainan Otentik (GPAI)
+                </h4>
+                <p style="font-size: 0.95rem; color: #475569; line-height: 1.75; margin-bottom: 1.25rem;">
+                  Mengadaptasi model asesmen GPAI (Mitchell, Oslin, & Griffin) yang telah diakui secara global dalam pendidikan jasmani modern:
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+                  <div style="background: #FFFFFF; border-radius: 16px; padding: 1.4rem; border-left: 5px solid #3B82F6; border: 1px solid #E2E8F0;">
+                    <strong style="color: #0C0D10; display: block; font-size: 0.95rem; margin-bottom: 0.35rem;">
+                      Komponen Pengambilan Keputusan (*Decision Making*)
+                    </strong>
+                    <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0;">
+                      Mengamati apakah siswa mengambil keputusan yang tepat: mengarahkan bola ke setter saat menerima servis atau langsung membuang bola secara sembrono.
+                    </p>
+                  </div>
+
+                  <div style="background: #FFFFFF; border-radius: 16px; padding: 1.4rem; border-left: 5px solid #FFC938; border: 1px solid #E2E8F0;">
+                    <strong style="color: #0C0D10; display: block; font-size: 0.95rem; margin-bottom: 0.35rem;">
+                      Komponen Dukungan & Penyesuaian Ruang (*Support & Base*)
+                    </strong>
+                    <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0;">
+                      Menilai kesigapan siswa bergerak menempati posisi pendukung ketika rekan seregu bersiap menerima bola lambung.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- =================================================================
+       4. NEXIS LUXURY FOOTER
+       ================================================================= -->
+    <footer class="footer-nexis">
+      <div class="container footer-nexis-inner">
+        <!-- Brand Mega Hero -->
+        <div class="footer-nexis-brand-hero">
+          <div class="footer-brand-title-wrap">
+            <span class="footer-brand-title">E-Porto</span>
+            <span class="footer-brand-badge">Rahmat Irnandi, S.Or.</span>
+          </div>
+          <p class="footer-brand-tagline">
+            Portofolio Digital Resmi PPL Terbimbing • Program Studi Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Jasmani, Olahraga, dan Kesehatan (PJOK) Universitas Negeri Yogyakarta (UNY) di SMK N 3 Kasihan Yogyakarta.
+          </p>
+        </div>
+
+        <!-- Horizontal Nav Links -->
+        <nav class="footer-nav-menu">
+          <a href="../index.html" class="footer-nav-link">Beranda</a>
+          <a href="../profil.html" class="footer-nav-link">Profil</a>
+          <a href="../UTS/rancangan.html" class="footer-nav-link">Siklus 1 (UTS)</a>
+          <a href="rancangan.html" class="footer-nav-link">Siklus 2 (UAS)</a>
+          <a href="../non-mengajar.html" class="footer-nav-link">Non-Mengajar</a>
+          <a href="../dokumentasi.html" class="footer-nav-link">Dokumentasi</a>
+        </nav>
+
+        <!-- Divider Line -->
+        <div class="footer-nexis-divider"></div>
+
+        <!-- Bottom Flex Bar -->
+        <div class="footer-nexis-bottom-bar">
+          <div class="footer-copyright-text">
+            Copyright &copy; 2026 <strong>Rahmat Irnandi, S.Or.</strong> • LPTK Universitas Negeri Yogyakarta (UNY) & SMK N 3 Kasihan Yogyakarta. All Rights Reserved.
+          </div>
+
+          <!-- Social Icons on the Right -->
+          <div class="footer-social-cluster">
+            <a href="javascript:void(0)" onclick="showToast('YouTube Pembelajaran PJOK')" class="social-nexis-pill" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="javascript:void(0)" onclick="showToast('Instagram Rahmat Irnandi')" class="social-nexis-pill" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="javascript:void(0)" onclick="showToast('LinkedIn Rahmat Irnandi')" class="social-nexis-pill" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:rahmat.ppg@uny.ac.id" class="social-nexis-pill" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior:'smooth'})" class="social-nexis-pill scroll-top-pill" aria-label="Kembali ke Atas" title="Kembali ke Atas"><i class="fa-solid fa-arrow-up"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script for Cycle Switcher (Siklus 2 & Siklus 3) -->
+    <script>
+      function switchUASInstrumen(cycle) {
+        const frame = document.getElementById("uas-doc-iframe");
+        const title = document.getElementById("uas-doc-title");
+        const subtitle = document.getElementById("uas-doc-sub");
+        const downloadBtn = document.getElementById("uas-doc-download");
+        const fullscreenBtn = document.getElementById("uas-doc-fullscreen");
+        const fallbackLink = document.getElementById("uas-doc-fallback");
+        const metaBadge = document.getElementById("uas-doc-badge");
+        const metaSchool = document.getElementById("uas-meta-school");
+        const metaWeight = document.getElementById("uas-meta-weight");
+        const metaKktp = document.getElementById("uas-meta-kktp");
+        const metaApproach = document.getElementById("uas-meta-approach");
+
+        const analysisBadge = document.getElementById("analysis-instrumen-badge");
+        const analysisMainTitle = document.getElementById("analysis-instrumen-main-title");
+        const analysisSubtitle = document.getElementById("analysis-instrumen-subtitle");
+
+        // Update active tab buttons
+        document.querySelectorAll(".uas-tab-btn").forEach((btn) => btn.classList.remove("active"));
+        const activeBtn = document.getElementById("tab-btn-" + cycle);
+        if (activeBtn) activeBtn.classList.add("active");
+
+        // Update active summary cards
+        document.querySelectorAll(".uas-cycle-summary-card").forEach((card) => card.classList.remove("active-card"));
+        const activeSummaryCard = document.getElementById("summary-card-" + cycle);
+        if (activeSummaryCard) activeSummaryCard.classList.add("active-card");
+
+        // Toggle separate analysis containers
+        document.querySelectorAll(".analysis-cycle-container").forEach((container) => container.classList.remove("active"));
+        const targetAnalysis = document.getElementById("analysis-siklus-" + cycle);
+        if (targetAnalysis) targetAnalysis.classList.add("active");
+
+        if (cycle === 2) {
+          frame.src = "../Dokumen/Instrumen Siklus 2.pdf#toolbar=1&navpanes=0&scrollbar=1";
+          title.textContent = "Instrumen Penilaian PJOK Siklus 2: Aktivitas Kebugaran Jasmani (Circuit Training)";
+          subtitle.innerHTML = "Penyusun: <strong>Rahmat Irnandi, S.Or.</strong> • Fase E SMK N 3 Kasihan Yogyakarta • Tes Daya Tahan, Lembar Observasi 5 Pos & Portofolio Nadi";
+          downloadBtn.href = "../Dokumen/Instrumen Siklus 2.pdf";
+          downloadBtn.setAttribute("download", "Instrumen_Penilaian_PJOK_Siklus2_KebugaranJasmani_RahmatIrnandi.pdf");
+          downloadBtn.innerHTML = '<i class="fa-solid fa-file-arrow-down"></i> Unduh PDF Instrumen';
+          fullscreenBtn.href = "../Dokumen/Instrumen Siklus 2.pdf";
+          if (fallbackLink) fallbackLink.href = "../Dokumen/Instrumen Siklus 2.pdf";
+          if (metaBadge) metaBadge.innerHTML = '<i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Terverifikasi LPTK UNY';
+          if (metaSchool) metaSchool.innerHTML = "<strong>Sekolah Mitra:</strong> SMK N 3 Kasihan Yogyakarta";
+          if (metaWeight) metaWeight.innerHTML = "<strong>Struktur Asesmen:</strong> Diagnostik + Unjuk Kerja + Afektif";
+          if (metaKktp) metaKktp.innerHTML = "<strong>Pendekatan:</strong> Circuit Training + TaRL Berdiferensiasi";
+          if (metaApproach) metaApproach.innerHTML = "<strong>Format:</strong> Rubrik 5 Pos Gerak & Jurnal Nadi";
+
+          if (analysisBadge) analysisBadge.textContent = "ANALISIS KHUSUS ASESMEN: SIKLUS 2 (KEBUGARAN JASMANI)";
+          if (analysisMainTitle) analysisMainTitle.textContent = "Analisis Instrumen Asesmen Siklus 2: Kebugaran Jasmani (Circuit Training)";
+          if (analysisSubtitle)
+            analysisSubtitle.textContent =
+              "Kajian pedagogis dan evaluasi ilmiah terhadap perancangan instrumen penilaian kebugaran jasmani, membedah rubrik unjuk kerja 5 pos sirkuit, prinsip asesmen berkeadilan TaRL, dan evaluasi portofolio denyut nadi siswa di SMK N 3 Kasihan Yogyakarta.";
+          showToast("Menampilkan Instrumen & Analisis Siklus 2: Kebugaran Jasmani");
+        } else if (cycle === 3) {
+          frame.src = "../Dokumen/Instrumen Siklus 3.pdf#toolbar=1&navpanes=0&scrollbar=1";
+          title.textContent = "Instrumen Penilaian PJOK Siklus 3: Variasi & Taktik Bola Voli (GPAI & TGfU)";
+          subtitle.innerHTML = "Penyusun: <strong>Rahmat Irnandi, S.Or.</strong> • Fase E SMK N 3 Kasihan Yogyakarta • Rubrik Unjuk Kerja GPAI & Observasi Sportivitas Tim";
+          downloadBtn.href = "../Dokumen/Instrumen Siklus 3.pdf";
+          downloadBtn.setAttribute("download", "Instrumen_Penilaian_PJOK_Siklus3_TaktikBolaVoli_RahmatIrnandi.pdf");
+          downloadBtn.innerHTML = '<i class="fa-solid fa-file-arrow-down"></i> Unduh PDF Instrumen';
+          fullscreenBtn.href = "../Dokumen/Instrumen Siklus 3.pdf";
+          if (fallbackLink) fallbackLink.href = "../Dokumen/Instrumen Siklus 3.pdf";
+          if (metaBadge) metaBadge.innerHTML = '<i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Terverifikasi LPTK UNY';
+          if (metaSchool) metaSchool.innerHTML = "<strong>Sekolah Mitra:</strong> SMK N 3 Kasihan Yogyakarta";
+          if (metaWeight) metaWeight.innerHTML = "<strong>Struktur Asesmen:</strong> GPAI Kinerja Taktis + Unjuk Kerja Servis";
+          if (metaKktp) metaKktp.innerHTML = "<strong>Pendekatan:</strong> TGfU + Peer Assessment Sportivitas";
+          if (metaApproach) metaApproach.innerHTML = "<strong>Format:</strong> Lembar Pengamatan Turnamen 4 vs 4";
+
+          if (analysisBadge) analysisBadge.textContent = "ANALISIS KHUSUS ASESMEN: SIKLUS 3 (VARIASI & TAKTIK BOLA VOLI)";
+          if (analysisMainTitle) analysisMainTitle.textContent = "Analisis Instrumen Asesmen Siklus 3: Variasi & Taktik Bola Voli (TGfU & GPAI)";
+          if (analysisSubtitle)
+            analysisSubtitle.textContent =
+              "Kajian pedagogis terhadap perancangan instrumen evaluasi taktik permainan bola voli berbasis Game Performance Assessment Instrument (GPAI), lembar observasi sportivitas rekan sebaya, dan rubrik mini-tournament.";
+          showToast("Menampilkan Instrumen & Analisis Siklus 3: Variasi & Taktik Bola Voli");
+        }
+      }
+    </script>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>

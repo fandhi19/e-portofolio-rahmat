@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UTS - Video Praktik Pembelajaran PJOK (Siklus 1: Bola Voli) | Rahmat Irnandi, S.Or. - PPG PJOK UNY</title>
+
+    <link rel="icon" type="image/png" href="../logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <style>
+      .standalone-navbar-wrap {
+        padding: 1.5rem 0 0.5rem 0;
+        position: relative;
+        z-index: 1000;
+      }
+      .navbar-capsule {
+        overflow: visible !important;
+      }
+      .nav-item-dropdown {
+        position: relative;
+      }
+      .nav-item-dropdown::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 18px;
+      }
+
+      /* Modular Pure White Island for Video (<main>) */
+      .ut-page-island {
+        max-width: 1280px;
+        margin: 2.5rem auto 5rem auto;
+        padding: 3.75rem 3.25rem;
+        background: #FFFFFF;
+        border-radius: 42px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+        position: relative;
+        overflow: visible !important;
+      }
+
+      /* Subpage Hero Header */
+      .ut-hero-header {
+        padding: 2.75rem 0 3.25rem 0;
+        text-align: center;
+        position: relative;
+      }
+      .ut-hero-title {
+        font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+        font-weight: 800;
+        color: #FFFFFF;
+        margin-bottom: 0.85rem;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+      }
+      .ut-hero-desc {
+        max-width: 860px;
+        margin: 0 auto 1.75rem auto;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: #94A3B8;
+      }
+
+      /* Breadcrumb */
+      .ut-breadcrumb {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.55rem 1.4rem;
+        border-radius: 999px;
+        font-size: 0.88rem;
+      }
+      .ut-breadcrumb a {
+        color: #E2E8F0;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      .ut-breadcrumb a:hover {
+        color: #FFC938;
+      }
+      .ut-breadcrumb i {
+        font-size: 0.72rem;
+        color: #64748B;
+      }
+      .ut-breadcrumb .current {
+        color: #FFC938;
+        font-weight: 700;
+      }
+
+      /* Video Showcase Card */
+      .video-showcase-card {
+        background: #0C0D10;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        margin-bottom: 4rem;
+      }
+      .video-toolbar {
+        background: #16171B;
+        padding: 1.25rem 1.85rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .video-toolbar-info {
+        display: flex;
+        align-items: center;
+        gap: 1.1rem;
+      }
+      .video-toolbar-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(255, 201, 56, 0.15);
+        border: 1px solid rgba(255, 201, 56, 0.35);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFC938;
+        font-size: 1.35rem;
+        flex-shrink: 0;
+      }
+      .video-toolbar-title {
+        color: #FFFFFF;
+        font-size: 1.05rem;
+        font-weight: 800;
+        margin-bottom: 0.2rem;
+      }
+      .video-toolbar-sub {
+        color: #94A3B8;
+        font-size: 0.82rem;
+      }
+      .video-toolbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+      }
+      .btn-nexis-yellow {
+        background: #FFC938;
+        color: #0C0D10;
+        font-weight: 800;
+        padding: 0.55rem 1.25rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.2s ease;
+        border: none;
+      }
+      .btn-nexis-yellow:hover {
+        background: #F59E0B;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 201, 56, 0.35);
+      }
+      .btn-nexis-outline {
+        background: transparent;
+        color: #FFFFFF;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-weight: 600;
+        padding: 0.55rem 1.25rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.2s ease;
+      }
+      .btn-nexis-outline:hover {
+        border-color: #FFC938;
+        color: #FFC938;
+        background: rgba(255, 201, 56, 0.05);
+      }
+
+      /* Main Video Grid Layout: 1fr + 380px sidebar */
+      .video-main-layout {
+        display: grid;
+        grid-template-columns: 1fr 390px;
+        background: #0C0D10;
+      }
+      .video-screen-wrapper {
+        position: relative;
+        padding-top: 56.25%;
+        background: #000000;
+        min-height: 420px;
+      }
+      .video-screen-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .video-sidebar-panel {
+        background: #111215;
+        padding: 1.85rem;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .timeline-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.95rem;
+        margin-top: 1rem;
+      }
+      .timeline-item {
+        display: flex;
+        gap: 0.85rem;
+        align-items: flex-start;
+        padding: 0.75rem 0.85rem;
+        border-radius: 12px;
+        transition: background 0.2s ease;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .timeline-item:hover {
+        background: rgba(255, 201, 56, 0.08);
+        border-color: rgba(255, 201, 56, 0.25);
+      }
+      .timeline-item.active {
+        background: rgba(255, 201, 56, 0.12);
+        border-left: 4px solid #FFC938;
+      }
+      .time-badge {
+        background: rgba(255, 201, 56, 0.18);
+        color: #FFC938;
+        font-size: 0.72rem;
+        font-weight: 800;
+        padding: 3px 8px;
+        border-radius: 6px;
+        flex-shrink: 0;
+      }
+      .timeline-item.active .time-badge {
+        background: #FFC938;
+        color: #0C0D10;
+      }
+      .timeline-title {
+        font-size: 0.88rem;
+        color: #FFFFFF;
+        font-weight: 700;
+        margin-bottom: 2px;
+        display: block;
+      }
+      .timeline-desc {
+        font-size: 0.8rem;
+        color: #94A3B8;
+        line-height: 1.5;
+        display: block;
+      }
+      .video-metadata-bar {
+        background: #16171B;
+        padding: 1.15rem 1.85rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .video-meta-item {
+        font-size: 0.84rem;
+        color: #94A3B8;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+      }
+      .video-meta-item strong {
+        color: #FFFFFF;
+      }
+
+      /* Academic Analysis Sections */
+      .analysis-module-card {
+        background: #F8FAFC;
+        border-radius: 28px;
+        border: 1px solid #E2E8F0;
+        padding: 2.75rem 2.5rem;
+        margin-bottom: 2.75rem;
+        transition: all 0.3s ease;
+      }
+      .analysis-module-card:hover {
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        border-color: #CBD5E1;
+      }
+      .analysis-module-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        margin-bottom: 2.25rem;
+        border-bottom: 1px solid #E2E8F0;
+        padding-bottom: 1.5rem;
+      }
+      .analysis-module-num {
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: #0C0D10;
+        line-height: 1;
+        background: #FFC938;
+        width: 58px;
+        height: 58px;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 8px 18px rgba(255, 201, 56, 0.3);
+      }
+      .analysis-module-title {
+        font-size: 1.55rem;
+        font-weight: 800;
+        color: #0C0D10;
+        margin-bottom: 0.35rem;
+      }
+      .analysis-module-desc {
+        font-size: 0.95rem;
+        color: #64748B;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      @media (max-width: 1024px) {
+        .video-main-layout {
+          grid-template-columns: 1fr;
+        }
+        .video-sidebar-panel {
+          border-left: none;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+      }
+
+      @media (max-width: 860px) {
+        .ut-page-island {
+          padding: 2.25rem 1.25rem;
+          margin: 1.5rem auto 3rem auto;
+          border-radius: 28px;
+        }
+        .video-screen-wrapper {
+          min-height: 260px;
+        }
+        .analysis-module-card {
+          padding: 1.75rem 1.25rem;
+        }
+        .analysis-module-header {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =================================================================
+       1. STANDALONE CAPSULE NAVBAR (Matching index.html Exactly)
+       ================================================================= -->
+    <header class="navbar container standalone-navbar-wrap">
+      <div class="navbar-capsule">
+        <a href="../index.html" class="brand-nexis">
+          <img src="../logo.png" alt="Logo UNY" class="brand-logo-img" onerror="this.src='../logo navbar.png'" />
+          <span class="brand-nexis-text">
+            E-Porto
+            <span class="brand-nexis-sub">Rahmat Irnandi, S.Or.</span>
+          </span>
+        </a>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="../index.html" class="nav-link">Beranda</a></li>
+            <li><a href="../profil.html" class="nav-link">Profil</a></li>
+
+            <!-- UTS Dropdown (Active) -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle active" role="button">
+                UTS <i class="fa-solid fa-chevron-down chevron-icon"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan Modul</a></li>
+                <li><a href="materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi Ajar</a></li>
+                <li><a href="media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media TPACK</a></li>
+                <li><a href="instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen Asesmen</a></li>
+                <li><a href="video.html" class="dropdown-item active"><i class="fa-solid fa-circle-play"></i> Video Praktik</a></li>
+              </ul>
+            </li>
+
+            <!-- UAS Dropdown -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button">
+                UAS <i class="fa-solid fa-chevron-down chevron-icon"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="../UAS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan Modul</a></li>
+                <li><a href="../UAS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi Ajar</a></li>
+                <li><a href="../UAS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media TPACK</a></li>
+                <li><a href="../UAS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen Asesmen</a></li>
+                <li><a href="../UAS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video Praktik</a></li>
+              </ul>
+            </li>
+
+            <li><a href="../non-mengajar.html" class="nav-link">Non-Mengajar</a></li>
+            <li><a href="../dokumentasi.html" class="nav-link">Dokumentasi</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="../profil.html" class="btn-nav-quote"> Profil </a>
+          <button class="mobile-toggle" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =================================================================
+         2. SUBPAGE HERO HEADER & BREADCRUMB
+         ================================================================= -->
+    <section class="ut-hero-header">
+      <div class="container">
+        <div class="badge-pill-group" style="justify-content: center; margin-bottom: 1.25rem;">
+          <span class="twin-dot-icon"> <span></span><span></span> </span>
+          <span style="font-weight: 700; letter-spacing: 0.05em;">UTS • SIKLUS 1 PPL TERBIMBING</span>
+        </div>
+
+        <h1 class="ut-hero-title">Video Praktik Pembelajaran PJOK (Siklus 1: Bola Voli)</h1>
+        <p class="ut-hero-desc">
+          Dokumentasi Rekaman Video Pelaksanaan Praktik Pembelajaran Terbimbing PJOK Materi Keterampilan Gerak Spesifik Passing Bawah dan Passing Atas Bola Voli dengan Model Demonstrasi Eksploratif dan Drill Bergradasi di Lapangan SMK N 3 Kasihan Yogyakarta.
+        </p>
+
+        <div class="ut-breadcrumb">
+          <a href="../index.html"><i class="fa-solid fa-house" style="margin-right: 4px;"></i> Beranda</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <a href="rancangan.html">Siklus 1 (UTS)</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span class="current">Video Praktik</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         3. MAIN MODULAR WHITE ISLAND (<main>)
+         ================================================================= -->
+    <main class="island-white ut-page-island reveal-init">
+      <!-- =============================================================
+           A. INTERACTIVE VIDEO PLAYER SECTION
+           ============================================================= -->
+      <section style="margin-bottom: 4.5rem;">
+        <div class="section-agency-head" style="margin-bottom: 2.25rem;">
+          <div class="badge-pill-group">
+            <span class="twin-dot-icon"> <span></span><span></span> </span>
+            <span>REKAMAN VIDEO SIKLUS 1 • STREAMING HD</span>
+          </div>
+          <h2 class="section-agency-title">Pemutaran Video Praktik Mengajar PJOK (YouTube HD)</h2>
+          <p class="section-agency-subtitle">
+            Saksikan rekaman video utuh pelaksanaan praktik mengajar PJOK materi gerak spesifik passing bola voli berdurasi terstandar Uji Kinerja (UKin) PPG Calon Guru yang diselenggarakan di lapangan olahraga terbuka SMK N 3 Kasihan Yogyakarta.
+          </p>
+        </div>
+
+        <!-- Video Showcase Container Card -->
+        <div class="video-showcase-card">
+          <!-- Toolbar -->
+          <div class="video-toolbar">
+            <div class="video-toolbar-info">
+              <div class="video-toolbar-icon">
+                <i class="fa-solid fa-circle-play"></i>
+              </div>
+              <div>
+                <div class="video-toolbar-title">Video Praktik: Pembelajaran PJOK Passing Bola Voli (Siklus 1)</div>
+                <div class="video-toolbar-sub">
+                  Praktikan: <strong>Rahmat Irnandi, S.Or.</strong> • SMK N 3 Kasihan Yogyakarta • Fase E • PPL PPG PJOK UNY
+                </div>
+              </div>
+            </div>
+
+            <div class="video-toolbar-actions">
+              <span class="tag-pill" style="background: rgba(255, 201, 56, 0.15); color: #FFC938; font-weight: 700; border: 1px solid rgba(255, 201, 56, 0.4); padding: 6px 14px; font-size: 0.8rem; border-radius: 999px;">
+                <i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Terverifikasi LPTK UNY
+              </span>
+              <a href="https://youtu.be/1jCaDqPt7w8?si=zL5CZL5W4UxaLVb3" target="_blank" rel="noopener noreferrer" class="btn-nexis-yellow">
+                <i class="fa-brands fa-youtube"></i> Tonton di YouTube
+              </a>
+              <a href="https://www.youtube.com/watch?v=1jCaDqPt7w8" target="_blank" rel="noopener noreferrer" class="btn-nexis-outline">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Layar Penuh
+              </a>
+            </div>
+          </div>
+
+          <!-- Video Display Layout: Screen + Sidebar -->
+          <div class="video-main-layout">
+            <!-- Video Screen Wrapper with YouTube Embed Iframe -->
+            <div class="video-screen-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/1jCaDqPt7w8?rel=0&modestbranding=1"
+                title="Video Praktik Pembelajaran Siklus 1 Rahmat Irnandi, S.Or. - PJOK Bola Voli UNY"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+                <p style="padding: 2.5rem; color: #FFFFFF; text-align: center;">
+                  Peramban Anda tidak mendukung pemutaran video langsung. Silakan
+                  <a href="https://youtu.be/1jCaDqPt7w8?si=zL5CZL5W4UxaLVb3" target="_blank" style="color: #FFC938; font-weight: bold; text-decoration: underline;">
+                    Klik di sini untuk menonton video di YouTube
+                  </a>.
+                </p>
+              </iframe>
+            </div>
+
+            <!-- Video Sidebar & Timeline Sintaks PJOK -->
+            <div class="video-sidebar-panel">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <h3 style="font-size: 1.15rem; color: #FFFFFF; font-weight: 800; margin: 0;">Sintaks Pembelajaran PJOK</h3>
+                <span class="time-badge">Drill Bergradasi</span>
+              </div>
+              <p style="font-size: 0.82rem; color: #94A3B8; margin-bottom: 1.15rem;">
+                Materi: Passing Bola Voli • Fase E SMK N 3 Kasihan Yogyakarta
+              </p>
+
+              <!-- Timeline Items -->
+              <div class="timeline-list">
+                <div class="timeline-item active">
+                  <span class="time-badge">Fase 1</span>
+                  <div>
+                    <strong class="timeline-title">Pendahuluan & Pemanasan Terpimpin</strong>
+                    <span class="timeline-desc">
+                      Presensi, doa bersama, apersepsi gerak passing, peregangan statis-dinamis, dan mini-game pemanasan koordinasi bola.
+                    </span>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <span class="time-badge">Fase 2</span>
+                  <div>
+                    <strong class="timeline-title">Pemodelan & Demonstrasi Gerak</strong>
+                    <span class="timeline-desc">
+                      Guru model mendemonstrasikan fase perkenaan bola passing bawah (lengan lurus) dan passing atas (jari mangkok) dengan video slow-motion.
+                    </span>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <span class="time-badge">Fase 3</span>
+                  <div>
+                    <strong class="timeline-title">Latihan Drill Bergradasi (TaRL)</strong>
+                    <span class="timeline-desc">
+                      Eksplorasi gerak tanpa bola (shadow drill), latihan lambung bola gantung, dan variasi passing berpasangan bertingkat.
+                    </span>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <span class="time-badge">Fase 4</span>
+                  <div>
+                    <strong class="timeline-title">Aplikasi Permainan & Observasi</strong>
+                    <span class="timeline-desc">
+                      Simulasi permainan 3 vs 3 lapangan kecil (*small-sided games*) dan pengisian lembar asesmen teman sebaya (*peer checklist*).
+                    </span>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <span class="time-badge">Fase 5</span>
+                  <div>
+                    <strong class="timeline-title">Pendinginan & Refleksi Sportivitas</strong>
+                    <span class="timeline-desc">
+                      Cooling down, evaluasi koreksi gerak bersama, refleksi nilai sportivitas/gotong royong, dan penutupan.
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Link -->
+              <div style="margin-top: auto; padding-top: 1.5rem;">
+                <a href="https://youtu.be/1jCaDqPt7w8?si=zL5CZL5W4UxaLVb3" target="_blank" rel="noopener noreferrer" class="btn-nexis-yellow" style="width: 100%; text-align: center; justify-content: center;">
+                  <i class="fa-brands fa-youtube" style="color: #FF0000; margin-right: 6px;"></i> Tonton Langsung di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Metadata Bar -->
+          <div class="video-metadata-bar">
+            <div style="display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap;">
+              <div class="video-meta-item">
+                <i class="fa-solid fa-school" style="color: #FFC938;"></i>
+                <span><strong>Lokasi:</strong> SMK N 3 Kasihan Yogyakarta</span>
+              </div>
+              <div class="video-meta-item">
+                <i class="fa-solid fa-clapperboard" style="color: #FFC938;"></i>
+                <span><strong>Format:</strong> UKin Praktik Mengajar PPG PJOK UNY</span>
+              </div>
+              <div class="video-meta-item">
+                <i class="fa-brands fa-youtube" style="color: #FF0000;"></i>
+                <span><strong>Streaming:</strong> YouTube HD 1080p</span>
+              </div>
+              <div class="video-meta-item">
+                <i class="fa-solid fa-volleyball" style="color: #FFC938;"></i>
+                <span><strong>Materi:</strong> Keterampilan Bola Voli Fase E</span>
+              </div>
+            </div>
+            <div>
+              <span style="font-size: 0.82rem; color: #FFC938; font-weight: 700;">
+                <i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Terakreditasi LPTK UNY
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+           B. COMPREHENSIVE ACADEMIC ANALYSIS
+           ============================================================= -->
+      <section>
+        <div class="section-agency-head" style="margin-bottom: 3.5rem;">
+          <div class="badge-pill-group">
+            <span class="twin-dot-icon"> <span></span><span></span> </span>
+            <span>ANALISIS KOMPREHENSIF PRAKTIK PEMBELAJARAN</span>
+          </div>
+          <h2 class="section-agency-title">Analisis Akademik & Refleksi Kritis Video Praktik Mengajar PJOK</h2>
+          <p class="section-agency-subtitle">
+            Kajian reflektif dan evaluasi pedagogis keolahragaan terhadap rekaman pelaksanaan praktik pembelajaran di lapangan nyata, menelaah keselarasan alokasi waktu aktivitas fisik aktif (ALT-PE), evaluasi keunggulan-keterbatasan, serta catatan supervisi klinis Guru Pamong & DPL UNY.
+          </p>
+        </div>
+
+        <!-- Modul 1: Konteks dan Sasaran -->
+        <article class="analysis-module-card">
+          <div class="analysis-module-header">
+            <div class="analysis-module-num">01</div>
+            <div>
+              <h3 class="analysis-module-title">Konteks dan Tujuan Video Praktik Pembelajaran PJOK</h3>
+              <p class="analysis-module-desc">
+                Tinjauan situasi lapangan olahraga terbuka SMK N 3 Kasihan Yogyakarta, dekonstruksi alur sintaks pembelajaran kinestetik dari apersepsi hingga pendinginan, serta sasaran evaluasi kompetensi calon guru profesional.
+              </p>
+            </div>
+          </div>
+
+          <div class="analysis-content-body">
+            <div style="margin-bottom: 2.5rem;">
+              <h4 style="font-size: 1.25rem; font-weight: 800; color: #0C0D10; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem;">
+                <i class="fa-solid fa-volleyball" style="color: #FFC938; font-size: 1.2rem;"></i>
+                A. Konteks Lapangan Pembelajaran & Kondisi Otentik Peserta Didik
+              </h4>
+              <p style="font-size: 0.95rem; color: #475569; line-height: 1.75; margin-bottom: 1.25rem;">
+                Video praktik pembelajaran ini merekam interaksi langsung mahasiswa PPG Calon Guru (<strong>Rahmat Irnandi, S.Or.</strong>) bersama peserta didik <strong>Fase E SMK N 3 Kasihan Yogyakarta</strong> pada materi pokok <em>Keterampilan Gerak Spesifik Passing Bawah dan Passing Atas Permainan Bola Voli</em>. Tiga konteks esensial yang terdokumentasi dalam video meliputi:
+              </p>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                <div style="background: #FFFFFF; border-radius: 18px; padding: 1.5rem; border-left: 4px solid #FFC938; border: 1px solid #E2E8F0; border-left-width: 5px; border-left-color: #FFC938;">
+                  <strong style="display: block; color: #0C0D10; font-size: 0.98rem; margin-bottom: 0.45rem;">
+                    <i class="fa-solid fa-person-chalkboard" style="margin-right: 6px; color: #FFC938;"></i> Instruksi Kinestetik & Bahasa Tubuh Guru Model
+                  </strong>
+                  <p style="font-size: 0.88rem; color: #64748B; line-height: 1.65; margin: 0;">
+                    Video memperlihatkan guru mengondisikan 36 siswa di lapangan outdoor dengan artikulasi suara lantang, isyarat peluit efektif, dan peragaan postur tubuh biomekanis yang sempurna sebagai rujukan visual bagi siswa.
+                  </p>
+                </div>
+
+                <div style="background: #FFFFFF; border-radius: 18px; padding: 1.5rem; border-left: 4px solid #F59E0B; border: 1px solid #E2E8F0; border-left-width: 5px; border-left-color: #F59E0B;">
+                  <strong style="display: block; color: #0C0D10; font-size: 0.98rem; margin-bottom: 0.45rem;">
+                    <i class="fa-solid fa-users-gear" style="margin-right: 6px; color: #F59E0B;"></i> Diferensiasi Latihan Bergradasi (TaRL)
+                  </strong>
+                  <p style="font-size: 0.88rem; color: #64748B; line-height: 1.65; margin: 0;">
+                    Terekam jelas strategi pengelompokan heterogen: siswa yang masih ragu berlatih passing bola gantung berpasangan di pos bimbingan, sementara siswa yang mahir melakukan rally bergerak dinamis.
+                  </p>
+                </div>
+
+                <div style="background: #FFFFFF; border-radius: 18px; padding: 1.5rem; border-left: 4px solid #10B981; border: 1px solid #E2E8F0; border-left-width: 5px; border-left-color: #10B981;">
+                  <strong style="display: block; color: #0C0D10; font-size: 0.98rem; margin-bottom: 0.45rem;">
+                    <i class="fa-solid fa-stopwatch-20" style="margin-right: 6px; color: #10B981;"></i> Efisiensi Alokasi Waktu ALT-PE (> 70%)
+                  </strong>
+                  <p style="font-size: 0.88rem; color: #64748B; line-height: 1.65; margin: 0;">
+                    Guru meminimalkan ceramah panjang di bawah terik matahari, langsung mengarahkan siswa ke aktivitas gerak aktif yang terorganisir dengan waktu tunggu giliran (*waiting time*) yang sangat minim.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 style="font-size: 1.25rem; font-weight: 800; color: #0C0D10; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem;">
+                <i class="fa-solid fa-bullseye" style="color: #FFC938; font-size: 1.2rem;"></i>
+                B. Sasaran Dokumentasi Video & Tujuan Evaluasi Reflektif
+              </h4>
+              <p style="font-size: 0.95rem; color: #475569; line-height: 1.7; margin-bottom: 1.5rem;">
+                Perekaman video praktik mengajar Siklus 1 ini memenuhi empat sasaran utama dalam program PPG Calon Guru PJOK UNY:
+              </p>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem;">
+                <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                  <div style="display: inline-block; background: rgba(255, 201, 56, 0.2); color: #B45309; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; margin-bottom: 0.75rem;">
+                    SASARAN 1 • UJI KINERJA (UKIN)
+                  </div>
+                  <h5 style="font-size: 1.05rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.5rem;">
+                    Pemenuhan Standar Portofolio Profesi
+                  </h5>
+                  <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0;">
+                    Menyediakan bukti otentik unjuk kemampuan mengajar calon guru secara komprehensif bagi Guru Pamong dan Dosen Pembimbing Lapangan (DPL) Universitas Negeri Yogyakarta (UNY) sesuai rubrik UKin Kemendikbudristek.
+                  </p>
+                </div>
+
+                <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                  <div style="display: inline-block; background: rgba(59, 130, 246, 0.15); color: #1D4ED8; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; margin-bottom: 0.75rem;">
+                    SASARAN 2 • MANAJEMEN KELAS OUTDOOR
+                  </div>
+                  <h5 style="font-size: 1.05rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.5rem;">
+                    Pengelolaan Ruang Gerak & Keselamatan
+                  </h5>
+                  <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0;">
+                    Menganalisis kemampuan guru dalam menata ruang lapangan voli, memastikan zonasi aman antarkelompok latihan, serta mengantisipasi risiko benturan bola pantul liar di lapangan terbuka.
+                  </p>
+                </div>
+
+                <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                  <div style="display: inline-block; background: rgba(16, 185, 129, 0.15); color: #047857; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; margin-bottom: 0.75rem;">
+                    SASARAN 3 • SUPERVISI KLINIS
+                  </div>
+                  <h5 style="font-size: 1.05rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.5rem;">
+                    Refleksi Komunikasi & Umpan Balik Gerak
+                  </h5>
+                  <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0;">
+                    Menilai ketepatan koreksi kinestetik guru saat melihat siswa melakukan kesalahan passing (*immediate error correction*), kehangatan intonasi, dan penguatan motivasi peserta didik.
+                  </p>
+                </div>
+
+                <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                  <div style="display: inline-block; background: rgba(245, 158, 11, 0.15); color: #B45309; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; margin-bottom: 0.75rem;">
+                    SASARAN 4 • PRAKTIK BAIK
+                  </div>
+                  <h5 style="font-size: 1.05rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.5rem;">
+                    Inovasi Pembelajaran Bola Voli Bermakna
+                  </h5>
+                  <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0;">
+                    Menjadi model praktik baik (*best practice*) bahwa pembelajaran PJOK di SMK seni mampu ditransformasikan menjadi kegiatan olahraga yang menyenangkan, inklusif, dan sarat nilai sportivitas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Modul 2: Kelebihan dan Rekomendasi -->
+        <article class="analysis-module-card">
+          <div class="analysis-module-header">
+            <div class="analysis-module-num">02</div>
+            <div>
+              <h3 class="analysis-module-title">Kelebihan, Evaluasi Kritis & Rekomendasi Tindak Lanjut</h3>
+              <p class="analysis-module-desc">
+                Refleksi kritis kekuatan pedagogik yang ditampilkan guru model di lapangan, identifikasi aspek penyempurnaan manajemen instruksional, serta rencana tindak lanjut pengembangan Siklus 2.
+              </p>
+            </div>
+          </div>
+
+          <div class="analysis-content-body">
+            <div class="analysis-grid-2col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; margin-bottom: 2rem;">
+              <!-- Kelebihan -->
+              <div style="background: #FFFFFF; border: 1px solid #BBF7D0; border-radius: 20px; padding: 1.75rem; border-top: 5px solid #16A34A;">
+                <h4 style="font-size: 1.15rem; font-weight: 800; color: #16A34A; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.6rem;">
+                  <i class="fa-solid fa-circle-check"></i> Keunggulan Praktik Pembelajaran (Strengths)
+                </h4>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; font-size: 0.88rem; color: #475569; line-height: 1.65;">
+                  <li style="display: flex; gap: 0.65rem;">
+                    <i class="fa-solid fa-check-circle" style="color: #16A34A; margin-top: 3px;"></i>
+                    <div><strong>Apersepsi Dinamis yang Menggugah Semangat:</strong> Pemanasan dikemas melalui permainan koordinasi bola kecil yang memicu tawa, keceriaan, dan kekompakan siswa.</div>
+                  </li>
+                  <li style="display: flex; gap: 0.65rem;">
+                    <i class="fa-solid fa-check-circle" style="color: #16A34A; margin-top: 3px;"></i>
+                    <div><strong>Demonstrasi Gerak Guru Model Sangat Presisi:</strong> Memberikan contoh visual langsung dengan sudut tubuh dan ayunan lengan yang sangat terukur.</div>
+                  </li>
+                  <li style="display: flex; gap: 0.65rem;">
+                    <i class="fa-solid fa-check-circle" style="color: #16A34A; margin-top: 3px;"></i>
+                    <div><strong>Penguatan Nilai Sportivitas & Respek:</strong> Berhasil membudayakan jabat tangan dan pemberian apresiasi "tos" antarteman saat berhasil maupun gagal melakukan passing.</div>
+                  </li>
+                  <li style="display: flex; gap: 0.65rem;">
+                    <i class="fa-solid fa-check-circle" style="color: #16A34A; margin-top: 3px;"></i>
+                    <div><strong>Interaksi Guru-Siswa Hangat & Edukatif:</strong> Menunjukkan empati tinggi saat mendampingi siswa yang masih ragu atau takut terkena bola voli keras.</div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Rekomendasi Tindak Lanjut -->
+              <div style="background: #FFFFFF; border: 1px solid #FED7AA; border-radius: 20px; padding: 1.75rem; border-top: 5px solid #EA580C;">
+                <h4 style="font-size: 1.15rem; font-weight: 800; color: #EA580C; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.6rem;">
+                  <i class="fa-solid fa-arrows-spin"></i> Evaluasi Kritis & Rekomendasi (Action Plans)
+                </h4>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; font-size: 0.88rem; color: #475569; line-height: 1.65;">
+                  <li style="display: flex; gap: 0.65rem;">
+                    <i class="fa-solid fa-circle-xmark" style="color: #EA580C; margin-top: 3px;"></i>
+                    <div><strong>Manajemen Isyarat Suara di Lapangan:</strong> Perlu penggunaan peluit dengan ritme kode yang lebih tegas untuk menghentikan latihan serentak tanpa perlu berteriak.</div>
+                  </li>
+                  <li style="display: flex; gap: 0.65rem;">
+                    <i class="fa-solid fa-circle-xmark" style="color: #EA580C; margin-top: 3px;"></i>
+                    <div><strong>Penyediaan Bola Alternatif (Bola Busa/Spons):</strong> Memfasilitasi siswa pemula yang memiliki ambang batas nyeri rendah pada lengan bawah saat benturan bola.</div>
+                  </li>
+                  <li style="display: flex; gap: 0.65rem;">
+                    <i class="fa-solid fa-circle-xmark" style="color: #EA580C; margin-top: 3px;"></i>
+                    <div><strong>Penataan Arah Pandang Terhadap Matahari:</strong> Mengatur posisi barisan siswa agar tidak menghadap langsung ke arah silau matahari saat menyimak penjelasan.</div>
+                  </li>
+                  <li style="display: flex; gap: 0.65rem;">
+                    <i class="fa-solid fa-circle-xmark" style="color: #EA580C; margin-top: 3px;"></i>
+                    <div><strong>Pemberdayaan Siswa Pemalu:</strong> Memberikan giliran melempar bola pertama kepada siswa yang pasif agar merasa memiliki peran penting dalam tim.</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Refleksi Holistik Guru Model -->
+            <div style="background: #0C0D10; border-radius: 20px; padding: 2.25rem; color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 15px 35px rgba(0,0,0,0.15);">
+              <h4 style="color: #FFC938; font-size: 1.15rem; font-weight: 800; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.6rem;">
+                <i class="fa-solid fa-quote-left"></i> Catatan Refleksi Diri Guru Model (Rahmat Irnandi, S.Or.)
+              </h4>
+              <p style="font-size: 0.95rem; line-height: 1.8; color: #E2E8F0; margin: 0; font-style: italic;">
+                "Menyaksikan rekaman video praktik mengajar Siklus 1 di lapangan SMK N 3 Kasihan Yogyakarta memberikan refleksi mendalam mengenai hakikat seorang guru pendidikan jasmani. PJOK bukan sekadar melatih otot atau mengejar angka passing masuk, melainkan seni membangkitkan rasa percaya diri peserta didik. Saat melihat senyum kebanggaan siswa yang awalnya takut menyentuh bola akhirnya berhasil menjaga rally passing tiga kali berturut-turut, di situlah kepuasan terbesar seorang pendidik olahraga. Catatan evaluasi dari DPL UNY dan Guru Pamong menjadi modal berharga bagi saya untuk mengoptimalkan variasi pembelajaran kebugaran jasmani pada Siklus 2."
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- =================================================================
+         4. NEXIS LUXURY FOOTER
+         ================================================================= -->
+    <footer class="footer-nexis">
+      <div class="container footer-nexis-inner">
+        <!-- Brand Mega Hero -->
+        <div class="footer-nexis-brand-hero">
+          <div class="footer-brand-title-wrap">
+            <span class="footer-brand-title">E-Porto</span>
+            <span class="footer-brand-badge">Rahmat Irnandi, S.Or.</span>
+          </div>
+          <p class="footer-brand-tagline">
+            Portofolio Digital Resmi PPL Terbimbing • Program Studi Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Jasmani, Olahraga, dan Kesehatan (PJOK) Universitas Negeri Yogyakarta (UNY) di SMK N 3 Kasihan Yogyakarta.
+          </p>
+        </div>
+
+        <!-- Horizontal Nav Links -->
+        <nav class="footer-nav-menu">
+          <a href="../index.html" class="footer-nav-link">Beranda</a>
+          <a href="../profil.html" class="footer-nav-link">Profil</a>
+          <a href="rancangan.html" class="footer-nav-link">Siklus 1 (UTS)</a>
+          <a href="../UAS/rancangan.html" class="footer-nav-link">Siklus 2 (UAS)</a>
+          <a href="../non-mengajar.html" class="footer-nav-link">Non-Mengajar</a>
+          <a href="../dokumentasi.html" class="footer-nav-link">Dokumentasi</a>
+        </nav>
+
+        <!-- Divider Line -->
+        <div class="footer-nexis-divider"></div>
+
+        <!-- Bottom Flex Bar -->
+        <div class="footer-nexis-bottom-bar">
+          <div class="footer-copyright-text">
+            Copyright &copy; 2026 <strong>Rahmat Irnandi, S.Or.</strong> • LPTK Universitas Negeri Yogyakarta (UNY) & SMK N 3 Kasihan Yogyakarta. All Rights Reserved.
+          </div>
+
+          <!-- Social Icons on the Right -->
+          <div class="footer-social-cluster">
+            <a href="javascript:void(0)" onclick="showToast('YouTube Pembelajaran PJOK')" class="social-nexis-pill" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="javascript:void(0)" onclick="showToast('Instagram Rahmat Irnandi')" class="social-nexis-pill" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="javascript:void(0)" onclick="showToast('LinkedIn Rahmat Irnandi')" class="social-nexis-pill" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:rahmat.ppg@uny.ac.id" class="social-nexis-pill" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior:'smooth'})" class="social-nexis-pill scroll-top-pill" aria-label="Kembali ke Atas" title="Kembali ke Atas"><i class="fa-solid fa-arrow-up"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>

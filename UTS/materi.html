@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UTS - Bahan Ajar Digital PJOK (Siklus 1: Mencegah Bahaya HIV/AIDS) | Rahmat Irnandi, S.Or. - PPG PJOK UNY</title>
+
+    <link rel="icon" type="image/png" href="../logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <style>
+      .standalone-navbar-wrap {
+        padding: 1.5rem 0 0.5rem 0;
+        position: relative;
+        z-index: 1000;
+      }
+      .navbar-capsule {
+        overflow: visible !important;
+      }
+      .nav-item-dropdown {
+        position: relative;
+      }
+      .nav-item-dropdown::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 18px;
+      }
+
+      /* Modular Pure White Island for Bahan Ajar (<main>) */
+      .ut-page-island {
+        max-width: 1280px;
+        margin: 2.5rem auto 5rem auto;
+        padding: 3.75rem 3.25rem;
+        background: #FFFFFF;
+        border-radius: 42px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+        position: relative;
+        overflow: visible !important;
+      }
+
+      /* Subpage Hero Header */
+      .ut-hero-header {
+        padding: 2.75rem 0 3.25rem 0;
+        text-align: center;
+        position: relative;
+      }
+      .ut-hero-title {
+        font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+        font-weight: 800;
+        color: #FFFFFF;
+        margin-bottom: 0.85rem;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+      }
+      .ut-hero-desc {
+        max-width: 840px;
+        margin: 0 auto 1.5rem auto;
+        color: #9CA3AF;
+        font-size: 1.02rem;
+        line-height: 1.75;
+      }
+
+      /* PDF Viewer Custom Toolbar & Card */
+      .pdf-viewer-card {
+        background: #16171B;
+        border: 1px solid var(--color-border-dark);
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        margin-bottom: 4rem;
+      }
+      .pdf-viewer-toolbar {
+        background: #111215;
+        padding: 1.25rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+        border-bottom: 2px solid var(--color-yellow);
+      }
+      .pdf-toolbar-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: #FFFFFF;
+      }
+      .pdf-toolbar-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: rgba(255, 201, 56, 0.18);
+        color: var(--color-yellow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.35rem;
+        flex-shrink: 0;
+        border: 1px solid rgba(255, 201, 56, 0.3);
+      }
+      .pdf-toolbar-title {
+        font-size: 1.08rem;
+        font-weight: 800;
+        color: #FFFFFF;
+        line-height: 1.3;
+      }
+      .pdf-toolbar-sub {
+        font-size: 0.8rem;
+        color: #9CA3AF;
+        font-weight: 500;
+        margin-top: 2px;
+      }
+      .pdf-frame-wrapper {
+        position: relative;
+        width: 100%;
+        height: 780px;
+        background: #1F2128;
+      }
+      .pdf-frame-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+
+      /* Analysis Module Cards (Bento Style in Pure White Island) */
+      .analysis-module-card {
+        background: #F8F9FA;
+        border: 1px solid #E5E7EB;
+        border-radius: 28px;
+        padding: 2.75rem 2.5rem;
+        margin-bottom: 3rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .analysis-module-card:hover {
+        border-color: #D1D5DB;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
+      }
+      .analysis-module-header {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #E5E7EB;
+      }
+      .analysis-module-num {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        background: #111215;
+        color: var(--color-yellow);
+        border: 1px solid rgba(255, 201, 56, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        font-weight: 800;
+        flex-shrink: 0;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      }
+      .analysis-module-title {
+        font-size: 1.55rem;
+        font-weight: 800;
+        color: #111215;
+        margin-bottom: 0.3rem;
+        letter-spacing: -0.01em;
+      }
+      .analysis-module-desc {
+        font-size: 0.92rem;
+        color: #64748B;
+        line-height: 1.6;
+      }
+
+      /* Bento Items & Pro/Con Boxes */
+      .analysis-grid-2col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.75rem;
+        margin-bottom: 2rem;
+      }
+      .analysis-box-item {
+        background: #FFFFFF;
+        border: 1px solid #E5E7EB;
+        border-radius: 20px;
+        padding: 1.85rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      }
+      .analysis-box-item.pro {
+        border-top: 4px solid var(--color-yellow);
+      }
+      .analysis-box-item.con {
+        border-top: 4px solid #F59E0B;
+      }
+      .analysis-box-item.solution {
+        border-top: 4px solid #111215;
+        background: #FFFFFF;
+        border-radius: 20px;
+        padding: 2rem;
+      }
+      .analysis-box-title {
+        font-size: 1.12rem;
+        font-weight: 800;
+        margin-bottom: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .analysis-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.15rem;
+      }
+      .analysis-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.85rem;
+        font-size: 0.9rem;
+        line-height: 1.65;
+        color: #334155;
+      }
+      .analysis-list li i {
+        margin-top: 3px;
+        flex-shrink: 0;
+      }
+
+      /* Theory Grid */
+      .theory-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+      }
+      .theory-card {
+        background: #FFFFFF;
+        border: 1px solid #E5E7EB;
+        border-radius: 20px;
+        padding: 1.85rem;
+        transition: all 0.3s ease;
+      }
+      .theory-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--color-yellow);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+      }
+      .theory-badge {
+        display: inline-flex;
+        align-items: center;
+        background: #FEF3C7;
+        color: #92400E;
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        padding: 4px 12px;
+        border-radius: var(--radius-pill);
+        border: 1px solid #FDE68A;
+        margin-bottom: 0.85rem;
+      }
+      .theory-title {
+        font-size: 1.12rem;
+        font-weight: 800;
+        color: #111215;
+        margin-bottom: 0.6rem;
+        line-height: 1.4;
+      }
+      .theory-desc {
+        font-size: 0.9rem;
+        color: #64748B;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      @media (max-width: 860px) {
+        .ut-page-island {
+          margin: 1.5rem 12px 3rem 12px;
+          padding: 2rem 1.25rem;
+          border-radius: 28px;
+        }
+        .analysis-grid-2col {
+          grid-template-columns: 1fr;
+        }
+        .analysis-module-card {
+          padding: 1.75rem 1.25rem;
+          border-radius: 22px;
+        }
+        .pdf-frame-wrapper {
+          height: 520px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =================================================================
+       1. STANDALONE CAPSULE NAVBAR (Matching index.html Exactly)
+       ================================================================= -->
+    <header class="navbar container standalone-navbar-wrap">
+      <div class="navbar-capsule">
+        <a href="../index.html" class="brand-nexis">
+          <img src="../logo.png" alt="Logo UNY" class="brand-logo-img" onerror="this.src='../logo navbar.png'" />
+          <span class="brand-nexis-text">
+            E-Porto
+            <span class="brand-nexis-sub">Rahmat Irnandi, S.Or.</span>
+          </span>
+        </a>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="../index.html" class="nav-link">Beranda</a></li>
+            <li><a href="../profil.html" class="nav-link">Profil</a></li>
+
+            <!-- UTS Dropdown (Active) -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle active" role="button">
+                UTS <i class="fa-solid fa-chevron-down chevron-icon"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan Modul</a></li>
+                <li><a href="materi.html" class="dropdown-item active"><i class="fa-solid fa-book-open"></i> Materi Ajar</a></li>
+                <li><a href="media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media TPACK</a></li>
+                <li><a href="instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen Asesmen</a></li>
+                <li><a href="video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video Praktik</a></li>
+              </ul>
+            </li>
+
+            <!-- UAS Dropdown -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button">
+                UAS <i class="fa-solid fa-chevron-down chevron-icon"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="../UAS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan Modul</a></li>
+                <li><a href="../UAS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi Ajar</a></li>
+                <li><a href="../UAS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media TPACK</a></li>
+                <li><a href="../UAS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen Asesmen</a></li>
+                <li><a href="../UAS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video Praktik</a></li>
+              </ul>
+            </li>
+
+            <li><a href="../non-mengajar.html" class="nav-link">Non-Mengajar</a></li>
+            <li><a href="../dokumentasi.html" class="nav-link">Dokumentasi</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="../profil.html" class="btn-nav-quote"> Profil </a>
+          <button class="mobile-toggle" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =================================================================
+       2. SUBPAGE HERO HEADER (High-Contrast Centered Layout)
+       ================================================================= -->
+    <section class="ut-hero-header reveal-init">
+      <div class="container">
+        <div class="badge-pill-group light" style="display: inline-flex; margin-bottom: 1rem;">
+          <span class="twin-dot-icon"> <span></span><span></span> </span>
+          <span>UTS • SIKLUS 1 PPL TERBIMBING PJOK UNY</span>
+        </div>
+
+        <h1 class="ut-hero-title">
+          Bahan Ajar Digital PJOK: <span class="yellow-highlight">Mencegah Bahaya HIV/AIDS</span>
+        </h1>
+        <p class="ut-hero-desc">
+          Buku saku digital edukatif <em>"Mencegah Bahaya HIV/AIDS: Kesehatan, Penalaran Kritis, dan Empati Sosial"</em> untuk Siklus 1 PPL Terbimbing di <strong>SMK N 3 Kasihan Yogyakarta</strong> oleh <strong>Rahmat Irnandi, S.Or.</strong> — Memuat enam sub-materi berjenjang: konsep dasar, fakta vs mitos, dampak multidimensi, strategi pencegahan (PHBS), empati & non-diskriminasi, serta peran remaja sebagai agen perubahan, dengan pendekatan <strong>Problem-Based Learning (PBL)</strong> dan penekanan pada sikap anti-stigma.
+        </p>
+
+        <div class="subpage-breadcrumb" style="justify-content: center;">
+          <a href="../index.html">Beranda</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Siklus 1 (UTS)</span>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span style="color: var(--color-yellow); font-weight: 700">Materi Pembelajaran</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+       3. MAIN CONTENT (Modular Pure White Island — Nexis Theme)
+       ================================================================= -->
+    <main class="island-white ut-page-island reveal-init">
+      <div class="container nm-island-inner">
+        <!-- =============================================================
+           A. INTERACTIVE PDF VIEWER SECTION
+           ============================================================= -->
+        <section style="margin-bottom: 4.5rem">
+          <div class="section-agency-head" style="margin-bottom: 2rem">
+            <div class="badge-pill-group">
+              <span class="twin-dot-icon"> <span></span><span></span> </span>
+              <span>BAHAN AJAR BUKU SAKU SIKLUS 1</span>
+            </div>
+            <h2 class="section-agency-title" style="color: #111215;">Pratinjau Materi Pembelajaran Digital (PDF)</h2>
+            <p class="section-agency-subtitle" style="color: #64748B;">
+              Eksplorasi langsung buku saku digital <strong>Mencegah Bahaya HIV/AIDS</strong> yang disusun secara sistematis, visual, dan aplikatif sebagai pegangan belajar mandiri maupun kolaboratif peserta didik di kelas dan di rumah.
+            </p>
+          </div>
+
+          <!-- PDF Viewer Container Card -->
+          <div class="pdf-viewer-card">
+            <!-- Toolbar -->
+            <div class="pdf-viewer-toolbar">
+              <div class="pdf-toolbar-info">
+                <div class="pdf-toolbar-icon">
+                  <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div>
+                  <div class="pdf-toolbar-title">Bahan Ajar PJOK: Buku Saku Mencegah Bahaya HIV/AIDS</div>
+                  <div class="pdf-toolbar-sub">Penyusun: <strong>Rahmat Irnandi, S.Or.</strong> • SMK N 3 Kasihan Yogyakarta • Fase F / Kelas XI</div>
+                </div>
+              </div>
+
+              <div class="pdf-toolbar-actions">
+                <span class="tag-pill" style="background: rgba(255, 201, 56, 0.15); color: var(--color-yellow); font-weight: 700; border: 1px solid rgba(255, 201, 56, 0.35); padding: 6px 14px; font-size: 0.78rem">
+                  <i class="fa-solid fa-circle-check" style="margin-right: 5px"></i> Terverifikasi LPTK UNY
+                </span>
+                <a href="../Dokumen/Materi Siklus 1.pdf" download="Materi_Pembelajaran_PJOK_Siklus1_Mencegah_Bahaya_HIV_AIDS_RahmatIrnandi.pdf" class="btn btn-yellow btn-sm">
+                  <i class="fa-solid fa-file-arrow-down"></i> Unduh Buku Saku PDF
+                </a>
+                <a href="../Dokumen/Materi Siklus 1.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm" style="border-color: rgba(255, 255, 255, 0.35); color: #FFFFFF;">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Layar Penuh
+                </a>
+              </div>
+            </div>
+
+            <!-- Embedded Frame -->
+            <div class="pdf-frame-wrapper">
+              <iframe src="../Dokumen/Materi Siklus 1.pdf#toolbar=1&navpanes=0&scrollbar=1" title="Materi Pembelajaran Siklus 1: Mencegah Bahaya HIV/AIDS - Rahmat Irnandi, S.Or." loading="lazy">
+                <p style="padding: 2rem; color: #FFFFFF; text-align: center">
+                  Peramban Anda tidak mendukung pratinjau PDF langsung. Silakan
+                  <a href="../Dokumen/Materi Siklus 1.pdf" target="_blank" style="color: var(--color-yellow); font-weight: bold; text-decoration: underline">
+                    Klik di sini untuk mengunduh atau membuka Materi Pembelajaran Siklus 1 (.PDF)
+                  </a>.
+                </p>
+              </iframe>
+            </div>
+
+            <!-- Footer Metadata Bar -->
+            <div style="background: #111215; padding: 1.25rem 2rem; border-top: 1px solid var(--color-border-dark); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem">
+              <div style="display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap">
+                <div style="font-size: 0.85rem; color: #9CA3AF">
+                  <i class="fa-solid fa-book-bookmark" style="color: var(--color-yellow); margin-right: 6px"></i>
+                  <strong style="color: #FFFFFF;">Format:</strong> Buku Saku Digital Interaktif PJOK
+                </div>
+                <div style="font-size: 0.85rem; color: #9CA3AF">
+                  <i class="fa-solid fa-sitemap" style="color: var(--color-yellow); margin-right: 6px"></i>
+                  <strong style="color: #FFFFFF;">Struktur:</strong> 6 Sub-Materi Berjenjang & Skenario PBL
+                </div>
+                <div style="font-size: 0.85rem; color: #9CA3AF">
+                  <i class="fa-solid fa-hand-holding-heart" style="color: var(--color-yellow); margin-right: 6px"></i>
+                  <strong style="color: #FFFFFF;">Fokus:</strong> Literasi Kesehatan, Penalaran Kritis & Anti-Stigma
+                </div>
+              </div>
+              <div>
+                <span style="font-size: 0.82rem; color: var(--color-yellow); font-weight: 700;">
+                  <i class="fa-solid fa-circle-check" style="margin-right: 5px"></i> Kurikulum Merdeka Fase F
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================
+           B. COMPREHENSIVE ANALYSIS OF THE LEARNING MATERIAL
+           ============================================================= -->
+        <section>
+          <div class="section-agency-head" style="margin-bottom: 3.5rem">
+            <div class="badge-pill-group">
+              <span class="twin-dot-icon"> <span></span><span></span> </span>
+              <span>ANALISIS KOMPREHENSIF MATERI PEMBELAJARAN</span>
+            </div>
+            <h2 class="section-agency-title" style="color: #111215;">Analisis Akademik & Refleksi Kritis Materi Pembelajaran</h2>
+            <p class="section-agency-subtitle" style="color: #64748B;">
+              Tinjauan mendalam terhadap relevansi desain bahan ajar digital, dekonstruksi enam sub-materi, kelebihan, tantangan instruksional, serta justifikasi teoritis pembelajaran kesehatan dan pencegahan HIV/AIDS.
+            </p>
+          </div>
+
+          <!-- 1. KONTEKS DAN TUJUAN MATERI -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">01</div>
+              <div>
+                <h3 class="analysis-module-title">Konteks Kebutuhan Bahan Ajar & Tujuan Pengembangan PJOK</h3>
+                <p class="analysis-module-desc">Tinjauan urgensi perancangan bahan ajar buku saku digital dalam menjembatani pemahaman konseptual, literasi kesehatan, dan sikap anti-stigma sebelum penerapan perilaku sehat di kehidupan nyata.</p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <div style="margin-bottom: 2.5rem">
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: #111215; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem">
+                  <i class="fa-solid fa-chalkboard-user" style="color: #B45309; font-size: 1.15rem"></i>
+                  A. Analisis Konteks Kebutuhan Bahan Ajar Peserta Didik SMK N 3 Kasihan Yogyakarta
+                </h4>
+                <p style="font-size: 0.95rem; color: #475569; line-height: 1.75; margin-bottom: 1.25rem">
+                  Peserta didik Fase F Kelas XI SMK N 3 Kasihan Yogyakarta telah memiliki pengetahuan dasar tentang sistem reproduksi dan beberapa penyakit menular seksual dari jenjang SMP. Namun, pemahaman mendalam tentang HIV/AIDS, stigma, dan cara pencegahannya masih terbatas atau bahkan keliru akibat informasi yang tidak akurat dari berbagai sumber. Buku saku digital <em>"Mencegah Bahaya HIV/AIDS"</em> ini dirancang untuk menjawab empat kebutuhan krusial:
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.5rem; margin-bottom: 1.75rem">
+                  <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 18px; padding: 1.5rem; border-left: 4px solid var(--color-yellow); box-shadow: 0 4px 12px rgba(0,0,0,0.02)">
+                    <strong style="display: block; color: #111215; font-size: 0.95rem; margin-bottom: 0.4rem">
+                      <i class="fa-solid fa-virus" style="margin-right: 6px; color: #B45309;"></i> Pengetahuan Akurat & Bebas Miskonsepsi
+                    </strong>
+                    <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0">
+                      Bahan ajar membedah pengertian HIV vs AIDS, lima jalur penularan, dan tabel aktivitas yang <em>tidak</em> menularkan HIV, sehingga peserta didik memiliki pegangan faktual yang jelas dan terbebas dari mitos.
+                    </p>
+                  </div>
+
+                  <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 18px; padding: 1.5rem; border-left: 4px solid #F59E0B; box-shadow: 0 4px 12px rgba(0,0,0,0.02)">
+                    <strong style="display: block; color: #111215; font-size: 0.95rem; margin-bottom: 0.4rem">
+                      <i class="fa-solid fa-shield-heart" style="margin-right: 6px; color: #F59E0B;"></i> Literasi Digital & Verifikasi Informasi
+                    </strong>
+                    <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0">
+                      Bab Fakta vs Mitos menyajikan tabel mitos vs fakta dan panduan verifikasi informasi kesehatan (cek sumber, tanggal, bandingkan, waspadai judul sensasional, tahan diri sebelum membagikan).
+                    </p>
+                  </div>
+
+                  <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 18px; padding: 1.5rem; border-left: 4px solid #111215; box-shadow: 0 4px 12px rgba(0,0,0,0.02)">
+                    <strong style="display: block; color: #111215; font-size: 0.95rem; margin-bottom: 0.4rem">
+                      <i class="fa-solid fa-hand-holding-heart" style="margin-right: 6px; color: #111215;"></i> Empati, Non-Diskriminasi & Bahasa Ramah
+                    </strong>
+                    <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0">
+                      Bahan ajar memuat tabel bahasa ramah vs menstigma, studi kasus ODHA, enam cara dukungan konkret, dan hak-hak ODHA di Indonesia sesuai UU dan UUD 1945, sehingga pembelajaran berpusat pada manusia, bukan penyakitnya.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: #111215; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem">
+                  <i class="fa-solid fa-bullseye" style="color: #B45309; font-size: 1.15rem"></i>
+                  B. Tujuan Pengembangan Bahan Ajar Berbasis Tujuan Pembelajaran (TP)
+                </h4>
+                <p style="font-size: 0.95rem; color: #475569; line-height: 1.7; margin-bottom: 1.4rem">Bahan ajar buku saku ini dikembangkan untuk merealisasikan tiga tujuan pembelajaran komprehensif pada Modul Ajar Siklus 1:</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem">
+                  <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; padding: 1.6rem; box-shadow: 0 4px 12px rgba(0,0,0,0.02)">
+                    <div style="display: inline-block; background: #FEF3C7; color: #92400E; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: var(--radius-pill); margin-bottom: 0.75rem; border: 1px solid #FDE68A;">
+                      TP.1 • KOGNITIF & KESADARAN DIRI
+                    </div>
+                    <h5 style="font-size: 1.05rem; font-weight: 800; color: #111215; margin-bottom: 0.5rem">Memahami Pengertian, Penyebab & Penularan</h5>
+                    <p style="font-size: 0.88rem; color: #64748B; line-height: 1.65; margin: 0">
+                      Peserta didik mampu memahami pengertian HIV/AIDS, penyebab, dan cara penularannya dengan tepat melalui diskusi kelompok dan analisis kasus, sehingga menunjukkan kesadaran diri terhadap risiko.
+                    </p>
+                  </div>
+
+                  <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; padding: 1.6rem; box-shadow: 0 4px 12px rgba(0,0,0,0.02)">
+                    <div style="display: inline-block; background: #FEF3C7; color: #92400E; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: var(--radius-pill); margin-bottom: 0.75rem; border: 1px solid #FDE68A;">
+                      TP.2 • PENALARAN KRITIS & EMPATI
+                    </div>
+                    <h5 style="font-size: 1.05rem; font-weight: 800; color: #111215; margin-bottom: 0.5rem">Menganalisis Dampak HIV/AIDS</h5>
+                    <p style="font-size: 0.88rem; color: #64748B; line-height: 1.65; margin: 0">
+                      Peserta didik mampu menganalisis dampak HIV/AIDS terhadap kesehatan fisik, mental, dan sosial individu serta masyarakat secara komprehensif melalui studi literatur dan presentasi, sehingga menumbuhkan sikap empati dan kepedulian.
+                    </p>
+                  </div>
+
+                  <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; padding: 1.6rem; box-shadow: 0 4px 12px rgba(0,0,0,0.02)">
+                    <div style="display: inline-block; background: #FEF3C7; color: #92400E; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: var(--radius-pill); margin-bottom: 0.75rem; border: 1px solid #FDE68A;">
+                      TP.3 • KREATIVITAS & TANGGUNG JAWAB
+                    </div>
+                    <h5 style="font-size: 1.05rem; font-weight: 800; color: #111215; margin-bottom: 0.5rem">Merumuskan Strategi Pencegahan HIV/AIDS</h5>
+                    <p style="font-size: 0.88rem; color: #64748B; line-height: 1.65; margin: 0">
+                      Peserta didik mampu merumuskan strategi pencegahan penularan HIV/AIDS melalui PHBS serta menghindari perilaku berisiko secara kreatif melalui pembuatan infografis atau kampanye sederhana, sehingga mampu bertanggung jawab atas kesehatan diri dan orang lain.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Dimensi Profil Lulusan -->
+                <div style="margin-top: 1.75rem; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; padding: 1.5rem">
+                  <strong style="display: block; color: #111215; font-size: 0.95rem; margin-bottom: 0.75rem">
+                    <i class="fa-solid fa-award" style="margin-right: 6px; color: #B45309;"></i> Dimensi Profil Lulusan yang Diinternalisasikan
+                  </strong>
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem">
+                    <div style="font-size: 0.88rem; color: #475569; line-height: 1.6">
+                      <strong style="color: #111215;">1. Kesehatan:</strong> Memahami dan menerapkan pola hidup sehat, termasuk upaya pencegahan HIV/AIDS, serta menunjukkan kepedulian terhadap kesehatan diri dan orang lain.
+                    </div>
+                    <div style="font-size: 0.88rem; color: #475569; line-height: 1.6">
+                      <strong style="color: #111215;">2. Penalaran Kritis:</strong> Menganalisis informasi HIV/AIDS dari berbagai sumber, mengevaluasi validitasnya, dan mengambil keputusan yang logis dan bertanggung jawab.
+                    </div>
+                    <div style="font-size: 0.88rem; color: #475569; line-height: 1.6">
+                      <strong style="color: #111215;">3. Kolaborasi:</strong> Bekerja sama dengan teman sebaya dalam diskusi dan proyek kelompok untuk meningkatkan pemahaman dan kesadaran tentang HIV/AIDS.
+                    </div>
+                    <div style="font-size: 0.88rem; color: #475569; line-height: 1.6">
+                      <strong style="color: #111215;">4. Komunikasi:</strong> Menyampaikan informasi dan gagasan tentang HIV/AIDS secara efektif, baik lisan maupun tulisan, serta berani menyuarakan pendapat yang benar.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Enam Sub-Materi -->
+              <div style="margin-top: 1.75rem; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; padding: 1.6rem">
+                <strong style="display: block; color: #111215; font-size: 1rem; margin-bottom: 0.85rem">
+                  <i class="fa-solid fa-list-check" style="margin-right: 6px; color: #B45309;"></i> Pemetaan Enam Sub-Materi dalam Buku Saku
+                </strong>
+                <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.65rem">
+                  <li style="font-size: 0.88rem; color: #475569; line-height: 1.6">
+                    <strong style="color: #111215;">Bab I — Konsep Dasar HIV/AIDS:</strong> Pengertian HIV vs AIDS, siklus infeksi, lima jalur penularan, dan tabel aktivitas yang tidak menularkan HIV.
+                  </li>
+                  <li style="font-size: 0.88rem; color: #475569; line-height: 1.6">
+                    <strong style="color: #111215;">Bab II — Fakta vs Mitos:</strong> Tabel mitos vs fakta populer dan panduan lima langkah verifikasi informasi kesehatan.
+                  </li>
+                  <li style="font-size: 0.88rem; color: #475569; line-height: 1.6">
+                    <strong style="color: #111215;">Bab III — Dampak HIV/AIDS:</strong> Dampak fisik, mental, sosial, dan ekonomi pada individu, keluarga, dan masyarakat; bahasan stigma sebagai dampak yang sering diabaikan.
+                  </li>
+                  <li style="font-size: 0.88rem; color: #475569; line-height: 1.6">
+                    <strong style="color: #111215;">Bab IV — Strategi Pencegahan:</strong> PHBS spesifik untuk konteks HIV/AIDS, strategi ABCDE, dan pengenalan VCT sebagai tindakan bertanggung jawab.
+                  </li>
+                  <li style="font-size: 0.88rem; color: #475569; line-height: 1.6">
+                    <strong style="color: #111215;">Bab V — Empati & Non-Diskriminasi:</strong> Studi kasus ODHA, tabel bahasa ramah vs menstigma, enam cara dukungan konkret, dan hak-hak ODHA di Indonesia.
+                  </li>
+                  <li style="font-size: 0.88rem; color: #475569; line-height: 1.6">
+                    <strong style="color: #111215;">Bab VI — Remaja Agen Perubahan:</strong> Empat peran remaja, enam ide kampanye sekolah, dan kiat sukses kampanye perubahan perilaku.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. KELEBIHAN DAN KEKURANGAN MATERI -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">02</div>
+              <div>
+                <h3 class="analysis-module-title">Kelebihan dan Evaluasi Kritis Materi Pembelajaran PJOK</h3>
+                <p class="analysis-module-desc">Evaluasi komparatif mengenai kekuatan penyajian bahan ajar, tantangan literasi kesehatan dan fasilitasi topik sensitif, serta strategi mitigasi instruksional yang efektif.</p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <div class="analysis-grid-2col">
+                <!-- Kolom Kelebihan -->
+                <div class="analysis-box-item pro">
+                  <div class="analysis-box-title" style="color: #111215">
+                    <i class="fa-solid fa-circle-check" style="color: #16A34A; font-size: 1.3rem"></i>
+                    Kelebihan & Kekuatan Bahan Ajar (Strengths)
+                  </div>
+                  <ul class="analysis-list">
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #16A34A"></i>
+                      <div>
+                        <strong>Selaras Penuh dengan Rancangan Modul Ajar:</strong>
+                        Setiap Tujuan Pembelajaran dan topik kontekstual di Rancangan terpetakan ke bab-bab buku saku, sehingga bahan ajar benar-benar mendukung ketercapaian TP.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #16A34A"></i>
+                      <div>
+                        <strong>Pendekatan PBL yang Konsisten:</strong>
+                        Setiap bab dibuka dengan skenario masalah autentik (mis. hoaks gigitan nyamuk, pesan berantai WhatsApp, siswa dikeluarkan dari sekolah) sehingga peserta didik berlatih berpikir kritis sejak awal.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #16A34A"></i>
+                      <div>
+                        <strong>Akurasi Medis Tinggi:</strong>
+                        Definisi HIV vs AIDS, jalur penularan, mitos, ART, VCT, PrEP, PEP, dan transmisi vertikal dijelaskan dengan benar dan proporsional.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #16A34A"></i>
+                      <div>
+                        <strong>Penekanan Anti-Stigma yang Kuat:</strong>
+                        Tabel bahasa ramah vs menstigma, studi kasus ODHA, dan hak-hak ODHA menjadikan buku saku bukan hanya sumber informasi, tetapi juga alat pendidikan karakter dan kewarganegaraan.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #16A34A"></i>
+                      <div>
+                        <strong>Daftar Pustaka Kredibel & Glosarium Lengkap:</strong>
+                        Rujukan dari Kemenkes RI, WHO, UNAIDS, Kemendikbudristek, KPAN, BKKBN, dan World Bank, serta glosarium 24 istilah penting.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #16A34A"></i>
+                      <div>
+                        <strong>Literasi Digital & Literasi Kesehatan:</strong>
+                        Bab II membekali peserta didik dengan keterampilan verifikasi informasi kesehatan, sangat relevan dengan era hoaks dan media sosial.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Kolom Kekurangan -->
+                <div class="analysis-box-item con">
+                  <div class="analysis-box-title" style="color: #92400E">
+                    <i class="fa-solid fa-triangle-exclamation" style="color: #F59E0B; font-size: 1.3rem"></i>
+                    Tantangan Implementasi Bahan Ajar (Limitations)
+                  </div>
+                  <ul class="analysis-list">
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #F59E0B"></i>
+                      <div>
+                        <strong>Typo & Karakter Encoding Rusak:</strong>
+                        Terdapat beberapa kesalahan teknis seperti "Irmandi", "Mítos", "Papar an", "St res", "Ketterarikannya", "epidemI", serta karakter encoding rusak di beberapa halaman.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #F59E0B"></i>
+                      <div>
+                        <strong>Konsistensi "Uji Nyali" Belum Merata:</strong>
+                        "Uji Nyali" eksplisit hanya muncul di Bab I dan Bab V, sementara Bab II, III, IV, dan VI belum memiliki refleksi tertutup yang seragam.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #F59E0B"></i>
+                      <div>
+                        <strong>Koneksi ke Aktivitas Fisik PJOK Masih Tipis:</strong>
+                        Materi condong ke pendidikan kesehatan; kaitan antara aktivitas fisik, imunitas, dan pencegahan HIV/AIDS belum dieksplisitkan dalam sub-bab khusus.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #F59E0B"></i>
+                      <div>
+                        <strong>Rubrik Latihan Mandiri PBL Belum Tersedia:</strong>
+                        Empat skenario PBL di akhir buku belum dilengkapi rubrik penilaian atau contoh jawaban, sehingga penilaian berpotensi subjektif.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #F59E0B"></i>
+                      <div>
+                        <strong>Fasilitasi Topik Sensitif Belum Dieksplisitkan:</strong>
+                        Belum ada "Catatan untuk Guru" tentang learning agreement, pertanyaan anonim, larangan memaksa pengungkapan pribadi, dan rujukan BK/UKS.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #F59E0B"></i>
+                      <div>
+                        <strong>Nuansa Data Statistik Perlu Diperjelas:</strong>
+                        Klaim "risiko ibu ke anak <2%" dan "petugas kesehatan <0,3%" akurat, tetapi perlu konteks bahwa angka tersebut berlaku dengan protokol pengobatan dan pencegahan optimal.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Solusi dan Mitigasi -->
+              <div class="analysis-box-item solution">
+                <div class="analysis-box-title" style="color: #111215; font-size: 1.2rem; border-bottom: 1px solid #E5E7EB; padding-bottom: 0.75rem; margin-bottom: 1.25rem">
+                  <i class="fa-solid fa-lightbulb" style="color: #B45309; font-size: 1.3rem"></i>
+                  Solusi & Rekomendasi Mitigasi Instruksional (Actionable Strategies)
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem">
+                  <div>
+                    <h5 style="color: #111215; font-size: 0.95rem; font-weight: 800; margin-bottom: 0.4rem">1. Perbaikan Teknis & Konsistensi Struktur</h5>
+                    <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0">
+                      Perbaiki typo, bersihkan karakter encoding rusak, tambahkan Tujuan Pembelajaran di Bab I, serta seragamkan "Uji Nyali"/"Refleksi" di semua bab agar siklus PBL konsisten.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 style="color: #111215; font-size: 0.95rem; font-weight: 800; margin-bottom: 0.4rem">2. Catatan untuk Guru & Protokol Topik Sensitif</h5>
+                    <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0">
+                      Tambahkan learning agreement, pertanyaan anonim, larangan memaksa pengungkapan pribadi, rujukan BK/UKS, dan penggunaan istilah ODHA/OHIDA yang tidak menstigmatisasi.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 style="color: #111215; font-size: 0.95rem; font-weight: 800; margin-bottom: 0.4rem">3. Rubrik Latihan Mandiri & Akuntabilitas Individual</h5>
+                    <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0">
+                      Sediakan rubrik untuk empat skenario PBL (identifikasi masalah, akurasi fakta, solusi, anti-stigma), serta tambahkan self-assessment dan peer assessment.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 style="color: #111215; font-size: 0.95rem; font-weight: 800; margin-bottom: 0.4rem">4. Penguatan Konteks PJOK & Joyful Learning</h5>
+                    <p style="font-size: 0.88rem; color: #64748B; line-height: 1.6; margin: 0">
+                      Tambahkan callout "Aktivitas Fisik, Imunitas & Pencegahan HIV/AIDS" di Bab IV, serta sisipkan kuis interaktif (Kahoot/Quizizz) atau teka-teki silang istilah di akhir bab.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. KAJIAN TEORI MATERI PEMBELAJARAN -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">03</div>
+              <div>
+                <h3 class="analysis-module-title">Kajian Teori & Landasan Keilmuan Bahan Ajar PJOK</h3>
+                <p class="analysis-module-desc">Justifikasi teoritis dari literatur pembelajaran mendalam, problem-based learning, literasi kesehatan, pembelajaran sosial-emosional, integrasi TPACK, dan pembelajaran reflektif.</p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <p style="font-size: 0.95rem; color: #475569; line-height: 1.75; margin-bottom: 2rem">
+                Perancangan dan pengorganisasian substansi buku saku Bahan Ajar Siklus 1 ini didasarkan pada enam landasan teori ilmiah pendidikan jasmani dan kesehatan:
+              </p>
+
+              <div class="theory-grid">
+                <div class="theory-card">
+                  <span class="theory-badge"><i class="fa-solid fa-brain" style="margin-right: 5px"></i> Pembelajaran Mendalam</span>
+                  <h4 class="theory-title">Deep Learning: Mindful, Meaningful, Joyful</h4>
+                  <p class="theory-desc">
+                    <em>Mindful learning</em> melibatkan peserta didik merenungkan informasi, mengidentifikasi bias, dan membangun kesadaran risiko; <em>meaningful learning</em> menghubungkan materi dengan pengalaman nyata dan isu kontemporer remaja; <em>joyful learning</em> menciptakan suasana positif, interaktif, dan tidak menghakimi.
+                  </p>
+                </div>
+
+                <div class="theory-card">
+                  <span class="theory-badge"><i class="fa-solid fa-diagram-project" style="margin-right: 5px"></i> Model Pembelajaran</span>
+                  <h4 class="theory-title">Problem-Based Learning (Barrows, 1996)</h4>
+                  <p class="theory-desc">
+                    Enam skenario PBL pembuka di setiap bab menempatkan masalah nyata sebagai titik tolak belajar. Peserta didik mengidentifikasi pertanyaan, mencari informasi, dan merumuskan solusi; guru berperan sebagai fasilitator yang membimbing penyelidikan.
+                  </p>
+                </div>
+
+                <div class="theory-card">
+                  <span class="theory-badge"><i class="fa-solid fa-heart-pulse" style="margin-right: 5px"></i> Literasi Kesehatan</span>
+                  <h4 class="theory-title">Health Literacy Kritis (Nutbeam, 2000)</h4>
+                  <p class="theory-desc">
+                    Buku saku tidak berhenti pada pengetahuan faktual, tetapi mendorong literasi kesehatan interaktif dan kritis: mengevaluasi validitas informasi, melawan mitos, dan mengurangi stigma terhadap ODHA.
+                  </p>
+                </div>
+
+                <div class="theory-card">
+                  <span class="theory-badge"><i class="fa-solid fa-hand-holding-heart" style="margin-right: 5px"></i> Afektif & Karakter</span>
+                  <h4 class="theory-title">Pembelajaran Sosial-Emosional & Anti-Stigma (CASEL, 2013)</h4>
+                  <p class="theory-desc">
+                    Bab V mengembangkan kesadaran sosial dan keterampilan relasi melalui studi kasus ODHA, tabel bahasa ramah, dan enam cara dukungan konkret, sehingga peserta didik berlatih empati dan menolak diskriminasi.
+                  </p>
+                </div>
+
+                <div class="theory-card">
+                  <span class="theory-badge"><i class="fa-solid fa-laptop-code" style="margin-right: 5px"></i> Integrasi TPACK</span>
+                  <h4 class="theory-title">Kerangka Kerja TPACK PJOK (Mishra & Koehler, 2006)</h4>
+                  <p class="theory-desc">
+                    Sinergi pengetahuan konten HIV/AIDS (CK), pedagogi PBL dan diferensiasi (PK), serta teknologi buku saku digital, Google Classroom, YouTube, Canva/Piktochart, dan Kahoot/Quizizz (TK) untuk pembelajaran yang akurat, menarik, dan tidak menstigmatisasi.
+                  </p>
+                </div>
+
+                <div class="theory-card">
+                  <span class="theory-badge"><i class="fa-solid fa-arrows-rotate" style="margin-right: 5px"></i> Pembelajaran Reflektif</span>
+                  <h4 class="theory-title">Siklus Belajar Reflektif (Kolb, 1984)</h4>
+                  <p class="theory-desc">
+                    Refleksi terbuka, "Uji Nyali", dan refleksi tertulis individu membantu peserta didik mengaitkan pengalaman belajar dengan komitmen pencegahan, empati, dan perilaku anti-diskriminasi terhadap orang yang hidup dengan HIV/AIDS.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <!-- =================================================================
+       4. MINIMALIST LUXURY FOOTER (Exact Nexis Concept)
+       ================================================================= -->
+    <footer class="footer-nexis reveal-init">
+      <div class="container">
+        <!-- Center Mega Brand -->
+        <div class="footer-nexis-brand-hero">
+          <a href="../index.html" class="footer-brand-link">
+            <div class="footer-logo-mark">
+              <img src="../logo.png" alt="Logo UNY" class="footer-logo-img" onerror="this.src='../logo navbar.png'" />
+            </div>
+            <div class="footer-brand-title-wrap">
+              <span class="footer-brand-title">E-Porto</span>
+              <span class="footer-brand-badge">Rahmat Irnandi, S.Or.</span>
+            </div>
+          </a>
+          <p class="footer-brand-tagline">
+            Portofolio Digital Resmi PPL Terbimbing • Program Studi Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Jasmani, Olahraga, dan Kesehatan (PJOK) Universitas Negeri Yogyakarta (UNY) di SMK N 3 Kasihan Yogyakarta.
+          </p>
+        </div>
+
+        <!-- Horizontal Nav Links -->
+        <nav class="footer-nav-menu">
+          <a href="../index.html" class="footer-nav-link">Beranda</a>
+          <a href="../profil.html" class="footer-nav-link">Profil</a>
+          <a href="rancangan.html" class="footer-nav-link">Siklus 1 (UTS)</a>
+          <a href="../UAS/rancangan.html" class="footer-nav-link">Siklus 2 (UAS)</a>
+          <a href="../non-mengajar.html" class="footer-nav-link">Non-Mengajar</a>
+          <a href="../dokumentasi.html" class="footer-nav-link">Dokumentasi</a>
+        </nav>
+
+        <!-- Divider Line -->
+        <div class="footer-nexis-divider"></div>
+
+        <!-- Bottom Flex Bar -->
+        <div class="footer-nexis-bottom-bar">
+          <div class="footer-copyright-text">
+            Copyright &copy; 2026 <strong>Rahmat Irnandi, S.Or.</strong> • LPTK Universitas Negeri Yogyakarta (UNY) & SMK N 3 Kasihan Yogyakarta. All Rights Reserved.
+          </div>
+
+          <!-- Social Icons on the Right -->
+          <div class="footer-social-cluster">
+            <a href="javascript:void(0)" onclick="showToast('YouTube Pembelajaran PJOK')" class="social-nexis-pill" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="javascript:void(0)" onclick="showToast('Instagram Rahmat Irnandi')" class="social-nexis-pill" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="javascript:void(0)" onclick="showToast('LinkedIn Rahmat Irnandi')" class="social-nexis-pill" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:rahmat.ppg@uny.ac.id" class="social-nexis-pill" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior:'smooth'})" class="social-nexis-pill scroll-top-pill" aria-label="Kembali ke Atas" title="Kembali ke Atas"><i class="fa-solid fa-arrow-up"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>
