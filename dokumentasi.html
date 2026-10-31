@@ -15,10 +15,28 @@
     <style>
       .standalone-navbar-wrap {
         padding: 1.5rem 0 0.5rem 0;
+        position: relative;
+        z-index: 1000;
       }
+      .navbar-capsule {
+        overflow: visible !important;
+      }
+      .nav-item-dropdown {
+        position: relative;
+      }
+      .nav-item-dropdown::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 18px;
+      }
+
       .gallery-page-hero {
-        padding: 2.5rem 0 3rem 0;
+        padding: 2.75rem 0 3.25rem 0;
         text-align: center;
+        position: relative;
       }
       .gallery-page-hero-title {
         font-size: clamp(2.2rem, 3.8vw, 3.2rem);
@@ -26,86 +44,170 @@
         color: #FFFFFF;
         margin-bottom: 0.85rem;
         letter-spacing: -0.02em;
+        line-height: 1.25;
       }
       .gallery-page-hero-desc {
-        max-width: 760px;
-        margin: 0 auto 1.5rem auto;
-        color: #9CA3AF;
-        font-size: 1.02rem;
+        max-width: 820px;
+        margin: 0 auto 1.75rem auto;
+        color: #94A3B8;
+        font-size: 1.05rem;
         line-height: 1.7;
       }
-      .modal-window-lightbox {
-        max-width: 820px !important;
-        padding: 2rem !important;
-        background: #16171B;
-        border: 1px solid var(--color-border-dark);
+
+      .gallery-grid-agency {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.85rem;
+        margin-bottom: 3.5rem;
       }
-      .modal-img-container {
-        margin-bottom: 1.25rem;
-        border-radius: var(--radius-md);
+      @media (max-width: 1024px) {
+        .gallery-grid-agency {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 680px) {
+        .gallery-grid-agency {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .gallery-card-agency {
+        background: #141519;
+        border-radius: 24px;
         overflow: hidden;
-        max-height: 480px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #111215;
+        flex-direction: column;
+        cursor: pointer;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
       }
-      .modal-img-container img {
-        max-height: 480px;
-        width: auto;
-        max-width: 100%;
-        object-fit: contain;
-        border-radius: var(--radius-sm);
+      .gallery-card-agency:hover {
+        transform: translateY(-6px);
+        border-color: #FFC938;
+        box-shadow: 0 20px 45px rgba(255, 201, 56, 0.15);
       }
       .gallery-agency-thumb {
         position: relative;
-        height: 230px;
+        height: 240px;
         overflow: hidden;
+        background: #0C0D10;
       }
       .gallery-agency-thumb img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        object-position: center;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .gallery-card-agency:hover .gallery-agency-thumb img {
         transform: scale(1.08);
       }
       .gallery-tag-pill-badge {
         position: absolute;
-        top: 12px;
-        left: 12px;
-        background: rgba(17, 18, 21, 0.85);
-        color: var(--color-yellow);
+        top: 14px;
+        left: 14px;
+        background: rgba(12, 13, 16, 0.88);
+        color: #FFC938;
         font-size: 0.74rem;
         font-weight: 800;
-        padding: 4px 12px;
-        border-radius: var(--radius-pill);
-        backdrop-filter: blur(6px);
-        border: 1px solid rgba(255, 201, 56, 0.3);
+        padding: 5px 12px;
+        border-radius: 999px;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 201, 56, 0.35);
         z-index: 2;
+        letter-spacing: 0.03em;
       }
-      .gallery-agency-desc {
-        font-size: 0.88rem;
-        color: #9CA3AF;
-        line-height: 1.6;
-        margin-bottom: 1.25rem;
+      .gallery-zoom-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(12, 13, 16, 0.45);
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s ease;
+      }
+      .gallery-card-agency:hover .gallery-zoom-overlay {
+        opacity: 1;
+      }
+      .gallery-zoom-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #FFC938;
+        color: #0C0D10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        box-shadow: 0 6px 20px rgba(255, 201, 56, 0.45);
+        transform: scale(0.85);
+        transition: transform 0.25s ease;
+      }
+      .gallery-card-agency:hover .gallery-zoom-btn {
+        transform: scale(1);
+      }
+      .gallery-agency-body {
+        padding: 1.75rem 1.65rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
       }
       .gallery-agency-meta {
         font-size: 0.76rem;
-        color: var(--color-yellow);
+        color: #FFC938;
         font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin-bottom: 0.4rem;
+        letter-spacing: 0.06em;
+        margin-bottom: 0.45rem;
+      }
+      .gallery-agency-title {
+        font-size: 1.18rem;
+        font-weight: 800;
+        color: #FFFFFF;
+        margin-bottom: 0.65rem;
+        line-height: 1.4;
+      }
+      .gallery-agency-desc {
+        font-size: 0.88rem;
+        color: #94A3B8;
+        line-height: 1.65;
+        margin-bottom: 1.35rem;
       }
       .gallery-agency-foot {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-top: auto;
-        padding-top: 0.85rem;
-        border-top: 1px solid var(--color-border-dark);
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      /* Lightbox Modal */
+      .modal-window-lightbox {
+        max-width: 860px !important;
+        padding: 2.25rem !important;
+        background: #141519;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 28px;
+      }
+      .modal-img-container {
+        margin-bottom: 1.5rem;
+        border-radius: 18px;
+        overflow: hidden;
+        max-height: 520px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #0C0D10;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .modal-img-container img {
+        max-height: 520px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
       }
     </style>
   </head>
@@ -162,9 +264,7 @@
         </nav>
 
         <div class="nav-actions">
-          <a href="index.html" class="btn-nav-quote">
-            <i class="fa-solid fa-arrow-left" style="margin-right: 4px;"></i> Beranda
-          </a>
+          <a href="profil.html" class="btn-nav-quote"> Profil </a>
           <button class="mobile-toggle" aria-label="Toggle Navigation">
             <i class="fa-solid fa-bars"></i>
           </button>
@@ -173,28 +273,27 @@
     </header>
 
     <!-- =================================================================
-       2. SUBPAGE HERO HEADER
+       2. SUBPAGE HERO HEADER (Dark Obsidian Theme)
        ================================================================= -->
-    <section class="gallery-page-hero reveal-init">
-      <div class="container">
-        <div class="badge-pill-group light">
-          <span class="twin-dot-icon"><span></span><span></span></span>
-          <span>DOKUMENTASI OTENTIK • ARSIP VISUAL PPL PPG PJOK UNY</span>
-        </div>
-
-        <h1 class="gallery-page-hero-title">
-          Galeri Dokumentasi PPL Terbimbing
-        </h1>
-        <p class="gallery-page-hero-desc">
-          Koleksi rekam visual otentik pelaksanaan Praktik Pengalaman Lapangan (PPL) Terbimbing mahasiswa PPG Calon Guru PJOK Universitas Negeri Yogyakarta (UNY) di <strong>SMK N 3 Kasihan Yogyakarta</strong> — mencakup praktik pembelajaran di lapangan, manajemen kesiswaan & kepanitiaan, hingga supervisi klinis DPL & Guru Pamong.
-        </p>
-
-        <div class="subpage-breadcrumb" style="justify-content: center;">
-          <a href="index.html">Beranda</a>
-          <i class="fa-solid fa-chevron-right"></i>
-          <span style="color: var(--color-yellow); font-weight: 700;">Dokumentasi PPL</span>
-        </div>
+    <section class="gallery-page-hero container reveal-init">
+      <div class="badge-pill mb-3" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 201, 56, 0.15); border: 1px solid rgba(255, 201, 56, 0.3); color: #FFC938; padding: 0.45rem 1.15rem; border-radius: 999px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">
+        <span style="width: 8px; height: 8px; background: #FFC938; border-radius: 50%; display: inline-block;"></span>
+        DOKUMENTASI OTENTIK • ARSIP VISUAL PPL PPG PJOK UNY
       </div>
+
+      <h1 class="gallery-page-hero-title">
+        Galeri Dokumentasi PPL Terbimbing
+      </h1>
+      <p class="gallery-page-hero-desc">
+        Koleksi rekam visual otentik pelaksanaan Praktik Pengalaman Lapangan (PPL) Terbimbing mahasiswa PPG Calon Guru PJOK Universitas Negeri Yogyakarta (UNY) di <strong>SMK N 3 Kasihan Yogyakarta</strong> — mencakup praktik pembelajaran di lapangan olahraga (Siklus 1, 2, dan 3) serta kegiatan non-mengajar (Upacara Bendera dan Piket 5S).
+      </p>
+
+      <!-- Breadcrumb Navigation -->
+      <nav class="subpage-breadcrumb" aria-label="Breadcrumb" style="justify-content: center; display: inline-flex; align-items: center; gap: 0.65rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 0.55rem 1.4rem; border-radius: 999px; font-size: 0.88rem;">
+        <a href="index.html" style="color: #E2E8F0; text-decoration: none;"><i class="fa-solid fa-house"></i> Beranda</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.72rem; color: #64748B;"></i>
+        <span style="color: var(--color-yellow); font-weight: 700;">Dokumentasi PPL</span>
+      </nav>
     </section>
 
     <!-- =================================================================
@@ -203,30 +302,28 @@
     <main class="container reveal-init" style="padding-bottom: 5rem;">
       <div class="gallery-filter-tabs">
         <button class="gallery-filter-btn active" data-filter="all">
-          <i class="fa-solid fa-border-all" style="margin-right: 6px;"></i> Semua Foto (10)
+          <i class="fa-solid fa-border-all" style="margin-right: 6px;"></i> Semua Foto (5)
         </button>
         <button class="gallery-filter-btn" data-filter="praktik">
-          <i class="fa-solid fa-person-running" style="margin-right: 6px;"></i> Praktik Pembelajaran PJOK
+          <i class="fa-solid fa-person-running" style="margin-right: 6px;"></i> Praktik Pembelajaran PJOK (3)
         </button>
         <button class="gallery-filter-btn" data-filter="non-mengajar">
-          <i class="fa-solid fa-school" style="margin-right: 6px;"></i> Kegiatan Non-Mengajar
-        </button>
-        <button class="gallery-filter-btn" data-filter="supervisi">
-          <i class="fa-solid fa-user-check" style="margin-right: 6px;"></i> Supervisi & Evaluasi DPL
+          <i class="fa-solid fa-school" style="margin-right: 6px;"></i> Kegiatan Non-Mengajar (2)
         </button>
       </div>
 
       <!-- =================================================================
-         4. GALLERY GRID (10 Authentic PPL PJOK Photos)
+         4. GALLERY GRID (5 Authentic PPL PJOK Photos Matching IMG Folder)
          ================================================================= -->
       <div class="gallery-grid-agency">
-        <!-- Foto 1: Siklus 1 Bola Voli -->
+
+        <!-- Foto 1: Siklus 1 Passing Bola Voli -->
         <div
           class="gallery-card-agency"
           data-category="praktik siklus-1"
           onclick="
             openPhotoModal(
-              'IMG/Dokumentasi Siklus 1.jpeg',
+              'IMG/Prakti Siklus 1.jpeg',
               'Dokumentasi Praktik Pembelajaran Siklus 1: Passing Bawah & Atas Bola Voli',
               'Praktik Pembelajaran PJOK',
               'Pelaksanaan praktik pembelajaran tatap muka Siklus 1 oleh Rahmat Irnandi, S.Or. pada materi keterampilan gerak spesifik passing bawah dan passing atas permainan bola voli di SMK N 3 Kasihan Yogyakarta. Siswa aktif berkolaborasi dan mempraktikkan variasi passing berpasangan.',
@@ -237,318 +334,154 @@
         >
           <div class="gallery-agency-thumb">
             <span class="gallery-tag-pill-badge">Siklus 1 • Bola Voli</span>
-            <img src="IMG/Dokumentasi Siklus 1.jpeg" alt="Praktik Pembelajaran Siklus 1 Bola Voli" loading="lazy" />
+            <img src="IMG/Prakti Siklus 1.jpeg" alt="Praktik Pembelajaran Siklus 1 Bola Voli" loading="lazy" />
             <div class="gallery-zoom-overlay">
               <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
             </div>
           </div>
           <div class="gallery-agency-body">
-            <div class="gallery-agency-meta">Fase E / F • SMK N 3 Kasihan Yogyakarta</div>
+            <div class="gallery-agency-meta">Fase E • SMK N 3 Kasihan Yogyakarta</div>
             <h4 class="gallery-agency-title">Siklus 1: Praktik Passing Bola Voli</h4>
             <p class="gallery-agency-desc">Aktivitas pembelajaran gerak spesifik passing bawah dan passing atas bola voli dengan demonstrasi teknik dan kontrol posisi kuda-kuda lengan.</p>
             <div class="gallery-agency-foot">
-              <span class="tag-pill-light">Permainan Bola Besar</span>
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-yellow)"><i class="fa-solid fa-expand"></i> Perbesar</span>
+              <span class="tag-pill-light" style="background: rgba(255, 201, 56, 0.15); color: #FFC938; border: 1px solid rgba(255, 201, 56, 0.3); padding: 3px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700;">Passing Bola Voli</span>
+              <span style="font-size: 0.8rem; font-weight: 700; color: #FFC938;"><i class="fa-solid fa-expand"></i> Perbesar</span>
             </div>
           </div>
         </div>
 
-        <!-- Foto 2: Siklus 1 Diferensiasi Gerak -->
-        <div
-          class="gallery-card-agency"
-          data-category="praktik siklus-1"
-          onclick="
-            openPhotoModal(
-              'IMG/Dokumentasi Siklus 2.jpeg',
-              'Dokumentasi Diferensiasi Gerak & Latihan Berpasangan Bola Voli',
-              'Praktik Pembelajaran PJOK',
-              'Dokumentasi penerapan pembelajaran diferensiasi proses gerak passing bola voli. Siswa pemula menggunakan bola modifikasi busa untuk meminimalisir rasa sakit di lengan, sedangkan siswa mahir melakukan latihan formasi segitiga dinamis.',
-              'Lapangan Olahraga SMK N 3 Kasihan Yogyakarta',
-              'Siklus 1 (UTS PPL)'
-            )
-          "
-        >
-          <div class="gallery-agency-thumb">
-            <span class="gallery-tag-pill-badge">Siklus 1 • Diferensiasi Gerak</span>
-            <img src="IMG/Dokumentasi Siklus 2.jpeg" alt="Diferensiasi Gerak Passing Bola Voli" loading="lazy" />
-            <div class="gallery-zoom-overlay">
-              <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-            </div>
-          </div>
-          <div class="gallery-agency-body">
-            <div class="gallery-agency-meta">Fase E / F • SMK N 3 Kasihan Yogyakarta</div>
-            <h4 class="gallery-agency-title">Diferensiasi Gerak & Formasi Dinamis</h4>
-            <p class="gallery-agency-desc">Pengelompokan siswa berdasarkan kesiapan gerak motorik dengan sarana bola modifikasi untuk menjamin kenyamanan belajar.</p>
-            <div class="gallery-agency-foot">
-              <span class="tag-pill-light">Diferensiasi Gerak</span>
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-yellow)"><i class="fa-solid fa-expand"></i> Perbesar</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 3: Siklus 2 Kebugaran Jasmani Sirkuit -->
+        <!-- Foto 2: Siklus 2 Circuit Training 5 Pos -->
         <div
           class="gallery-card-agency"
           data-category="praktik siklus-2"
           onclick="
             openPhotoModal(
-              'IMG/Dokumentasi Siklus 3.jpeg',
-              'Dokumentasi Praktik Kebugaran Jasmani Metode Circuit Training',
+              'IMG/Praktik Siklus 2.jpeg',
+              'Dokumentasi Praktik Kebugaran Jasmani Metode Circuit Training 5 Pos',
               'Praktik Pembelajaran PJOK',
-              'Pelaksanaan pembelajaran kebugaran jasmani terstruktur metode 5 pos circuit training (Push up, Sit up, Shuttle run, Jumping jack, Plank) melatih komponen daya tahan dan kekuatan otot penunjang aktivitas kejuruan.',
-              'Lapangan & Hall Olahraga SMK N 3 Kasihan Yogyakarta',
+              'Pelaksanaan pembelajaran kebugaran jasmani terstruktur metode 5 pos circuit training (shuttle run, push up lutut, zig-zag cone, sit up crunch, skipping rope) melatih komponen kebugaran aerobik dan anaerobik penunjang aktivitas kejuruan di SMK N 3 Kasihan Yogyakarta.',
+              'Lapangan Olahraga Terbuka SMK N 3 Kasihan Yogyakarta',
               'Siklus 2 (UAS PPL)'
             )
           "
         >
           <div class="gallery-agency-thumb">
             <span class="gallery-tag-pill-badge">Siklus 2 • Circuit Training</span>
-            <img src="IMG/Dokumentasi Siklus 3.jpeg" alt="Praktik Kebugaran Jasmani Sirkuit" loading="lazy" />
+            <img src="IMG/Praktik Siklus 2.jpeg" alt="Praktik Kebugaran Jasmani Circuit Training" loading="lazy" />
             <div class="gallery-zoom-overlay">
               <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
             </div>
           </div>
           <div class="gallery-agency-body">
-            <div class="gallery-agency-meta">Fase E / F • SMK N 3 Kasihan Yogyakarta</div>
+            <div class="gallery-agency-meta">Fase E • SMK N 3 Kasihan Yogyakarta</div>
             <h4 class="gallery-agency-title">Siklus 2: Kebugaran Jasmani Sirkuit 5 Pos</h4>
-            <p class="gallery-agency-desc">Aktivitas rangkaian latihan fisik terukur dengan rotasi pos berkala untuk menguatkan daya tahan kardiovaskular dan kekuatan fisik.</p>
+            <p class="gallery-agency-desc">Aktivitas rangkaian latihan fisik terukur dengan rotasi pos berkala untuk menguatkan daya tahan kardiovaskular, kekuatan, kelincahan, dan kelenturan tubuh.</p>
             <div class="gallery-agency-foot">
-              <span class="tag-pill-light">Kebugaran Jasmani</span>
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-yellow)"><i class="fa-solid fa-expand"></i> Perbesar</span>
+              <span class="tag-pill-light" style="background: rgba(255, 201, 56, 0.15); color: #FFC938; border: 1px solid rgba(255, 201, 56, 0.3); padding: 3px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700;">Circuit Training</span>
+              <span style="font-size: 0.8rem; font-weight: 700; color: #FFC938;"><i class="fa-solid fa-expand"></i> Perbesar</span>
             </div>
           </div>
         </div>
 
-        <!-- Foto 4: Siklus 2 Pengukuran & Denyut Nadi -->
+        <!-- Foto 3: Siklus 3 Variasi & Taktik Bola Voli TGfU -->
         <div
           class="gallery-card-agency"
-          data-category="praktik siklus-2"
+          data-category="praktik siklus-3"
           onclick="
             openPhotoModal(
-              'IMG/Dokumentasi Siklus 4.jpeg',
-              'Dokumentasi Pengukuran Denyut Nadi Latihan & Evaluasi Kebugaran',
+              'IMG/Praktik Siklus 3.jpeg',
+              'Dokumentasi Praktik Pembelajaran Model TGfU & Turnamen Mini 4 vs 4',
               'Praktik Pembelajaran PJOK',
-              'Dokumentasi pencatatan denyut nadi istirahat dan denyut nadi latihan (Training Heart Rate) siswa menggunakan e-LKPD digital serta evaluasi ketercapaian beban latihan fisik.',
-              'Selasar Olahraga SMK N 3 Kasihan Yogyakarta',
-              'Siklus 2 (UAS PPL)'
+              'Dokumentasi pembelajaran variasi dan kombinasi taktik bola voli dengan pendekatan Teaching Games for Understanding (TGfU). Siswa mengasah kesadaran taktis penempatan bola dan kerja sama tim dalam format turnamen mini modifikasi 4 lawan 4 di SMK N 3 Kasihan Yogyakarta.',
+              'Lapangan Olahraga SMK N 3 Kasihan Yogyakarta',
+              'Siklus 3 (UAS PPL)'
             )
           "
         >
           <div class="gallery-agency-thumb">
-            <span class="gallery-tag-pill-badge">Siklus 2 • Asesmen Kebugaran</span>
-            <img src="IMG/Dokumentasi Siklus 4.jpeg" alt="Asesmen Kebugaran Jasmani Siswa" loading="lazy" />
+            <span class="gallery-tag-pill-badge">Siklus 3 • Model TGfU</span>
+            <img src="IMG/Praktik Siklus 3.jpeg" alt="Praktik Variasi & Taktik Bola Voli TGfU" loading="lazy" />
             <div class="gallery-zoom-overlay">
               <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
             </div>
           </div>
           <div class="gallery-agency-body">
-            <div class="gallery-agency-meta">Fase E / F • SMK N 3 Kasihan Yogyakarta</div>
-            <h4 class="gallery-agency-title">Pengukuran Denyut Nadi & Evaluasi Fisik</h4>
-            <p class="gallery-agency-desc">Penerapan TPACK dalam memantau zona latihan aerobik dan kebugaran motorik siswa secara akurat dan ilmiah.</p>
+            <div class="gallery-agency-meta">Fase E • SMK N 3 Kasihan Yogyakarta</div>
+            <h4 class="gallery-agency-title">Siklus 3: Variasi &amp; Taktik Bola Voli (TGfU)</h4>
+            <p class="gallery-agency-desc">Penerapan pendekatan Teaching Games for Understanding melalui Turnamen Mini Modifikasi 4 vs 4 berfokus pada pemahaman taktis dan keputusan bermain.</p>
             <div class="gallery-agency-foot">
-              <span class="tag-pill-light">Asesmen Kinestetik</span>
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-yellow)"><i class="fa-solid fa-expand"></i> Perbesar</span>
+              <span class="tag-pill-light" style="background: rgba(255, 201, 56, 0.15); color: #FFC938; border: 1px solid rgba(255, 201, 56, 0.3); padding: 3px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700;">Model TGfU</span>
+              <span style="font-size: 0.8rem; font-weight: 700; color: #FFC938;"><i class="fa-solid fa-expand"></i> Perbesar</span>
             </div>
           </div>
         </div>
 
-        <!-- Foto 5: Piket Lobi & Budaya 5S -->
+        <!-- Foto 4: Upacara Bendera -->
         <div
           class="gallery-card-agency"
           data-category="non-mengajar"
           onclick="
             openPhotoModal(
-              'IMG/Piket Loby.jpeg',
-              'Dokumentasi Piket Lobi & Pelayanan Tamu Sekolah',
+              'IMG/Upacara Bendera.jpeg',
+              'Dokumentasi Pelaksanaan Upacara Bendera & Pengondisian Siswa',
               'Kegiatan Non-Mengajar',
-              'Rahmat Irnandi, S.Or. bertugas di lobi utama SMK N 3 Kasihan Yogyakarta melayani tamu kedinasan, buku registrasi kehadiran, serta perizinan peserta didik dengan budaya 5S (Senyum, Salam, Sapa, Sopan, Santun).',
-              'Lobi Utama SMK N 3 Kasihan Yogyakarta',
-              'Piket Lobi Sekolah'
-            )
-          "
-        >
-          <div class="gallery-agency-thumb">
-            <span class="gallery-tag-pill-badge">Non-Mengajar • Piket Lobi</span>
-            <img src="IMG/Piket Loby.jpeg" alt="Piket Lobi SMK N 3 Kasihan Yogyakarta" loading="lazy" />
-            <div class="gallery-zoom-overlay">
-              <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-            </div>
-          </div>
-          <div class="gallery-agency-body">
-            <div class="gallery-agency-meta">Lobi Utama • Pelayanan Kedinasan</div>
-            <h4 class="gallery-agency-title">Piket Lobi & Pelayanan Tamu Sekolah</h4>
-            <p class="gallery-agency-desc">Penyambutan tamu kedinasan, pembinaan kedisiplinan siswa yang terlambat, serta administrasi buku tamu sekolah.</p>
-            <div class="gallery-agency-foot">
-              <span class="tag-pill-light">Budaya 5S</span>
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-yellow)"><i class="fa-solid fa-expand"></i> Perbesar</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 6: Pengawasan ASTS -->
-        <div
-          class="gallery-card-agency"
-          data-category="non-mengajar"
-          onclick="
-            openPhotoModal(
-              'IMG/Mengawas ASTS.jpeg',
-              'Dokumentasi Pengawasan Asesmen Sumatif Tengah Semester (ASTS)',
-              'Kegiatan Non-Mengajar',
-              'Rahmat Irnandi, S.Or. menjalankan tugas pengawasan ruang evaluasi ASTS Gasal guna menjamin integritas akademik, ketertiban ruang ujian, dan kepatuhan terhadap POS evaluasi belajar di SMK N 3 Kasihan Yogyakarta.',
-              'Ruang Ujian SMK N 3 Kasihan Yogyakarta',
-              'Pengawasan ASTS'
-            )
-          "
-        >
-          <div class="gallery-agency-thumb">
-            <span class="gallery-tag-pill-badge">Non-Mengajar • Evaluasi ASTS</span>
-            <img src="IMG/Mengawas ASTS.jpeg" alt="Pengawasan Ujian ASTS" loading="lazy" />
-            <div class="gallery-zoom-overlay">
-              <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-            </div>
-          </div>
-          <div class="gallery-agency-body">
-            <div class="gallery-agency-meta">Ruang Evaluasi • Penjaminan Integritas</div>
-            <h4 class="gallery-agency-title">Pengawasan Ujian ASTS Gasal</h4>
-            <p class="gallery-agency-desc">Pengawalan ketertiban evaluasi sumatif, verifikasi lembar jawab siswa, dan penegakan kejujuran akademik.</p>
-            <div class="gallery-agency-foot">
-              <span class="tag-pill-light">Integritas Akademik</span>
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-yellow)"><i class="fa-solid fa-expand"></i> Perbesar</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 7: Panitia Lomba Kemerdekaan RI -->
-        <div
-          class="gallery-card-agency"
-          data-category="non-mengajar"
-          onclick="
-            openPhotoModal(
-              'IMG/Panitia Lomba.jpeg',
-              'Kepanitiaan & Dewan Juri Lomba Semarak Kemerdekaan RI Ke-79',
-              'Kegiatan Non-Mengajar',
-              'Keterlibatan aktif Rahmat Irnandi, S.Or. bersama dewan guru dan pengurus OSIS SMK N 3 Kasihan Yogyakarta sebagai panitia pelaksana dan wasit perlombaan olahraga tradisional HUT Ke-79 RI.',
+              'Rahmat Irnandi, S.Or. bersama dewan guru dan peserta didik dalam pelaksanaan Upacara Bendera di Lapangan Upacara SMK N 3 Kasihan Yogyakarta, mengondisikan ketertiban barisan, kedisiplinan atribut, dan kekhidmatan penghormatan Sang Saka Merah Putih.',
               'Lapangan Utama SMK N 3 Kasihan Yogyakarta',
-              'Panitia Lomba HUT RI'
-            )
-          "
-        >
-          <div class="gallery-agency-thumb">
-            <span class="gallery-tag-pill-badge">Non-Mengajar • Semarak HUT RI</span>
-            <img src="IMG/Panitia Lomba.jpeg" alt="Panitia Lomba Kemerdekaan RI" loading="lazy" />
-            <div class="gallery-zoom-overlay">
-              <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-            </div>
-          </div>
-          <div class="gallery-agency-body">
-            <div class="gallery-agency-meta">Lapangan Utama • Perayaan HUT Ke-79 RI</div>
-            <h4 class="gallery-agency-title">Panitia & Juri Lomba Kemerdekaan RI</h4>
-            <p class="gallery-agency-desc">Pengelolaan kepanitiaan perlombaan olahraga ketangkasan antarkelas, perwasitan yang adil, serta pembinaan sportivitas kesiswaan.</p>
-            <div class="gallery-agency-foot">
-              <span class="tag-pill-light">Kesiswaan OSIS</span>
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-yellow)"><i class="fa-solid fa-expand"></i> Perbesar</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Foto 8: Upacara 17 Agustus -->
-        <div
-          class="gallery-card-agency"
-          data-category="non-mengajar"
-          onclick="
-            openPhotoModal(
-              'IMG/Upacara Kemerdekaan 17 Agustus.jpeg',
-              'Upacara Peringatan Detik-Detik Proklamasi Kemerdekaan RI Ke-79',
-              'Kegiatan Non-Mengajar',
-              'Rahmat Irnandi, S.Or. bersama segenap jajaran guru, staf, dan peserta didik SMK N 3 Kasihan Yogyakarta berbaris khidmat mengikuti Upacara Bendera Peringatan HUT Ke-79 Republik Indonesia.',
-              'Lapangan Upacara SMK N 3 Kasihan Yogyakarta',
-              'Upacara Kemerdekaan RI'
+              'Upacara Bendera'
             )
           "
         >
           <div class="gallery-agency-thumb">
             <span class="gallery-tag-pill-badge">Non-Mengajar • Upacara Bendera</span>
-            <img src="IMG/Upacara Kemerdekaan 17 Agustus.jpeg" alt="Upacara 17 Agustus" loading="lazy" />
+            <img src="IMG/Upacara Bendera.jpeg" alt="Upacara Bendera SMK N 3 Kasihan" loading="lazy" />
             <div class="gallery-zoom-overlay">
               <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
             </div>
           </div>
           <div class="gallery-agency-body">
-            <div class="gallery-agency-meta">Lapangan Upacara • 17 Agustus 2024</div>
-            <h4 class="gallery-agency-title">Upacara HUT Ke-79 Kemerdekaan RI</h4>
-            <p class="gallery-agency-desc">Peringatan khidmat detik-detik Proklamasi Kemerdekaan RI meneladani jiwa nasionalisme, persatuan, dan kedisiplinan warga sekolah.</p>
+            <div class="gallery-agency-meta">Lapangan Utama • Kedisiplinan &amp; Karakter</div>
+            <h4 class="gallery-agency-title">Pelaksanaan &amp; Pengondisian Upacara Bendera</h4>
+            <p class="gallery-agency-desc">Pengondisian saf barisan siswa, pembinaan kesiapan petugas upacara, dan penanaman nilai karakter patriotisme kebangsaan.</p>
             <div class="gallery-agency-foot">
-              <span class="tag-pill-light">Nasionalisme</span>
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-yellow)"><i class="fa-solid fa-expand"></i> Perbesar</span>
+              <span class="tag-pill-light" style="background: rgba(255, 201, 56, 0.15); color: #FFC938; border: 1px solid rgba(255, 201, 56, 0.3); padding: 3px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700;">Nasionalisme</span>
+              <span style="font-size: 0.8rem; font-weight: 700; color: #FFC938;"><i class="fa-solid fa-expand"></i> Perbesar</span>
             </div>
           </div>
         </div>
 
-        <!-- Foto 9: Kunjungan Supervisi DPL UNY -->
+        <!-- Foto 5: Piket 5S di Gerbang Sekolah -->
         <div
           class="gallery-card-agency"
-          data-category="supervisi"
+          data-category="non-mengajar"
           onclick="
             openPhotoModal(
-              'IMG/Kunjungan DPL.jpeg',
-              'Supervisi Klinis & Monitoring Praktik Mengajar DPL UNY',
-              'Supervisi & Evaluasi DPL',
-              'Kunjungan resmi Dosen Pembimbing Lapangan (DPL) PPG PJOK Universitas Negeri Yogyakarta (UNY) untuk mengobservasi pembelajaran tatap muka di lapangan dan berkoordinasi dengan Guru Pamong di SMK N 3 Kasihan Yogyakarta.',
-              'Selasar Olahraga SMK N 3 Kasihan Yogyakarta',
-              'Supervisi Klinis DPL'
+              'IMG/Piket 5S.jpeg',
+              'Dokumentasi Pelaksanaan Piket 5S di Gerbang Utama Sekolah',
+              'Kegiatan Non-Mengajar',
+              'Rahmat Irnandi, S.Or. bertugas menyambut kedatangan peserta didik di pintu gerbang utama SMK N 3 Kasihan Yogyakarta dengan senyum ramah, jabat tangan salam, serta memeriksa kerapian seragam dan keselamatan berkendara (helm SNI).',
+              'Pintu Gerbang Utama SMK N 3 Kasihan Yogyakarta',
+              'Piket 5S'
             )
           "
         >
           <div class="gallery-agency-thumb">
-            <span class="gallery-tag-pill-badge">Supervisi • DPL PPG UNY</span>
-            <img src="IMG/Kunjungan DPL.jpeg" alt="Kunjungan Supervisi DPL UNY" loading="lazy" />
+            <span class="gallery-tag-pill-badge">Non-Mengajar • Piket 5S</span>
+            <img src="IMG/Piket 5S.jpeg" alt="Piket 5S SMK N 3 Kasihan Yogyakarta" loading="lazy" />
             <div class="gallery-zoom-overlay">
               <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
             </div>
           </div>
           <div class="gallery-agency-body">
-            <div class="gallery-agency-meta">Supervisi Klinis • Kampus LPTK UNY</div>
-            <h4 class="gallery-agency-title">Kunjungan Supervisi DPL PPG UNY</h4>
-            <p class="gallery-agency-desc">Observasi lapangan dan bimbingan pedagogik langsung oleh DPL untuk memastikan keselarasan perangkat pembelajaran Kurikulum Merdeka.</p>
+            <div class="gallery-agency-meta">Gerbang Utama • Budaya Positif Sekolah</div>
+            <h4 class="gallery-agency-title">Piket 5S (Senyum, Sapa, Salam, Sopan, Santun)</h4>
+            <p class="gallery-agency-desc">Penyambutan ramah kehadiran siswa di gerbang sekolah, penegakan disiplin atribut, dan pembiasaan etika santun.</p>
             <div class="gallery-agency-foot">
-              <span class="tag-pill-light">Supervisi Klinis</span>
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-yellow)"><i class="fa-solid fa-expand"></i> Perbesar</span>
+              <span class="tag-pill-light" style="background: rgba(255, 201, 56, 0.15); color: #FFC938; border: 1px solid rgba(255, 201, 56, 0.3); padding: 3px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700;">Budaya 5S</span>
+              <span style="font-size: 0.8rem; font-weight: 700; color: #FFC938;"><i class="fa-solid fa-expand"></i> Perbesar</span>
             </div>
           </div>
         </div>
 
-        <!-- Foto 10: Evaluasi Akhir DPL & Guru Pamong -->
-        <div
-          class="gallery-card-agency"
-          data-category="supervisi"
-          onclick="
-            openPhotoModal(
-              'IMG/Evaluasi dan Refleksi Akhir DPL Bersama Guru Pamong.jpeg',
-              'Evaluasi & Refleksi Akhir Penugasan PPL Bersama DPL & Guru Pamong',
-              'Supervisi & Evaluasi DPL',
-              'Rapat evaluasi akhir komprehensif penugasan PPL Terbimbing bersama Dosen Pembimbing Lapangan UNY dan Guru Pamong PJOK SMK N 3 Kasihan Yogyakarta, menandai tuntasnya seluruh rangkaian siklus praktik lapangan.',
-              'Ruang Koordinasi SMK N 3 Kasihan Yogyakarta',
-              'Evaluasi Akhir PPL'
-            )
-          "
-        >
-          <div class="gallery-agency-thumb">
-            <span class="gallery-tag-pill-badge">Supervisi • Refleksi Akhir</span>
-            <img src="IMG/Evaluasi dan Refleksi Akhir DPL Bersama Guru Pamong.jpeg" alt="Evaluasi Akhir DPL & Guru Pamong" loading="lazy" />
-            <div class="gallery-zoom-overlay">
-              <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-            </div>
-          </div>
-          <div class="gallery-agency-body">
-            <div class="gallery-agency-meta">Ruang Rapat • Refleksi Akhir PPL</div>
-            <h4 class="gallery-agency-title">Evaluasi Akhir DPL & Guru Pamong PJOK</h4>
-            <p class="gallery-agency-desc">Refleksi komprehensif 4F (Facts, Feelings, Findings, Future) penugasan terbimbing serta pengesahan berkas portofolio pembelajaran.</p>
-            <div class="gallery-agency-foot">
-              <span class="tag-pill-light">Refleksi Model 4F</span>
-              <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-yellow)"><i class="fa-solid fa-expand"></i> Perbesar</span>
-            </div>
-          </div>
-        </div>
       </div>
     </main>
 
@@ -565,58 +498,52 @@
           <img id="photo-modal-img" src="" alt="Pratinjau Foto Dokumentasi" />
         </div>
 
-        <span id="photo-badge" class="tag-pill-light" style="margin-bottom: 0.75rem; display: inline-block;"></span>
-        <h3 id="photo-title" style="font-size: 1.35rem; color: #FFFFFF; margin-bottom: 0.4rem; font-weight: 800;"></h3>
-        <div id="photo-loc" style="font-size: 0.85rem; color: var(--color-yellow); font-weight: 600; margin-bottom: 0.85rem;"></div>
-        <div id="photo-desc" style="color: #D1D5DB; font-size: 0.92rem; line-height: 1.7; background: #202228; padding: 1.25rem; border-radius: 12px; border-left: 4px solid var(--color-yellow); margin-bottom: 1.25rem;"></div>
+        <span id="photo-badge" class="tag-pill-light" style="background: rgba(255, 201, 56, 0.15); color: #FFC938; border: 1px solid rgba(255, 201, 56, 0.3); margin-bottom: 0.75rem; display: inline-block; font-weight: 700; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem;"></span>
+        <h3 id="photo-title" style="font-size: 1.35rem; color: #FFFFFF; margin-bottom: 0.4rem; font-weight: 800; line-height: 1.4;"></h3>
+        <div id="photo-loc" style="font-size: 0.85rem; color: #FFC938; font-weight: 600; margin-bottom: 0.85rem;"></div>
+        <div id="photo-desc" style="color: #D1D5DB; font-size: 0.92rem; line-height: 1.7; background: #202228; padding: 1.25rem; border-radius: 14px; border-left: 4px solid #FFC938; margin-bottom: 1.25rem;"></div>
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
-          <span style="font-size: 0.82rem; color: #9CA3AF"> <i class="fa-solid fa-camera"></i> Arsip Digital PPL • SMK N 3 Kasihan Yogyakarta & UNY </span>
+          <span style="font-size: 0.82rem; color: #9CA3AF"> <i class="fa-solid fa-camera" style="color: #FFC938; margin-right: 5px;"></i> Arsip Digital PPL • SMK N 3 Kasihan Yogyakarta &amp; UNY </span>
           <div style="display: flex; gap: 0.5rem;">
-            <a id="photo-modal-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-yellow btn-sm"><i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Foto Asli</a>
-            <button class="btn btn-dark btn-sm" onclick="showToast('Tautan foto dokumentasi berhasil disalin!')"><i class="fa-solid fa-share-nodes"></i> Bagikan</button>
+            <a id="photo-modal-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-nexis-yellow" style="font-size: 0.85rem;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Foto Asli</a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- =================================================================
-       6. FOOTER (Exact Nexis Minimal Luxury Layout)
+       6. LUXURY NEXIS FOOTER (Consistent with index.html Exactly)
        ================================================================= -->
-    <footer class="footer-nexis">
+    <footer class="footer-nexis reveal-init">
       <div class="container">
-        <!-- Center Mega Brand -->
+        <!-- Mega Brand Block -->
         <div class="footer-nexis-brand-hero">
-          <a href="index.html" class="footer-brand-link">
-            <div class="footer-logo-mark">
-              <img src="logo.png" alt="Logo UNY" class="footer-logo-img" onerror="this.src='logo navbar.png'" />
-            </div>
-            <div class="footer-brand-title-wrap">
-              <span class="footer-brand-title">E-Porto</span>
-              <span class="footer-brand-badge">Rahmat Irnandi, S.Or.</span>
-            </div>
-          </a>
-          <p class="footer-brand-tagline">
-            Portofolio Digital Resmi PPL Terbimbing • Program Studi Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Jasmani, Olahraga, dan Kesehatan (PJOK) Universitas Negeri Yogyakarta (UNY) di SMK N 3 Kasihan Yogyakarta.
+          <div class="footer-nexis-badge">
+            <i class="fa-solid fa-award"></i> PORTOFOLIO RESMI PPL TERBIMBING PPG CALON GURU PJOK
+          </div>
+          <h2 class="footer-nexis-title">Rahmat Irnandi, S.Or.</h2>
+          <p class="footer-nexis-sub">
+            Mahasiswa PPG Calon Guru Gelombang 1 Bidang Studi Pendidikan Jasmani, Olahraga, dan Kesehatan (PJOK) • Universitas Negeri Yogyakarta (UNY) • Mitra Praktik: SMK Negeri 3 Kasihan Bantul
           </p>
         </div>
 
-        <!-- Horizontal Nav Links -->
-        <nav class="footer-nav-menu">
-          <a href="index.html" class="footer-nav-link">Beranda</a>
-          <a href="profil.html" class="footer-nav-link">Profil</a>
-          <a href="UTS/rancangan.html" class="footer-nav-link">Siklus 1 (UTS)</a>
-          <a href="UAS/rancangan.html" class="footer-nav-link">Siklus 2 (UAS)</a>
-          <a href="non-mengajar.html" class="footer-nav-link">Non-Mengajar</a>
-          <a href="dokumentasi.html" class="footer-nav-link active">Dokumentasi</a>
+        <!-- Horizontal Minimalist Menu -->
+        <nav class="footer-nexis-menu" aria-label="Footer Navigation">
+          <a href="index.html">Beranda</a>
+          <a href="profil.html">Profil</a>
+          <a href="UTS/rancangan.html">Siklus 1 (UTS)</a>
+          <a href="UAS/rancangan.html">Siklus 2 &amp; 3 (UAS)</a>
+          <a href="non-mengajar.html">Non-Mengajar</a>
+          <a href="dokumentasi.html" class="active">Dokumentasi</a>
         </nav>
 
         <!-- Divider Line -->
         <div class="footer-nexis-divider"></div>
 
-        <!-- Bottom Flex Bar -->
-        <div class="footer-nexis-bottom-bar">
-          <div class="footer-copyright-text">
-            Copyright &copy; 2026 <strong>Rahmat Irnandi, S.Or.</strong> • LPTK Universitas Negeri Yogyakarta (UNY) & SMK N 3 Kasihan Yogyakarta. All Rights Reserved.
+        <!-- Bottom Row: Copyright & Socials -->
+        <div class="footer-nexis-bottom">
+          <div class="footer-nexis-copy">
+            &copy; 2026 <strong>Rahmat Irnandi, S.Or.</strong> • PPG PJOK Universitas Negeri Yogyakarta (UNY). Hak Cipta Dilindungi Undang-Undang.
           </div>
 
           <!-- Social Icons on the Right -->
@@ -625,11 +552,14 @@
             <a href="javascript:void(0)" onclick="showToast('Instagram Rahmat Irnandi')" class="social-nexis-pill" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="javascript:void(0)" onclick="showToast('LinkedIn Rahmat Irnandi')" class="social-nexis-pill" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="mailto:rahmat.ppg@uny.ac.id" class="social-nexis-pill" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-            <a href="#" class="social-nexis-pill scroll-top-pill" aria-label="Kembali ke Atas" title="Kembali ke Atas"><i class="fa-solid fa-arrow-up"></i></a>
+            <a href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior:'smooth'})" class="social-nexis-pill back-to-top" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></a>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- Toast Notification Element -->
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
@@ -650,7 +580,7 @@
         if (photoLink) photoLink.href = imgSrc;
         if (photoTitle) photoTitle.textContent = title;
         if (photoBadge) photoBadge.textContent = `${category} • ${label}`;
-        if (photoLoc) photoLoc.innerHTML = `<i class="fa-solid fa-location-dot" style="margin-right:6px; color:var(--color-yellow);"></i> Lokasi: ${location}`;
+        if (photoLoc) photoLoc.innerHTML = `<i class="fa-solid fa-location-dot" style="margin-right:6px; color:#FFC938;"></i> Lokasi: ${location}`;
         if (photoDesc) photoDesc.textContent = desc;
 
         photoModal.classList.add("active");
@@ -671,6 +601,29 @@
             document.body.style.overflow = "";
           }
         });
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && photoModal && photoModal.classList.contains("active")) {
+          photoModal.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+      });
+
+      // Toast notification helper
+      function showToast(message) {
+        let toast = document.getElementById('toast');
+        if (!toast) {
+          toast = document.createElement('div');
+          toast.id = 'toast';
+          toast.className = 'toast';
+          document.body.appendChild(toast);
+        }
+        toast.textContent = message;
+        toast.className = 'toast show';
+        setTimeout(function() {
+          toast.className = toast.className.replace('show', '');
+        }, 3000);
       }
     </script>
   </body>

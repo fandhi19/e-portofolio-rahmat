@@ -48,12 +48,17 @@
         overflow: visible !important;
       }
 
-      /* Stats Bento Strip */
+      /* Stats Bento Strip (2 Columns) */
       .nm-stats-strip {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         margin-bottom: 3.5rem;
+      }
+      @media (max-width: 768px) {
+        .nm-stats-strip {
+          grid-template-columns: 1fr;
+        }
       }
       .nm-stat-card {
         background: #F8F9FA;
@@ -209,7 +214,7 @@
       }
       .nm-photo-thumb img {
         width: 100%;
-        height: 420px;
+        height: 480px;
         object-fit: cover;
         object-position: center;
         display: block;
@@ -263,20 +268,6 @@
         font-weight: 700;
       }
 
-      /* Dual Photo Grid */
-      .nm-photos-grid-2 {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 1.5rem;
-        margin-bottom: 2.5rem;
-      }
-      .nm-photos-grid-2 .nm-photo-wrapper {
-        margin-bottom: 0;
-      }
-      .nm-photos-grid-2 .nm-photo-thumb img {
-        height: 340px;
-      }
-
       /* 3-Column Info Bento Grid */
       .nm-grid-3 {
         display: grid;
@@ -298,15 +289,14 @@
         font-size: 1.05rem;
         font-weight: 800;
         color: #111215;
-        margin-bottom: 1.1rem;
+        margin-bottom: 1rem;
         display: flex;
         align-items: center;
         gap: 0.65rem;
-        padding-bottom: 0.75rem;
-        border-bottom: 1px solid #E5E7EB;
       }
       .nm-box-title i {
-        color: #B45309;
+        color: var(--color-yellow);
+        font-size: 1.15rem;
       }
       .nm-box-item ul {
         list-style: none;
@@ -315,60 +305,47 @@
       }
       .nm-box-item ul li {
         position: relative;
-        padding-left: 1.35rem;
-        margin-bottom: 0.75rem;
-        font-size: 0.9rem;
-        line-height: 1.6;
+        padding-left: 1.4rem;
+        margin-bottom: 0.85rem;
+        font-size: 0.88rem;
         color: #475569;
+        line-height: 1.65;
       }
       .nm-box-item ul li:last-child {
         margin-bottom: 0;
       }
       .nm-box-item ul li::before {
-        content: "•";
+        content: '•';
         position: absolute;
-        left: 0;
+        left: 0.35rem;
+        top: -0.1rem;
         color: var(--color-yellow);
-        font-weight: 800;
-        font-size: 1.3rem;
-        line-height: 1;
+        font-weight: 900;
+        font-size: 1.25rem;
       }
 
-      /* Reflection Box (Deep Obsidian Luxury Card) */
+      /* Pedagogical Reflection Box */
       .nm-reflection-box {
         background: #111215;
-        border: 1px solid var(--color-border-dark);
-        border-radius: 24px;
-        padding: 2rem 2.25rem;
-        color: #FFFFFF;
+        border-radius: 20px;
+        padding: 1.75rem 2rem;
         display: flex;
         align-items: flex-start;
-        gap: 1.25rem;
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
-        margin-bottom: 2rem;
-        position: relative;
-        overflow: hidden;
-      }
-      .nm-reflection-box::after {
-        content: "";
-        position: absolute;
-        top: -40px;
-        right: -40px;
-        width: 120px;
-        height: 120px;
-        background: radial-gradient(circle, rgba(255, 201, 56, 0.12) 0%, transparent 70%);
-        pointer-events: none;
+        gap: 1.5rem;
+        border: 1px solid rgba(255, 201, 56, 0.25);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+        margin-bottom: 1.75rem;
       }
       .nm-reflection-icon {
-        width: 46px;
-        height: 46px;
+        width: 48px;
+        height: 48px;
         border-radius: 14px;
         background: rgba(255, 201, 56, 0.15);
         color: var(--color-yellow);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.25rem;
+        font-size: 1.35rem;
         flex-shrink: 0;
         border: 1px solid rgba(255, 201, 56, 0.3);
       }
@@ -376,18 +353,17 @@
         font-size: 1.05rem;
         font-weight: 800;
         color: var(--color-yellow);
-        margin: 0 0 0.5rem;
-        letter-spacing: 0.02em;
+        margin: 0 0 0.45rem;
       }
       .nm-reflection-text p {
-        font-size: 0.95rem;
-        line-height: 1.75;
+        font-size: 0.92rem;
         color: #E2E8F0;
+        line-height: 1.75;
         margin: 0;
         font-style: italic;
       }
 
-      /* Card Footer */
+      /* Card Footer Tags */
       .nm-card-footer {
         display: flex;
         justify-content: space-between;
@@ -399,60 +375,30 @@
       }
       .nm-tags-group {
         display: flex;
-        gap: 0.65rem;
         flex-wrap: wrap;
+        gap: 0.6rem;
       }
       .nm-tag-pill {
-        background: #F1F5F9;
-        color: #1E293B;
-        font-size: 0.78rem;
+        font-size: 0.76rem;
         font-weight: 700;
-        padding: 5px 14px;
+        color: #64748B;
+        background: #F1F5F9;
+        padding: 4px 12px;
         border-radius: var(--radius-pill);
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        border: 1px solid #E2E8F0;
+        gap: 5px;
       }
       .nm-tag-pill i {
-        color: #B45309;
-      }
-
-      /* Modal Image Preview */
-      .modal-window-lightbox {
-        max-width: 820px !important;
-        padding: 2rem !important;
-        background: #16171B;
-        border: 1px solid var(--color-border-dark);
-      }
-      .modal-img-container {
-        width: 100%;
-        max-height: 480px;
-        background: #111215;
-        border-radius: var(--radius-sm);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        margin-bottom: 1.25rem;
-      }
-      .modal-img-container img {
-        max-height: 480px;
-        width: auto;
-        max-width: 100%;
-        object-fit: contain;
-        border-radius: var(--radius-sm);
+        font-size: 0.65rem;
+        color: var(--color-yellow);
       }
 
       @media (max-width: 860px) {
-        .nm-master-island {
-          margin: 1.5rem 12px 3rem 12px;
-          padding: 2rem 1.25rem;
+        .nm-page-island {
+          padding: 2.25rem 1.25rem;
+          margin: 1.5rem auto 3rem auto;
           border-radius: 28px;
-        }
-        .nm-stats-strip {
-          grid-template-columns: 1fr;
-          gap: 1rem;
         }
         .nm-showcase-card {
           padding: 1.75rem 1.25rem;
@@ -462,10 +408,12 @@
           font-size: 1.35rem;
         }
         .nm-photo-thumb img {
-          height: 260px;
+          height: 300px;
         }
-        .nm-photos-grid-2 .nm-photo-thumb img {
-          height: 240px;
+        .nm-reflection-box {
+          flex-direction: column;
+          gap: 1rem;
+          padding: 1.5rem;
         }
       }
     </style>
@@ -531,23 +479,26 @@
       </div>
     </header>
 
+    <!-- =================================================================
+       2. SUBPAGE HERO HEADER (Dark Obsidian Theme)
+       ================================================================= -->
     <section class="subpage-hero-agency reveal-init">
       <div class="container" style="text-align: center;">
-        <div class="badge-pill-group light" style="display: inline-flex;">
-          <span class="twin-dot-icon"> <span></span><span></span> </span>
+        <div class="badge-pill-group light" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 201, 56, 0.15); border: 1px solid rgba(255, 201, 56, 0.3); color: #FFC938; padding: 0.45rem 1.15rem; border-radius: 999px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.25rem;">
+          <span style="width: 8px; height: 8px; background: #FFC938; border-radius: 50%; display: inline-block;"></span>
           <span>PPL TERBIMBING • KEGIATAN NON-MENGAJAR</span>
         </div>
 
         <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); color: #FFFFFF; margin-bottom: 0.8rem; font-weight: 800; letter-spacing: -0.02em;">
           Kegiatan Non-Mengajar PPL di SMK N 3 Kasihan Yogyakarta
         </h1>
-        <p style="max-width: 820px; font-size: 1.05rem; line-height: 1.6; color: #9CA3AF; margin: 0 auto 1.5rem auto;">
-          Laporan terperinci mengenai pelaksanaan 3 program non-mengajar otentik yang dilaksanakan oleh <strong>Rahmat Irnandi, S.Or.</strong> selama masa PPL di SMK N 3 Kasihan Yogyakarta. Meliputi <strong>Piket Lobi</strong>, <strong>Mengawas ASTS</strong>, dan <strong>Panitia Lomba Kemerdekaan RI</strong> sebagai wujud integrasi kompetensi kepribadian, sosial, manajerial, dan penguatan budaya sekolah.
+        <p style="max-width: 840px; font-size: 1.05rem; line-height: 1.7; color: #9CA3AF; margin: 0 auto 1.5rem auto;">
+          Dokumentasi dan laporan terperinci pelaksanaan program non-mengajar otentik oleh <strong>Rahmat Irnandi, S.Or.</strong> selama masa PPL di SMK N 3 Kasihan Yogyakarta: <strong>Upacara Bendera</strong> dan <strong>Piket 5S</strong> sebagai wujud integrasi kompetensi kepribadian, sosial, kedisiplinan, serta penguatan budaya positif sekolah.
         </p>
 
-        <div class="subpage-breadcrumb" style="justify-content: center;">
-          <a href="index.html">Beranda</a>
-          <i class="fa-solid fa-chevron-right"></i>
+        <div class="subpage-breadcrumb" style="justify-content: center; display: inline-flex; align-items: center; gap: 0.65rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 0.55rem 1.4rem; border-radius: 999px; font-size: 0.88rem;">
+          <a href="index.html" style="color: #E2E8F0; text-decoration: none;"><i class="fa-solid fa-house"></i> Beranda</a>
+          <i class="fa-solid fa-chevron-right" style="font-size: 0.72rem; color: #64748B;"></i>
           <span style="color: var(--color-yellow); font-weight: 700">Kegiatan Non-Mengajar</span>
         </div>
       </div>
@@ -559,258 +510,26 @@
     <main class="island-white nm-page-island reveal-init">
       <div class="container nm-island-inner">
 
-        <!-- Highlights Stat Row -->
+        <!-- Highlights Stat Row: 2 Program Utama -->
         <div class="nm-stats-strip">
           <div class="nm-stat-card">
             <div class="nm-stat-num">01</div>
             <div class="nm-stat-info">
-              <h4>Piket Lobi</h4>
-              <p>Layanan Tamu, Perizinan Siswa & Budaya 5S</p>
+              <h4>Upacara Bendera</h4>
+              <p>Kedisiplinan, Nasionalisme &amp; Pengondisian Barisan Siswa</p>
             </div>
           </div>
           <div class="nm-stat-card">
             <div class="nm-stat-num">02</div>
             <div class="nm-stat-info">
-              <h4>Mengawas ASTS</h4>
-              <p>Pengawasan Evaluasi & Integritas Akademik</p>
-            </div>
-          </div>
-          <div class="nm-stat-card">
-            <div class="nm-stat-num">03</div>
-            <div class="nm-stat-info">
-              <h4>Panitia Lomba HUT RI</h4>
-              <p>Karakter Kebangsaan & Kepanitiaan Kesiswaan</p>
+              <h4>Piket 5S</h4>
+              <p>Senyum, Sapa, Salam, Sopan, Santun &amp; Budaya Positif Gerbang</p>
             </div>
           </div>
         </div>
 
         <!-- =============================================================
-             KEGIATAN 1: PIKET LOBI
-             ============================================================= -->
-        <article class="nm-showcase-card">
-          <div class="nm-card-top">
-            <div class="nm-top-left">
-              <div class="nm-icon-wrapper">
-                <i class="fa-solid fa-bell-concierge"></i>
-              </div>
-              <div>
-                <span class="nm-category-badge">Layanan Administrasi, Ketertiban & Budaya Sekolah</span>
-                <h2 class="nm-title">1. Piket Lobi & Manajemen Pelayanan Tamu Sekolah</h2>
-                <div class="nm-meta-location">
-                  <i class="fa-solid fa-location-dot" style="color: var(--color-yellow);"></i>
-                  <span>Lobi Utama & Meja Informasi SMK N 3 Kasihan Yogyakarta • Terjadwal Berkala PPL</span>
-                </div>
-              </div>
-            </div>
-            <div class="nm-status-badge">
-              <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i>
-              <span>Terlaksana Penuh</span>
-            </div>
-          </div>
-
-          <p class="nm-lead-text">
-            Selama pelaksanaan PPL Terbimbing di SMK N 3 Kasihan Yogyakarta, Rahmat Irnandi, S.Or. secara terjadwal melaksanakan tugas piket lobi sebagai representasi etalase terdepan pelayanan institusi sekolah. Bertugas di lobi utama menempatkan calon guru pada episentrum interaksi langsung dengan beragam pemangku kepentingan (<em>stakeholders</em>)—mulai dari tamu kedinasan, pengawas sekolah, orang tua/wali peserta didik, tamu kemitraan, hingga civitas akademika internal. Kegiatan ini mengasah kepekaan komunikasi interpersonal, ketegasan administratif, serta keteladanan penanaman budaya 5S (Senyum, Salam, Sapa, Sopan, dan Santun) dalam membangun atmosfer lingkungan sekolah yang ramah, tertib, dan berwibawa.
-          </p>
-
-          <!-- Photo Showcase: Piket Lobi -->
-          <div class="nm-photo-wrapper">
-            <div class="nm-photo-thumb" onclick="openPhotoModal('IMG/Piket Loby.jpeg', 'Dokumentasi Tugas Piket Lobi & Pelayanan Tamu Sekolah', 'Kegiatan Non-Mengajar', 'Rahmat Irnandi, S.Or. bertugas di lobi utama SMK N 3 Kasihan Yogyakarta menyambut tamu sekolah, mencatat kehadiran tamu di buku registrasi, serta melayani administrasi perizinan peserta didik dengan menerapkan budaya 5S.', 'Lobi Utama SMK N 3 Kasihan Yogyakarta', 'Piket Lobi')">
-              <img src="IMG/Piket Loby.jpeg" alt="Dokumentasi Piket Lobi SMK N 3 Kasihan Yogyakarta" />
-              <div class="nm-photo-overlay-action">
-                <i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk Perbesar
-              </div>
-              <div class="nm-photo-overlay">
-                <div class="nm-photo-caption-title">Dokumentasi Tugas Piket Lobi & Manajemen Pelayanan Tamu Sekolah</div>
-                <div class="nm-photo-caption-sub">
-                  <i class="fa-solid fa-location-dot"></i> Lobi Utama & Meja Informasi SMK N 3 Kasihan Yogyakarta • Budaya 5S
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="nm-grid-3">
-            <div class="nm-box-item">
-              <div class="nm-box-title">
-                <i class="fa-solid fa-list-check"></i>
-                <span>Tugas Pokok & Tanggung Jawab</span>
-              </div>
-              <ul>
-                <li>Menerima, menyapa, dan meregistrasi setiap tamu kedinasan maupun tamu umum ke dalam Buku Tamu Resmi Sekolah.</li>
-                <li>Menerbitkan kartu identitas pengunjung (<em>Visitor Badge</em>) guna menegakkan protokol keamanan lingkungan sekolah.</li>
-                <li>Mengonfirmasi dan menghubungkan kepentingan tamu kepada pimpinan sekolah, guru mata pelajaran, guru BK, atau tata usaha.</li>
-                <li>Mengelola penerimaan surat masuk kedinasan, dokumen eksternal, serta paket kiriman pembelajaran untuk didistribusikan ke bagian terkait.</li>
-                <li>Memfasilitasi administrasi perizinan siswa (kartu izin meninggalkan kelas, izin berobat/sakit, dan dispensasi tugas kedinasan/lomba).</li>
-              </ul>
-            </div>
-
-            <div class="nm-box-item">
-              <div class="nm-box-title">
-                <i class="fa-solid fa-gears"></i>
-                <span>Prosedur & Alur Operasional (SOP)</span>
-              </div>
-              <ul>
-                <li>Hadir di pos lobi mulai pukul 06.30 WIB untuk penyambutan pagi bersama tim guru piket harian sekolah.</li>
-                <li>Mencatat rekapitulasi presensi keterlambatan peserta didik pagi hari dengan pendekatan dialogis dan pembinaan disiplin positif tanpa kekerasan.</li>
-                <li>Berkoordinasi aktif dengan petugas keamanan (Satpam) gerbang utama dalam memantau akses keluar-masuk warga sekolah selama jam efektif belajar.</li>
-                <li>Menuliskan laporan jurnal harian piket mengenai dinamika kejadian, rekap izin siswa, dan daftar tamu yang hadir hingga jam kepulangan.</li>
-              </ul>
-            </div>
-
-            <div class="nm-box-item">
-              <div class="nm-box-title">
-                <i class="fa-solid fa-award"></i>
-                <span>Capaian & Dampak Nyata</span>
-              </div>
-              <ul>
-                <li>Terwujudnya pelayanan prima (<em>service excellence</em>) yang transparan, santun, dan responsif bagi seluruh orang tua murid dan tamu instansi.</li>
-                <li>Terdokumentasikannya lalu lintas perizinan dan dispensasi siswa secara rapi, valid, dan dapat dipertanggungjawabkan kepada guru wali kelas.</li>
-                <li>Penurunan angka pelanggaran ketertiban jam belajar melalui pendekatan bimbingan disiplin persuasif di area lobi.</li>
-                <li>Penguatan citra kelembagaan SMK N 3 Kasihan Yogyakarta sebagai sekolah berbudaya adiluhung yang mengedepankan etika kesantunan.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="nm-reflection-box">
-            <div class="nm-reflection-icon">
-              <i class="fa-solid fa-lightbulb"></i>
-            </div>
-            <div class="nm-reflection-text">
-              <h5>Refleksi Pedagogik & Penguatan Kompetensi Guru:</h5>
-              <p>
-                "Menjalankan piket lobi membukakan mata saya bahwa peran seorang guru melampaui sekat-sekat dinding ruang kelas. Guru adalah figur pelayanan publik yang dituntut memiliki kematangan emosional, kemampuan mendengar aktif, dan kecakapan komunikasi asertif—terutama saat menghadapi kekhawatiran wali murid maupun mengarahkan peserta didik yang terlambat. Tugas ini mematangkan kompetensi kepribadian dan sosial saya sebagai calon guru profesional yang siap menjadi teladan tata krama dan integritas di ruang publik satuan pendidikan."
-              </p>
-            </div>
-          </div>
-
-          <div class="nm-card-footer">
-            <div class="nm-tags-group">
-              <span class="nm-tag-pill"><i class="fa-solid fa-tag"></i> Pelayanan Publik</span>
-              <span class="nm-tag-pill"><i class="fa-solid fa-heart"></i> Budaya 5S</span>
-              <span class="nm-tag-pill"><i class="fa-solid fa-shield-halved"></i> Ketertiban Sekolah</span>
-              <span class="nm-tag-pill"><i class="fa-solid fa-user-check"></i> Disiplin Positif</span>
-            </div>
-            <div style="font-size: 0.82rem; color: var(--color-text-muted); font-weight: 600;">
-              <i class="fa-solid fa-clock" style="margin-right: 4px;"></i> Terjadwal Rutin Setiap Pekan
-            </div>
-          </div>
-        </article>
-
-        <!-- =============================================================
-             KEGIATAN 2: MENGAWAS ASTS
-             ============================================================= -->
-        <article class="nm-showcase-card">
-          <div class="nm-card-top">
-            <div class="nm-top-left">
-              <div class="nm-icon-wrapper">
-                <i class="fa-solid fa-clipboard-check"></i>
-              </div>
-              <div>
-                <span class="nm-category-badge">Evaluasi Pembelajaran & Penjaminan Mutu Akademik</span>
-                <h2 class="nm-title">2. Pengawasan Asesmen Sumatif Tengah Semester (ASTS)</h2>
-                <div class="nm-meta-location">
-                  <i class="fa-solid fa-location-dot" style="color: var(--color-yellow);"></i>
-                  <span>Ruang Ujian Fase E & Fase F SMK N 3 Kasihan Yogyakarta • Pekan Penilaian Sumatif</span>
-                </div>
-              </div>
-            </div>
-            <div class="nm-status-badge">
-              <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i>
-              <span>Terlaksana Penuh</span>
-            </div>
-          </div>
-
-          <p class="nm-lead-text">
-            Dalam rangkaian penjaminan mutu asesmen pembelajaran Kurikulum Merdeka di SMK N 3 Kasihan Yogyakarta, Rahmat Irnandi, S.Or. dipercaya mengemban amanah sebagai Pengawas Ruang pada pelaksanaan Asesmen Sumatif Tengah Semester (ASTS) Gasal. Pengawasan asesmen sumatif memegang peranan krusial dalam menjamin keabsahan (validitas), keadilan (fairness), dan keandalan (reliabilitas) data capaian kompetensi peserta didik. Melalui pengawasan yang cermat dan berkeadaban, calon guru memastikan iklim ruang ujian berjalan hening, tertib, dan steril dari kecurangan akademik, sehingga setiap hasil evaluasi yang diperoleh merefleksikan kemampuan intelektual dan kejujuran murni peserta didik.
-          </p>
-
-          <!-- Photo Showcase: Mengawas ASTS -->
-          <div class="nm-photo-wrapper">
-            <div class="nm-photo-thumb" onclick="openPhotoModal('IMG/Mengawas ASTS.jpeg', 'Dokumentasi Pengawasan Asesmen Sumatif Tengah Semester (ASTS)', 'Kegiatan Non-Mengajar', 'Rahmat Irnandi, S.Or. menjalankan tugas pengawasan ruang ujian pada pelaksanaan ASTS Gasal di SMK N 3 Kasihan Yogyakarta untuk menjamin integritas, kejujuran akademik, dan ketertiban evaluasi belajar siswa.', 'Ruang Ujian SMK N 3 Kasihan Yogyakarta', 'Pengawasan ASTS')">
-              <img src="IMG/Mengawas ASTS.jpeg" alt="Dokumentasi Pengawasan ASTS SMK N 3 Kasihan Yogyakarta" />
-              <div class="nm-photo-overlay-action">
-                <i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk Perbesar
-              </div>
-              <div class="nm-photo-overlay">
-                <div class="nm-photo-caption-title">Pengawasan Ruang Asesmen Sumatif Tengah Semester (ASTS) Gasal</div>
-                <div class="nm-photo-caption-sub">
-                  <i class="fa-solid fa-location-dot"></i> Ruang Ujian Fase E & F SMK N 3 Kasihan Yogyakarta • Integritas Akademik
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="nm-grid-3">
-            <div class="nm-box-item">
-              <div class="nm-box-title">
-                <i class="fa-solid fa-list-check"></i>
-                <span>Tugas Pokok & Tanggung Jawab</span>
-              </div>
-              <ul>
-                <li>Mengambil berkas naskah soal, lembar jawab, daftar hadir, dan Berita Acara di Ruang Sekretariat Panitia ASTS tepat waktu.</li>
-                <li>Memeriksa kebersihan ruang, kerapian tata letak meja-kursi, serta memastikan jarak duduk antarpeserta telah memenuhi standar ujian.</li>
-                <li>Memverifikasi identitas peserta didik melalui pemeriksaan kartu peserta ujian dan kesesuaian denah tempat duduk.</li>
-                <li>Membacakan tata tertib peserta asesmen secara tegas, memimpin doa bersama, dan menginstruksikan penyimpanan gawai di tempat yang ditentukan.</li>
-                <li>Mengawasi ketertiban ruang selama 90 menit per sesi ujian, mencegah komunikasi antarsiswa atau indikasi ketidakjujuran akademik.</li>
-                <li>Menghitung kesesuaian jumlah lembar jawab dengan daftar hadir, menyusun Berita Acara Pelaksanaan, dan menyegel berkas kembali ke panitia.</li>
-              </ul>
-            </div>
-
-            <div class="nm-box-item">
-              <div class="nm-box-title">
-                <i class="fa-solid fa-gears"></i>
-                <span>Standar Operasional Prosedur (POS)</span>
-              </div>
-              <ul>
-                <li>Memasuki ruang ujian 15 menit sebelum bel tanda pengerjaan dimulai untuk memberikan arahan teknis dan pengisian biodata lembar jawab.</li>
-                <li>Penerapan kebijakan bebas gawai: seluruh ponsel/tas peserta didik wajib diletakkan di depan kelas di dekat meja pengawas dalam kondisi nonaktif.</li>
-                <li>Penanganan kendala teknis: menangani lembar naskah yang cacat cetak atau rusak dengan menukarkan naskah cadangan resmi dari sekretariat.</li>
-                <li>Pencatatan Berita Acara: mendokumentasikan rincian kehadiran (siswa hadir, absen karena sakit/izin) serta menandatangani berkas bersama pengawas pendamping.</li>
-              </ul>
-            </div>
-
-            <div class="nm-box-item">
-              <div class="nm-box-title">
-                <i class="fa-solid fa-award"></i>
-                <span>Capaian & Dampak Nyata</span>
-              </div>
-              <ul>
-                <li>Tercapainya kelancaran 100% sesi pengawasan ASTS di ruang ujian yang ditugaskan tanpa terjadinya insiden kebocoran soal atau kecurangan.</li>
-                <li>Terbangunnya iklim asesmen yang tenang, suportif, dan adil, memungkinkan peserta didik berkonsentrasi maksimal mengerahkan kompetensinya.</li>
-                <li>Tertibnya administrasi lembar jawab dan Berita Acara tanpa ada lembar yang tercecer atau tertukar nomor presensi.</li>
-                <li>Penanaman nilai integritas moral bahwa kejujuran akademik jauh lebih bernilai daripada sekadar angka hasil nilai ujian.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="nm-reflection-box">
-            <div class="nm-reflection-icon">
-              <i class="fa-solid fa-lightbulb"></i>
-            </div>
-            <div class="nm-reflection-text">
-              <h5>Refleksi Pedagogik & Penguatan Kompetensi Guru:</h5>
-              <p>
-                "Tugas mengawas ASTS mengajarkan saya esensi terdalam dari keadilan evaluasi pendidikan. Bagi seorang pendidik mata pelajaran PJOK (Pendidikan Jasmani, Olahraga, dan Kesehatan), ruang ujian adalah panggung nyata di mana nilai moralitas, kejujuran, dan rasa tanggung jawab diuji secara riil. Mengawas bukanlah sekadar menjaga agar siswa tidak menyontek, melainkan menciptakan rasa aman dan memastikan bahwa setiap usaha belajar anak dihargai secara terhormat. Pengalaman ini melatih ketegasan manajerial saya dalam menegakkan tata tertib secara berwibawa namun tetap penuh empati."
-              </p>
-            </div>
-          </div>
-
-          <div class="nm-card-footer">
-            <div class="nm-tags-group">
-              <span class="nm-tag-pill"><i class="fa-solid fa-tag"></i> Asesmen Sumatif</span>
-              <span class="nm-tag-pill"><i class="fa-solid fa-scale-balanced"></i> Integritas Akademik</span>
-              <span class="nm-tag-pill"><i class="fa-solid fa-file-contract"></i> POS Ujian Resmi</span>
-              <span class="nm-tag-pill"><i class="fa-solid fa-check-double"></i> Kurikulum Merdeka</span>
-            </div>
-            <div style="font-size: 0.82rem; color: var(--color-text-muted); font-weight: 600;">
-              <i class="fa-solid fa-calendar-days" style="margin-right: 4px;"></i> Periode ASTS Gasal TA 2024/2025
-            </div>
-          </div>
-        </article>
-
-        <!-- =============================================================
-             KEGIATAN 3: PANITIA LOMBA KEMERDEKAAN
+             KEGIATAN 1: UPACARA BENDERA
              ============================================================= -->
         <article class="nm-showcase-card">
           <div class="nm-card-top">
@@ -819,121 +538,214 @@
                 <i class="fa-solid fa-flag"></i>
               </div>
               <div>
-                <span class="nm-category-badge">Pembinaan Kesiswaan, Nasionalisme & Kepanitiaan Sekolah</span>
-                <h2 class="nm-title">3. Kepanitiaan Peringatan HUT Ke-79 Kemerdekaan RI</h2>
+                <span class="nm-category-badge">Penguatan Karakter, Kedisiplinan &amp; Nasionalisme</span>
+                <h2 class="nm-title">1. Pelaksanaan &amp; Pengondisian Upacara Bendera</h2>
                 <div class="nm-meta-location">
                   <i class="fa-solid fa-location-dot" style="color: var(--color-yellow);"></i>
-                  <span>Lapangan Utama & Aula SMK N 3 Kasihan Yogyakarta • Semarak Bulan Kemerdekaan</span>
+                  <span>Lapangan Upacara Utama SMK N 3 Kasihan Yogyakarta</span>
                 </div>
               </div>
             </div>
-            <div class="nm-status-badge">
-              <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i>
-              <span>Terlaksana Penuh</span>
-            </div>
+            <span class="nm-status-badge">
+              <i class="fa-solid fa-circle-check"></i> Terlaksana Rutin &amp; Khidmat
+            </span>
           </div>
 
           <p class="nm-lead-text">
-            Sebagai wujud komitmen kebangsaan dan peran aktif dalam pembinaan kesiswaan, Rahmat Irnandi, S.Or. terlibat sebagai panitia pelaksana pada Peringatan Hari Ulang Tahun (HUT) Ke-79 Kemerdekaan Republik Indonesia di SMK N 3 Kasihan Yogyakarta. Momentum kemerdekaan menjadi arena laboratorium nyata bagi calon guru PJOK (Pendidikan Jasmani, Olahraga, dan Kesehatan) dalam mengaktualisasikan nilai-nilai kebangsaan, gotong royong, dan patriotisme ke dalam jiwa generasi muda. Bekerja sama secara kolaboratif dengan Pembina OSIS, dewan guru, dan pengurus OSIS/MPK, keterlibatan ini mencakup perencanaan konseptual, manajemen teknis perlombaan edukatif, penjurian objektif, hingga koordinasi puncak peringatan proklamasi kemerdekaan.
+            Upacara bendera merupakan agenda rutin mingguan serta peringatan hari-hari besar nasional di SMK N 3 Kasihan Yogyakarta yang berfungsi sebagai sarana strategis pembentukan karakter patriotisme, kedisiplinan baris-berbaris, dan pembentukan watak kesatria siswa. Sebagai calon pendidik PJOK, <strong>Rahmat Irnandi, S.Or.</strong> berperan aktif dalam pengondisian ketertiban saf barisan peserta didik per kelas, pembimbingan petugas upacara, pendampingan protokol, serta memberikan keteladanan sikap sempurna di lapangan terbuka.
           </p>
 
-          <!-- Dual Photo Showcase: Panitia Lomba & Upacara HUT RI -->
-          <div class="nm-photos-grid-2">
-            <div class="nm-photo-wrapper">
-              <div class="nm-photo-thumb" onclick="openPhotoModal('IMG/Panitia Lomba.jpeg', 'Kepanitiaan & Penjurian Lomba Kemerdekaan RI Ke-79', 'Kegiatan Non-Mengajar', 'Rahmat Irnandi, S.Or. bersama dewan guru dan OSIS SMK N 3 Kasihan Yogyakarta bertugas sebagai panitia dan dewan juri perlombaan semarak HUT Ke-79 Kemerdekaan RI.', 'Lapangan & Panggung Utama SMK N 3 Kasihan Yogyakarta', 'Panitia Lomba')">
-                <img src="IMG/Panitia Lomba.jpeg" alt="Kepanitiaan Lomba HUT Kemerdekaan RI SMK N 3 Kasihan Yogyakarta" />
-                <div class="nm-photo-overlay-action">
-                  <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar
-                </div>
-                <div class="nm-photo-overlay">
-                  <div class="nm-photo-caption-title">Kepanitiaan & Penjurian Lomba Semarak HUT Ke-79 Kemerdekaan RI</div>
-                  <div class="nm-photo-caption-sub">
-                    <i class="fa-solid fa-location-dot"></i> Lapangan & Panggung Utama SMK N 3 Kasihan Yogyakarta
-                  </div>
-                </div>
+          <!-- Photo Showcase: Upacara Bendera -->
+          <div class="nm-photo-wrapper">
+            <div class="nm-photo-thumb" onclick="openPhotoModal('IMG/Upacara Bendera.jpeg', 'Dokumentasi Upacara Bendera SMK N 3 Kasihan Yogyakarta', 'Kegiatan Non-Mengajar', 'Rahmat Irnandi, S.Or. bersama dewan guru dan peserta didik dalam pelaksanaan Upacara Bendera di Lapangan Upacara SMK N 3 Kasihan Yogyakarta, mengondisikan ketertiban barisan, kedisiplinan atribut, dan kekhidmatan penghormatan Sang Saka Merah Putih.', 'Lapangan Utama SMK N 3 Kasihan Yogyakarta', 'Upacara Bendera')">
+              <img src="IMG/Upacara Bendera.jpeg" alt="Dokumentasi Upacara Bendera SMK N 3 Kasihan Yogyakarta" />
+              <div class="nm-photo-overlay-action">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk Perbesar
               </div>
-            </div>
-
-            <div class="nm-photo-wrapper">
-              <div class="nm-photo-thumb" onclick="openPhotoModal('IMG/Upacara Kemerdekaan 17 Agustus.jpeg', 'Upacara Peringatan Detik-Detik Proklamasi Kemerdekaan RI Ke-79', 'Kegiatan Non-Mengajar', 'Rahmat Irnandi, S.Or. bersama civitas akademika dan siswa SMK N 3 Kasihan Yogyakarta berbaris khidmat mengikuti Upacara Peringatan HUT Ke-79 Kemerdekaan Republik Indonesia.', 'Lapangan Utama SMK N 3 Kasihan Yogyakarta', 'Upacara 17 Agustus')">
-                <img src="IMG/Upacara Kemerdekaan 17 Agustus.jpeg" alt="Upacara Peringatan HUT Ke-79 RI di SMK N 3 Kasihan Yogyakarta" />
-                <div class="nm-photo-overlay-action">
-                  <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar
-                </div>
-                <div class="nm-photo-overlay">
-                  <div class="nm-photo-caption-title">Upacara Peringatan HUT Ke-79 Kemerdekaan Republik Indonesia</div>
-                  <div class="nm-photo-caption-sub">
-                    <i class="fa-solid fa-location-dot"></i> Lapangan Upacara SMK N 3 Kasihan Yogyakarta
-                  </div>
+              <div class="nm-photo-overlay">
+                <div class="nm-photo-caption-title">Dokumentasi Pelaksanaan Upacara Bendera &amp; Pembinaan Karakter Siswa</div>
+                <div class="nm-photo-caption-sub">
+                  <i class="fa-solid fa-location-dot"></i> Lapangan Upacara Utama SMK N 3 Kasihan Yogyakarta • Kedisiplinan &amp; Nasionalisme
                 </div>
               </div>
             </div>
           </div>
 
-
+          <!-- 3-Column Info Bento Grid -->
           <div class="nm-grid-3">
             <div class="nm-box-item">
               <div class="nm-box-title">
                 <i class="fa-solid fa-list-check"></i>
-                <span>Tugas Pokok & Tanggung Jawab</span>
+                <span>Tugas Pokok &amp; Peran Mahasiswa PPG</span>
               </div>
               <ul>
-                <li>Terlibat dalam rapat koordinasi panitia dewan guru dan OSIS untuk merumuskan tema, cabang perlombaan, dan linimasa kegiatan.</li>
-                <li>Menyusun Petunjuk Pelaksanaan dan Petunjuk Teknis (Juklak-Juknis) untuk perlombaan bertema wawasan kebangsaan dan kreativitas siswa.</li>
-                <li>Bertindak sebagai Koordinator Lapangan dan Dewan Juri untuk lomba orasi kebangsaan, kebersihan & estetika kelas bertema nasionalisme, serta lomba kekompakan antarkelas.</li>
-                <li>Mendampingi pengurus OSIS dalam mengelola logistik perlengkapan, tata suara panggung, alur mobilisasi ratusan peserta didik, dan keselamatan kegiatan.</li>
-                <li>Mengordinasikan pembagian hadiah, sertifikat penghargaan, serta evaluasi menyeluruh pascapenutupan kegiatan semarak kemerdekaan.</li>
+                <li>Mengondisikan dan menertibkan kerapian saf barisan peserta didik per program keahlian sebelum upacara dimulai.</li>
+                <li>Membimbing dan mengawal kesiapan petugas upacara (pemimpin upacara, tim pengibar bendera, pembaca teks UUD 1945 &amp; ikrar).</li>
+                <li>Menjaga kekhidmatan suasana upacara dan memantau ketertiban siswa selama penyampaian amanat pembina upacara.</li>
+                <li>Berkoordinasi sigap dengan tim PMR/Kesehatan sekolah untuk mengevakuasi dan mendampingi siswa yang mengalami gangguan fisik/kelelahan ke ruang UKS.</li>
+                <li>Memimpin pembubaran barisan secara tertib dan teratur menuju ruang kelas masing-masing pasca upacara selesai.</li>
               </ul>
             </div>
 
             <div class="nm-box-item">
               <div class="nm-box-title">
                 <i class="fa-solid fa-gears"></i>
-                <span>Dinamika Kolaborasi & Manajemen Lapangan</span>
+                <span>Prosedur &amp; Alur Operasional (SOP)</span>
               </div>
               <ul>
-                <li>Sinergi kemitraan: menjalin komunikasi harmonis antara guru pembina, mahasiswa praktikan PPL, pengurus OSIS/MPK, dan dewan juri.</li>
-                <li>Manajemen risiko & keamanan: berkoordinasi dengan tim PMR sekolah untuk menyediakan posko P3K dan memantau kondisi fisik peserta lomba di lapangan terbuka.</li>
-                <li>Kriteria penilaian objektif: menyusun rubrik penilaian juri yang transparan mencakup bobot orasi, kesesuaian nilai Pancasila, kekompakan, dan sportivitas.</li>
-                <li>Mitigasi waktu: menjaga agar setiap babak perlombaan berlangsung tepat jadwal tanpa mengorbankan ketertiban lingkungan belajar sekolah.</li>
+                <li>Hadir di lapangan upacara pada pukul 06.40 WIB untuk memeriksa kesiapan tiang bendera, sound system, dan formasi batas barisan.</li>
+                <li>Memastikan seluruh peserta didik mengenakan kelengkapan seragam upacara (topi, dasi, ikat pinggang, dan sepatu hitam) sesuai tata tertib sekolah.</li>
+                <li>Mengatur posisi barisan guru, staf tata usaha, dan siswa secara proporsional demi kelancaran lalu lintas upacara.</li>
+                <li>Mengevaluasi jalannya upacara bersama tim kesiswaan sebagai bahan refleksi peningkatan kedisiplinan pekan berikutnya.</li>
               </ul>
             </div>
 
             <div class="nm-box-item">
               <div class="nm-box-title">
-                <i class="fa-solid fa-award"></i>
-                <span>Capaian & Dampak Nyata</span>
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Kompetensi Guru &amp; Dampak Nyata</span>
               </div>
               <ul>
-                <li>Partisipasi aktif 100% dari seluruh kelas Fase E dan Fase F SMK N 3 Kasihan Yogyakarta dengan atmosfer perlombaan yang semarak dan sportif.</li>
-                <li>Tumbuhnya rasa bangga atas warisan perjuangan pahlawan dan penguatan ikatan persaudaraan antarseluruh warga sekolah tanpa sekat.</li>
-                <li>Lahirnya karya dekorasi kelas dan orasi kepemudaan bertemakan nilai-nilai luhur Pancasila dan persatuan Negara Kesatuan Republik Indonesia (NKRI).</li>
-                <li>Terasahnya kapasitas kepemimpinan siswa panitia OSIS melalui bimbingan intensif dan keteladanan yang diberikan calon guru.</li>
+                <li><strong>Kompetensi Kepribadian &amp; Sosial:</strong> Menampilkan wibawa pendidik, keteladanan sikap sempurna, dan komunikasi asertif menggerakkan ratusan siswa di lapangan.</li>
+                <li><strong>Manajemen Lapangan Terbuka:</strong> Mengasah keterampilan komando vokal dan pemetaan formasi ruang terbuka yang sangat esensial bagi guru PJOK.</li>
+                <li><strong>Profil Pelajar Pancasila:</strong> Memperkuat dimensi Beriman, Bertakwa kepada Tuhan YME, Berkebinekaan Global, dan Cinta Tanah Air secara praksis.</li>
               </ul>
             </div>
           </div>
 
+          <!-- Pedagogical Reflection Box -->
           <div class="nm-reflection-box">
             <div class="nm-reflection-icon">
               <i class="fa-solid fa-lightbulb"></i>
             </div>
             <div class="nm-reflection-text">
-              <h5>Refleksi Pedagogik & Penguatan Kompetensi Guru:</h5>
+              <h5>Refleksi Pedagogik &amp; Penguatan Kompetensi Guru:</h5>
               <p>
-                "Kepanitiaan HUT Kemerdekaan RI ke-79 membuktikan bahwa penanaman karakter dan wawasan kebangsaan paling bertenaga adalah yang dialami dan dirayakan bersama. Di luar ruang kelas teori, peringatan kemerdekaan menjadi laboratorium hidup penanaman dimensi Profil Pelajar Pancasila—terutama Gotong Royong, Berkebinekaan Global, dan Mandiri. Bagi saya pribadi, keterlibatan manajerial ini melatih kemampuan <em>event organizing</em>, manajemen krisis lapangan, dan seni merawat sinergi lintas generasi. Guru sejati adalah mereka yang mampu menggerakkan dan menyalakan api nasionalisme di hati para muridnya."
+                "Keterlibatan dalam upacara bendera mempertegas peran guru PJOK tidak hanya sebagai pengajar gerak di lapangan olahraga, melainkan figur pembina kedisiplinan dan karakter nasionalisme siswa. Sikap tegap, kerapian saf barisan, dan kepatuhan terhadap aba-aba upacara adalah implementasi nyata dari pendidikan jasmani yang berakar pada kesiapan mental, pengendalian diri, dan penghormatan mendalam terhadap simbol kedaulatan bangsa."
               </p>
             </div>
           </div>
 
           <div class="nm-card-footer">
             <div class="nm-tags-group">
-              <span class="nm-tag-pill"><i class="fa-solid fa-tag"></i> HUT RI Ke-79</span>
-              <span class="nm-tag-pill"><i class="fa-solid fa-handshake"></i> Gotong Royong</span>
-              <span class="nm-tag-pill"><i class="fa-solid fa-landmark"></i> Wawasan Kebangsaan</span>
-              <span class="nm-tag-pill"><i class="fa-solid fa-people-group"></i> Kepemimpinan Kesiswaan</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-tag"></i> Upacara Bendera</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-shield-halved"></i> Kedisiplinan Siswa</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-landmark"></i> Nasionalisme</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-people-group"></i> Manajemen Lapangan</span>
             </div>
             <div style="font-size: 0.82rem; color: var(--color-text-muted); font-weight: 600;">
-              <i class="fa-solid fa-star" style="color: var(--color-yellow); margin-right: 4px;"></i> Peringatan Akbar Kemerdekaan RI
+              <i class="fa-solid fa-star" style="color: var(--color-yellow); margin-right: 4px;"></i> Agenda Rutin Karakter SMK N 3 Kasihan
+            </div>
+          </div>
+        </article>
+
+        <!-- =============================================================
+             KEGIATAN 2: PIKET 5S
+             ============================================================= -->
+        <article class="nm-showcase-card">
+          <div class="nm-card-top">
+            <div class="nm-top-left">
+              <div class="nm-icon-wrapper">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <div>
+                <span class="nm-category-badge">Pembiasaan Budaya Positif &amp; Layanan Kedatangan Siswa</span>
+                <h2 class="nm-title">2. Pelaksanaan Piket 5S (Senyum, Sapa, Salam, Sopan, Santun)</h2>
+                <div class="nm-meta-location">
+                  <i class="fa-solid fa-location-dot" style="color: var(--color-yellow);"></i>
+                  <span>Pintu Gerbang Utama &amp; Lobi Masuk SMK N 3 Kasihan Yogyakarta</span>
+                </div>
+              </div>
+            </div>
+            <span class="nm-status-badge">
+              <i class="fa-solid fa-circle-check"></i> Terlaksana Rutin Pagi Hari
+            </span>
+          </div>
+
+          <p class="nm-lead-text">
+            Piket 5S (Senyum, Sapa, Salam, Sopan, Santun) adalah pilar pembiasaan budaya positif sekolah yang dilaksanakan setiap pagi di pintu gerbang utama SMK N 3 Kasihan Yogyakarta. Bertujuan menyambut kedatangan peserta didik, bapak/ibu guru, karyawan, serta orang tua/tamu sekolah dengan keramahan, keteladanan sikap, dan kehangatan relasi. Keterlibatan <strong>Rahmat Irnandi, S.Or.</strong> dalam menyapa dan memeriksa kedisiplinan pagi membangun iklim psikososial sekolah yang aman, inklusif, dan saling menghargai.
+          </p>
+
+          <!-- Photo Showcase: Piket 5S -->
+          <div class="nm-photo-wrapper">
+            <div class="nm-photo-thumb" onclick="openPhotoModal('IMG/Piket 5S.jpeg', 'Dokumentasi Piket 5S di Gerbang SMK N 3 Kasihan Yogyakarta', 'Kegiatan Non-Mengajar', 'Rahmat Irnandi, S.Or. bertugas menyambut kedatangan peserta didik di pintu gerbang utama SMK N 3 Kasihan Yogyakarta dengan senyum ramah, jabat tangan salam, serta memeriksa kerapian seragam dan keselamatan berkendara (helm SNI).', 'Pintu Gerbang Utama SMK N 3 Kasihan Yogyakarta', 'Piket 5S')">
+              <img src="IMG/Piket 5S.jpeg" alt="Dokumentasi Piket 5S SMK N 3 Kasihan Yogyakarta" />
+              <div class="nm-photo-overlay-action">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk Perbesar
+              </div>
+              <div class="nm-photo-overlay">
+                <div class="nm-photo-caption-title">Dokumentasi Pelaksanaan Piket 5S &amp; Budaya Positif Sekolah</div>
+                <div class="nm-photo-caption-sub">
+                  <i class="fa-solid fa-location-dot"></i> Pintu Gerbang Utama SMK N 3 Kasihan Yogyakarta • Senyum, Sapa, Salam, Sopan, Santun
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3-Column Info Bento Grid -->
+          <div class="nm-grid-3">
+            <div class="nm-box-item">
+              <div class="nm-box-title">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Tugas Pokok &amp; Peran Mahasiswa PPG</span>
+              </div>
+              <ul>
+                <li>Menyambut kehadiran seluruh warga sekolah di gerbang utama sejak pukul 06.30 WIB dengan senyum ramah, sapaan hangat, dan salam santun.</li>
+                <li>Melakukan penertiban ramah terhadap kelengkapan seragam sekolah, kerapian rambut, serta penggunaan helm standar SNI bagi pengendara motor.</li>
+                <li>Mencatat dan merekap peserta didik yang datang terlambat dengan pendekatan bimbingan dialogis tanpa kekerasan fisik/verbal.</li>
+                <li>Menyapa orang tua/wali murid yang mengantarkan peserta didik serta memberikan arahan ramah bagi tamu masyarakat sekitar.</li>
+                <li>Membantu kelancaran arus kedatangan dan keselamatan penyeberangan di depan gerbang sekolah.</li>
+              </ul>
+            </div>
+
+            <div class="nm-box-item">
+              <div class="nm-box-title">
+                <i class="fa-solid fa-gears"></i>
+                <span>Prosedur Operasional &amp; Budaya Kerja 5S</span>
+              </div>
+              <ul>
+                <li>Bersiap di titik sambut gerbang utama 30 menit sebelum bel masuk berbunyi bersama tim guru piket dan satgas kesiswaan.</li>
+                <li>Mengarahkan siswa mematikan mesin sepeda motor dan menuntun kendaraan dengan tertib memasuki area parkir sekolah.</li>
+                <li>Membimbing peserta didik yang terlambat untuk melakukan refleksi diri singkat, merapikan diri, dan menandatangani jurnal kedisiplinan.</li>
+                <li>Berkoordinasi aktif dengan petugas keamanan sekolah (Satpam) dan guru BK untuk penanganan kasus kedisiplinan khusus.</li>
+              </ul>
+            </div>
+
+            <div class="nm-box-item">
+              <div class="nm-box-title">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Kompetensi Guru &amp; Dampak Nyata</span>
+              </div>
+              <ul>
+                <li><strong>Kompetensi Kepribadian &amp; Sosial:</strong> Melatih kesabaran, keramahan tulus, empati, dan kemampuan membangun hubungan emosional yang hangat dengan siswa.</li>
+                <li><strong>Budaya Kerja Industri (5S/5R):</strong> Menanamkan nilai dasar budaya kerja industri (Seiri, Seiton, Seiso, Seiketsu, Shitsuke) yang sangat relevan bagi siswa SMK kejuruan.</li>
+                <li><strong>Iklim Belajar Positif:</strong> Menghilangkan ketegangan pagi hari, menumbuhkan rasa dihargai, dan membangkitkan motivasi belajar sejak pertama tiba di sekolah.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Pedagogical Reflection Box -->
+          <div class="nm-reflection-box">
+            <div class="nm-reflection-icon">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div class="nm-reflection-text">
+              <h5>Refleksi Pedagogik &amp; Penguatan Kompetensi Guru:</h5>
+              <p>
+                "Piket 5S mengajarkan bahwa sentuhan pedagogik pertama yang diterima seorang siswa di pagi hari menentukan motivasi dan emosi belajarnya sepanjang hari. Sebuah senyuman hangat, sapaan tulus, dan salam penuh hormat di gerbang sekolah membangun jembatan rasa percaya (<em>trust</em>) antara guru dan siswa. Ini adalah pendidikan karakter paling otentik yang tidak bisa digantikan oleh teori manapun di ruang kelas."
+              </p>
+            </div>
+          </div>
+
+          <div class="nm-card-footer">
+            <div class="nm-tags-group">
+              <span class="nm-tag-pill"><i class="fa-solid fa-tag"></i> Piket 5S</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-heart"></i> Budaya Positif Sekolah</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-handshake"></i> Senyum Sapa Salam</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-user-check"></i> Keteladanan Pagi</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--color-text-muted); font-weight: 600;">
+              <i class="fa-solid fa-star" style="color: var(--color-yellow); margin-right: 4px;"></i> Pembiasaan Harian Karakter SMK N 3 Kasihan
             </div>
           </div>
         </article>
@@ -942,43 +754,38 @@
     </main>
 
     <!-- =================================================================
-       5. MINIMALIST LUXURY FOOTER (Exact Nexis Concept)
+       4. LUXURY NEXIS FOOTER (Consistent with index.html Exactly)
        ================================================================= -->
     <footer class="footer-nexis reveal-init">
       <div class="container">
-        <!-- Center Mega Brand -->
+        <!-- Mega Brand Block -->
         <div class="footer-nexis-brand-hero">
-          <a href="index.html" class="footer-brand-link">
-            <div class="footer-logo-mark">
-              <img src="logo.png" alt="Logo UNY" class="footer-logo-img" onerror="this.src='logo navbar.png'" />
-            </div>
-            <div class="footer-brand-title-wrap">
-              <span class="footer-brand-title">E-Porto</span>
-              <span class="footer-brand-badge">Rahmat Irnandi, S.Or.</span>
-            </div>
-          </a>
-          <p class="footer-brand-tagline">
-            Portofolio Digital Resmi PPL Terbimbing • Program Studi Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Jasmani, Olahraga, dan Kesehatan (PJOK) Universitas Negeri Yogyakarta (UNY) di SMK N 3 Kasihan Yogyakarta.
+          <div class="footer-nexis-badge">
+            <i class="fa-solid fa-award"></i> PORTOFOLIO RESMI PPL TERBIMBING PPG CALON GURU PJOK
+          </div>
+          <h2 class="footer-nexis-title">Rahmat Irnandi, S.Or.</h2>
+          <p class="footer-nexis-sub">
+            Mahasiswa PPG Calon Guru Gelombang 1 Bidang Studi Pendidikan Jasmani, Olahraga, dan Kesehatan (PJOK) • Universitas Negeri Yogyakarta (UNY) • Mitra Praktik: SMK Negeri 3 Kasihan Bantul
           </p>
         </div>
 
-        <!-- Horizontal Nav Links -->
-        <nav class="footer-nav-menu">
-          <a href="index.html" class="footer-nav-link">Beranda</a>
-          <a href="profil.html" class="footer-nav-link">Profil</a>
-          <a href="UTS/rancangan.html" class="footer-nav-link">Siklus 1 (UTS)</a>
-          <a href="UAS/rancangan.html" class="footer-nav-link">Siklus 2 (UAS)</a>
-          <a href="non-mengajar.html" class="footer-nav-link active">Non-Mengajar</a>
-          <a href="dokumentasi.html" class="footer-nav-link">Dokumentasi</a>
+        <!-- Horizontal Minimalist Menu -->
+        <nav class="footer-nexis-menu" aria-label="Footer Navigation">
+          <a href="index.html">Beranda</a>
+          <a href="profil.html">Profil</a>
+          <a href="UTS/rancangan.html">Siklus 1 (UTS)</a>
+          <a href="UAS/rancangan.html">Siklus 2 &amp; 3 (UAS)</a>
+          <a href="non-mengajar.html" class="active">Non-Mengajar</a>
+          <a href="dokumentasi.html">Dokumentasi</a>
         </nav>
 
         <!-- Divider Line -->
         <div class="footer-nexis-divider"></div>
 
-        <!-- Bottom Flex Bar -->
-        <div class="footer-nexis-bottom-bar">
-          <div class="footer-copyright-text">
-            Copyright &copy; 2026 <strong>Rahmat Irnandi, S.Or.</strong> • LPTK Universitas Negeri Yogyakarta (UNY) & SMK N 3 Kasihan Yogyakarta. All Rights Reserved.
+        <!-- Bottom Row: Copyright & Socials -->
+        <div class="footer-nexis-bottom">
+          <div class="footer-nexis-copy">
+            &copy; 2026 <strong>Rahmat Irnandi, S.Or.</strong> • PPG PJOK Universitas Negeri Yogyakarta (UNY). Hak Cipta Dilindungi Undang-Undang.
           </div>
 
           <!-- Social Icons on the Right -->
@@ -987,13 +794,15 @@
             <a href="javascript:void(0)" onclick="showToast('Instagram Rahmat Irnandi')" class="social-nexis-pill" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="javascript:void(0)" onclick="showToast('LinkedIn Rahmat Irnandi')" class="social-nexis-pill" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="mailto:rahmat.ppg@uny.ac.id" class="social-nexis-pill" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-            <a href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior:'smooth'})" class="social-nexis-pill scroll-top-pill" aria-label="Kembali ke Atas" title="Kembali ke Atas"><i class="fa-solid fa-arrow-up"></i></a>
+            <a href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior:'smooth'})" class="social-nexis-pill back-to-top" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></a>
           </div>
         </div>
       </div>
     </footer>
 
-    
+    <!-- Toast Notification Element -->
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
     <!-- Photo Lightbox Modal -->
     <div id="photo-modal" class="modal-overlay">
       <div class="modal-window modal-window-lightbox">
@@ -1014,7 +823,7 @@
           <span style="font-size: 0.82rem; color: #9CA3AF">
             <i class="fa-solid fa-camera" style="color: var(--color-yellow); margin-right: 5px"></i> Dokumentasi Asli PPL Terbimbing di SMK N 3 Kasihan Yogyakarta
           </span>
-          <a id="photo-modal-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-yellow btn-sm">
+          <a id="photo-modal-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-nexis-yellow" style="font-size: 0.85rem;">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Ukuran Asli
           </a>
         </div>
@@ -1069,12 +878,22 @@
           document.body.style.overflow = "";
         }
       });
-    </script>
 
+      // Toast notification helper
+      function showToast(message) {
+        let toast = document.getElementById('toast');
+        if (!toast) {
+          toast = document.createElement('div');
+          toast.id = 'toast';
+          toast.className = 'toast';
+          document.body.appendChild(toast);
+        }
+        toast.textContent = message;
+        toast.className = 'toast show';
+        setTimeout(function() {
+          toast.className = toast.className.replace('show', '');
+        }, 3000);
+      }
+    </script>
   </body>
 </html>
-
-
-
-
-

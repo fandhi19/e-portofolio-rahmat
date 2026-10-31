@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UAS - Video Praktik Pembelajaran PJOK (Siklus 2 & 3) | Rahmat Irnandi, S.Or. - PPG PJOK UNY</title>
+    <title>UAS - Video Praktik Pembelajaran PJOK (Kebugaran Jasmani) | Rahmat Irnandi, S.Or. - PPG PJOK UNY</title>
 
     <link rel="icon" type="image/png" href="../logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -93,53 +93,6 @@
       .ut-breadcrumb .current {
         color: #FFC938;
         font-weight: 700;
-      }
-
-      /* Cycle Switcher Tabs for UAS */
-      .uas-tabs-wrapper {
-        display: flex;
-        gap: 1rem;
-        margin-bottom: 2rem;
-        flex-wrap: wrap;
-      }
-      .uas-tab-btn {
-        background: #F1F5F9;
-        border: 1px solid #E2E8F0;
-        color: #0C0D10;
-        padding: 0.95rem 1.75rem;
-        border-radius: 999px;
-        font-size: 0.92rem;
-        font-weight: 700;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.75rem;
-        transition: all 0.2s ease;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-      }
-      .uas-tab-btn:hover {
-        background: #FFFFFF;
-        border-color: #FFC938;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-      }
-      .uas-tab-btn.active {
-        background: #0C0D10;
-        color: #FFFFFF;
-        border-color: #0C0D10;
-        box-shadow: 0 8px 24px rgba(12, 13, 16, 0.25);
-      }
-      .uas-tab-badge {
-        background: rgba(255, 201, 56, 0.2);
-        color: #B45309;
-        font-size: 0.72rem;
-        padding: 3px 8px;
-        border-radius: 6px;
-        font-weight: 800;
-      }
-      .uas-tab-btn.active .uas-tab-badge {
-        background: #FFC938;
-        color: #0C0D10;
       }
 
       /* Video Showcase Card */
@@ -332,34 +285,6 @@
         color: #FFFFFF;
       }
 
-      /* UAS Cycle Summary Cards */
-      .uas-cycles-summary-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.75rem;
-        margin-bottom: 3.5rem;
-      }
-      .uas-cycle-summary-card {
-        background: #F8FAFC;
-        border: 1px solid #E2E8F0;
-        border-radius: 24px;
-        padding: 2rem;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-      }
-      .uas-cycle-summary-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
-        border-color: #FFC938;
-      }
-      .uas-cycle-summary-card.active-card {
-        background: #FFFFFF;
-        border: 2px solid #FFC938;
-        box-shadow: 0 16px 36px rgba(255, 201, 56, 0.15);
-      }
-
       /* Academic Analysis Sections */
       .analysis-module-card {
         background: #F8FAFC;
@@ -409,18 +334,6 @@
         margin: 0;
       }
 
-      .analysis-container {
-        display: none;
-      }
-      .analysis-container.active {
-        display: block;
-        animation: fadeInAnalysis 0.35s ease forwards;
-      }
-      @keyframes fadeInAnalysis {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-
       @media (max-width: 1024px) {
         .video-main-layout {
           grid-template-columns: 1fr;
@@ -428,9 +341,6 @@
         .video-sidebar-panel {
           border-left: none;
           border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .uas-cycles-summary-grid {
-          grid-template-columns: 1fr;
         }
       }
 
@@ -515,214 +425,214 @@
     <!-- =================================================================
        2. SUBPAGE HERO HEADER (Dark Obsidian Theme)
        ================================================================= -->
-    <section class="ut-hero-header container">
-      <div class="badge-pill mb-3" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 201, 56, 0.15); border: 1px solid rgba(255, 201, 56, 0.3); color: #FFC938; padding: 0.45rem 1.15rem; border-radius: 999px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
-        <span style="width: 8px; height: 8px; background: #FFC938; border-radius: 50%; display: inline-block;"></span>
-        UAS • SIKLUS 2 &amp; 3 PPL TERBIMBING
-      </div>
-      <h1 class="ut-hero-title">Video Praktik Pembelajaran PJOK (Siklus 2 &amp; 3)</h1>
-      <p class="ut-hero-desc">
-        Dokumentasi rekaman video otentik pelaksanaan praktik pembelajaran PJOK Kurikulum Merdeka Fase E di SMK N 3 Kasihan Yogyakarta: Aktivitas Kebugaran Jasmani Circuit Training (Siklus 2) dan Variasi &amp; Taktik Bola Voli Model TGfU (Siklus 3).
-      </p>
+    <section class="ut-hero-header">
+      <div class="container">
+        <div class="badge-pill-group" style="justify-content: center; margin-bottom: 1.25rem;">
+          <span class="twin-dot-icon"> <span></span><span></span> </span>
+          <span style="font-weight: 700; letter-spacing: 0.05em;">UAS • PRAKTIK PEMBELAJARAN PPL TERBIMBING</span>
+        </div>
 
-      <!-- Breadcrumb Navigation -->
-      <nav class="ut-breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html"><i class="fa-solid fa-house"></i> Beranda</a>
-        <i class="fa-solid fa-chevron-right"></i>
-        <span>Siklus Lanjutan (UAS)</span>
-        <i class="fa-solid fa-chevron-right"></i>
-        <span class="current">Video Praktik</span>
-      </nav>
+        <h1 class="ut-hero-title">Video Praktik Pembelajaran PJOK (Kebugaran Jasmani)</h1>
+        <p class="ut-hero-desc">
+          Dokumentasi rekaman video otentik pelaksanaan praktik pembelajaran PJOK Kurikulum Merdeka Fase E di SMK N 3 Kasihan Yogyakarta: Aktivitas Kebugaran Jasmani dengan Metode Circuit Training 5 Pos Bergradasi.
+        </p>
+
+        <!-- Breadcrumb Navigation -->
+        <nav class="ut-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html"><i class="fa-solid fa-house" style="margin-right: 4px;"></i> Beranda</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <a href="rancangan.html">UAS (Praktik Mandiri)</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span class="current">Video Praktik</span>
+        </nav>
+      </div>
     </section>
 
     <!-- =================================================================
        3. MODULAR PURE WHITE ISLAND (<main>)
        ================================================================= -->
     <main class="island-white ut-page-island reveal-init">
-      <!-- Cycle Switcher Tabs -->
-      <div class="uas-tabs-wrapper">
-        <button id="tab-btn-2" class="uas-tab-btn active" onclick="switchUASVideo(2)">
-          <i class="fa-solid fa-heart-pulse"></i>
-          <span>Siklus 2: Video Kebugaran Jasmani (Circuit Training)</span>
-          <span class="uas-tab-badge">Siklus 2</span>
-        </button>
-        <button id="tab-btn-3" class="uas-tab-btn" onclick="switchUASVideo(3)">
-          <i class="fa-solid fa-volleyball"></i>
-          <span>Siklus 3: Video Variasi &amp; Taktik Bola Voli (TGfU)</span>
-          <span class="uas-tab-badge">Siklus 3</span>
-        </button>
-      </div>
-
       <!-- Video Showcase Header -->
-      <div style="margin-bottom: 2.25rem;">
-        <div class="badge-pill mb-2" style="display: inline-flex; align-items: center; gap: 0.45rem; background: rgba(255, 201, 56, 0.2); border: 1px solid rgba(255, 201, 56, 0.4); color: #B45309; padding: 0.35rem 0.9rem; border-radius: 999px; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.04em;">
-          <i class="fa-brands fa-youtube" style="color: #FF0000;"></i>
-          <span>REKAMAN VIDEO SIKLUS LANJUTAN • STREAMING HD</span>
-        </div>
-        <h2 class="section-agency-title">Pemutaran Video Praktik Mengajar PJOK (YouTube HD)</h2>
-        <p class="section-agency-subtitle">
-          Saksikan rekaman video utuh pelaksanaan praktik mengajar PJOK berdurasi terstandar Uji Kinerja (UKin) PPG Calon Guru yang diselenggarakan di lapangan olahraga terbuka SMK N 3 Kasihan Yogyakarta.
-        </p>
-      </div>
-
-      <!-- =============================================================
-         A. VIDEO PLAYER CARD (Responsive Screen + Interactive Timeline)
-         ============================================================= -->
-      <div class="video-showcase-card">
-        <!-- Toolbar -->
-        <div class="video-toolbar">
-          <div class="video-toolbar-info">
-            <div class="video-toolbar-icon">
-              <i class="fa-solid fa-circle-play"></i>
-            </div>
-            <div>
-              <div id="uas-video-title" class="video-toolbar-title">
-                Video Praktik: Aktivitas Kebugaran Jasmani - Circuit Training (Siklus 2)
-              </div>
-              <div id="uas-video-sub" class="video-toolbar-sub">
-                Praktikan: <strong>Rahmat Irnandi, S.Or.</strong> • Model: Station Teaching 5 Pos • Fase E SMK N 3 Kasihan • Lapangan Terbuka
-              </div>
-            </div>
+      <section style="margin-bottom: 4.5rem;">
+        <div class="section-agency-head" style="margin-bottom: 2.25rem;">
+          <div class="badge-pill-group">
+            <span class="twin-dot-icon"> <span></span><span></span> </span>
+            <span>REKAMAN VIDEO PEMBELAJARAN UAS • GOOGLE DRIVE HD</span>
           </div>
-          <div class="video-toolbar-actions">
-            <span id="uas-model-badge" style="background: rgba(255, 201, 56, 0.15); border: 1px solid rgba(255, 201, 56, 0.3); color: #FFC938; font-size: 0.82rem; font-weight: 800; padding: 0.45rem 1rem; border-radius: 999px;">
-              Circuit Training 5 Pos
-            </span>
-            <a id="uas-youtube-btn" href="https://youtu.be/AQ9FbNC42ck" target="_blank" rel="noopener noreferrer" class="btn-nexis-yellow">
-              <i class="fa-brands fa-youtube" style="color: #FF0000;"></i> Tonton di YouTube
-            </a>
-            <a id="uas-fullscreen-btn" href="https://www.youtube.com/watch?v=AQ9FbNC42ck" target="_blank" rel="noopener noreferrer" class="btn-nexis-outline">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Layar Penuh
-            </a>
-          </div>
+          <h2 class="section-agency-title">Pemutaran Video Praktik Mengajar PJOK (Google Drive HD)</h2>
+          <p class="section-agency-subtitle">
+            Saksikan rekaman video utuh pelaksanaan praktik mengajar PJOK materi aktivitas kebugaran jasmani berdurasi terstandar Uji Kinerja (UKin) PPG Calon Guru yang diselenggarakan di lapangan olahraga terbuka SMK N 3 Kasihan Yogyakarta.
+          </p>
         </div>
 
-        <!-- Video Display Layout: Screen + Sidebar -->
-        <div class="video-main-layout">
-          <!-- Video Screen Wrapper with YouTube Embed Iframe -->
-          <div class="video-screen-wrapper">
-            <iframe
-              id="uas-video-frame"
-              src="https://www.youtube.com/embed/AQ9FbNC42ck?rel=0&modestbranding=1"
-              title="Video Praktik Pembelajaran PJOK Rahmat Irnandi, S.Or. - PPG UNY"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            >
-              <p style="padding: 2rem; color: #FFFFFF; text-align: center;">
-                Peramban Anda tidak mendukung pemutaran video langsung. Silakan
-                <a id="uas-fallback-link" href="https://youtu.be/AQ9FbNC42ck" target="_blank" style="color: #FFC938; font-weight: bold; text-decoration: underline;">
-                  Klik di sini untuk menonton video di YouTube
-                </a>.
-              </p>
-            </iframe>
-          </div>
-
-          <!-- Video Sidebar Panel: Teaching Syntax Timeline -->
-          <div class="video-sidebar-panel">
-            <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 1rem;">
-              <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 800; letter-spacing: 0.08em; color: #FFC938;">
-                <i class="fa-solid fa-list-ol" style="margin-right: 6px;"></i> SINTAKS MENGAJAR PJOK
-              </span>
-              <span style="font-size: 0.72rem; color: #94A3B8; background: rgba(255, 255, 255, 0.05); padding: 2px 8px; border-radius: 4px;">
-                5 Tahapan
-              </span>
+        <!-- Video Showcase Container Card -->
+        <div class="video-showcase-card">
+          <!-- Toolbar -->
+          <div class="video-toolbar">
+            <div class="video-toolbar-info">
+              <div class="video-toolbar-icon">
+                <i class="fa-solid fa-circle-play"></i>
+              </div>
+              <div>
+                <div class="video-toolbar-title">
+                  Video Praktik: Aktivitas Kebugaran Jasmani - Circuit Training
+                </div>
+                <div class="video-toolbar-sub">
+                  Praktikan: <strong>Rahmat Irnandi, S.Or.</strong> • Model: Station Teaching 5 Pos • Fase E SMK N 3 Kasihan • Lapangan Terbuka
+                </div>
+              </div>
             </div>
 
-            <!-- Dynamic Timeline List -->
-            <div id="uas-timeline-container" class="timeline-list">
-              <!-- Rendered via JS -->
-            </div>
-
-            <!-- Action Link -->
-            <div style="margin-top: auto; padding-top: 1.5rem;">
-              <a id="uas-sidebar-btn" href="https://youtu.be/AQ9FbNC42ck" target="_blank" rel="noopener noreferrer" class="btn-nexis-yellow" style="width: 100%; text-align: center; justify-content: center;">
-                <i class="fa-brands fa-youtube" style="color: #FF0000; margin-right: 6px;"></i> Tonton Langsung di YouTube
+            <div class="video-toolbar-actions">
+              <span style="background: rgba(255, 201, 56, 0.15); border: 1px solid rgba(255, 201, 56, 0.3); color: #FFC938; font-size: 0.82rem; font-weight: 800; padding: 0.45rem 1rem; border-radius: 999px;">
+                <i class="fa-solid fa-heart-pulse" style="margin-right: 5px;"></i> Circuit Training 5 Pos
+              </span>
+              <a href="https://drive.google.com/file/d/1YAmdowNtRHsnEEh1PRsZHW_XuLmmoCzI/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-nexis-yellow">
+                <i class="fa-brands fa-google-drive"></i> Buka di Google Drive
+              </a>
+              <a href="https://drive.google.com/file/d/1YAmdowNtRHsnEEh1PRsZHW_XuLmmoCzI/preview" target="_blank" rel="noopener noreferrer" class="btn-nexis-outline">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Layar Penuh
               </a>
             </div>
           </div>
-        </div>
 
-        <!-- Footer Metadata Bar -->
-        <div class="video-metadata-bar">
-          <div style="display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap;">
-            <div class="video-meta-item">
-              <i class="fa-solid fa-school" style="color: #FFC938;"></i>
-              <span><strong>Lokasi:</strong> SMK N 3 Kasihan Yogyakarta</span>
+          <!-- Video Display Layout: Screen + Sidebar -->
+          <div class="video-main-layout">
+            <!-- Video Screen Wrapper with Google Drive Embed Iframe -->
+            <div class="video-screen-wrapper">
+              <iframe
+                src="https://drive.google.com/file/d/1YAmdowNtRHsnEEh1PRsZHW_XuLmmoCzI/preview"
+                title="Video Praktik Pembelajaran PJOK Kebugaran Jasmani - Rahmat Irnandi, S.Or. PPG UNY"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+                <p style="padding: 2.5rem; color: #FFFFFF; text-align: center;">
+                  Peramban Anda tidak mendukung pemutaran video langsung. Silakan
+                  <a href="https://drive.google.com/file/d/1YAmdowNtRHsnEEh1PRsZHW_XuLmmoCzI/view?usp=drive_link" target="_blank" style="color: #FFC938; font-weight: bold; text-decoration: underline;">
+                    Klik di sini untuk menonton video di Google Drive
+                  </a>.
+                </p>
+              </iframe>
             </div>
-            <div class="video-meta-item">
-              <i class="fa-solid fa-clapperboard" style="color: #FFC938;"></i>
-              <span><strong>Format:</strong> UKin Praktik Mengajar PPG Calon Guru</span>
-            </div>
-            <div class="video-meta-item">
-              <i class="fa-brands fa-youtube" style="color: #FF0000;"></i>
-              <span><strong>Streaming:</strong> YouTube HD 1080p</span>
-            </div>
-            <div class="video-meta-item">
-              <i class="fa-solid fa-graduation-cap" style="color: #FFC938;"></i>
-              <span><strong>Kurikulum:</strong> Merdeka Belajar Fase E</span>
+
+            <!-- Video Sidebar Panel: Teaching Syntax Timeline -->
+            <div class="video-sidebar-panel">
+              <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 1rem;">
+                <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 800; letter-spacing: 0.08em; color: #FFC938;">
+                  <i class="fa-solid fa-list-ol" style="margin-right: 6px;"></i> SINTAKS MENGAJAR PJOK
+                </span>
+                <span class="time-badge">Circuit 5 Pos</span>
+              </div>
+              <p style="font-size: 0.82rem; color: #94A3B8; margin: 0.85rem 0 0.5rem 0;">
+                Materi: Kebugaran Jasmani • Fase E SMK N 3 Kasihan Yogyakarta
+              </p>
+
+              <!-- Timeline Items: Circuit Training Kebugaran Jasmani -->
+              <div class="timeline-list">
+                <div class="timeline-item active">
+                  <span class="time-badge">Fase 1</span>
+                  <div>
+                    <strong class="timeline-title">Pendahuluan &amp; Apersepsi Fisiologis</strong>
+                    <span class="timeline-desc">
+                      Presensi, doa bersama, cek kesiapan fisik, tes denyut nadi istirahat mandiri, dan pemanasan dinamis terstruktur.
+                    </span>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <span class="time-badge">Fase 2</span>
+                  <div>
+                    <strong class="timeline-title">Demonstrasi Pos 1–5 &amp; Pengondisian Sirkuit</strong>
+                    <span class="timeline-desc">
+                      Guru mendemonstrasikan mekanika benar shuttle run, push-up lutut, zig-zag cone, crunch perut, dan skipping tali.
+                    </span>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <span class="time-badge">Fase 3</span>
+                  <div>
+                    <strong class="timeline-title">Pelaksanaan Putaran 1 &amp; Umpan Balik Gerak</strong>
+                    <span class="timeline-desc">
+                      Siswa berotasi 45s kerja / 30s istirahat. Guru memberikan koreksi postural pada pos kekuatan dan kelincahan.
+                    </span>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <span class="time-badge">Fase 4</span>
+                  <div>
+                    <strong class="timeline-title">Pelaksanaan Putaran 2 (Puncak Beban Aerobik)</strong>
+                    <span class="timeline-desc">
+                      Intensitas dinaikkan untuk mencapai Target Heart Rate 60–80% HRmax, diiringi motivasi verbal suportif antarkelompok.
+                    </span>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <span class="time-badge">Fase 5</span>
+                  <div>
+                    <strong class="timeline-title">Pendinginan, Hitung Nadi &amp; Refleksi LKPD</strong>
+                    <span class="timeline-desc">
+                      Pendinginan statis perlahan, pengukuran denyut nadi pemulihan, pengisian LKPD kebugaran, dan doa penutup.
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Link -->
+              <div style="margin-top: auto; padding-top: 1.5rem;">
+                <a href="https://drive.google.com/file/d/1YAmdowNtRHsnEEh1PRsZHW_XuLmmoCzI/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-nexis-yellow" style="width: 100%; text-align: center; justify-content: center;">
+                  <i class="fa-brands fa-google-drive" style="margin-right: 6px;"></i> Tonton di Google Drive
+                </a>
+              </div>
             </div>
           </div>
-          <div>
-            <span style="font-size: 0.82rem; color: #FFC938; font-weight: 700;">
-              <i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Terverifikasi LPTK UNY
-            </span>
+
+          <!-- Footer Metadata Bar -->
+          <div class="video-metadata-bar">
+            <div style="display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap;">
+              <div class="video-meta-item">
+                <i class="fa-solid fa-school" style="color: #FFC938;"></i>
+                <span><strong>Lokasi:</strong> SMK N 3 Kasihan Yogyakarta</span>
+              </div>
+              <div class="video-meta-item">
+                <i class="fa-solid fa-clapperboard" style="color: #FFC938;"></i>
+                <span><strong>Format:</strong> UKin Praktik Mengajar PPG PJOK UNY</span>
+              </div>
+              <div class="video-meta-item">
+                <i class="fa-brands fa-google-drive" style="color: #FFC938;"></i>
+                <span><strong>Streaming:</strong> Google Drive HD 1080p</span>
+              </div>
+              <div class="video-meta-item">
+                <i class="fa-solid fa-heart-pulse" style="color: #FFC938;"></i>
+                <span><strong>Materi:</strong> Aktivitas Kebugaran Jasmani Fase E</span>
+              </div>
+            </div>
+            <div>
+              <span style="font-size: 0.82rem; color: #FFC938; font-weight: 700;">
+                <i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Terverifikasi LPTK UNY
+              </span>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- =============================================================
-         B. UAS CYCLES SUMMARY CARDS (Interactive Switchers)
+         B. COMPREHENSIVE ACADEMIC ANALYSIS: KEBUGARAN JASMANI
          ============================================================= -->
-      <div class="uas-cycles-summary-grid">
-        <!-- Card Siklus 2 -->
-        <div id="summary-card-2" class="uas-cycle-summary-card active-card" onclick="switchUASVideo(2)">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-            <span class="badge-pill" style="background: rgba(255, 201, 56, 0.2); color: #B45309; font-weight: 800; font-size: 0.75rem; padding: 4px 10px; border-radius: 6px;">
-              SIKLUS 2 • UAS PPL
-            </span>
-            <span style="font-size: 0.82rem; color: #FF0000; font-weight: 700;">
-              <i class="fa-brands fa-youtube"></i> YouTube HD
-            </span>
+      <section>
+        <div class="section-agency-head" style="margin-bottom: 2.25rem;">
+          <div class="badge-pill-group">
+            <span class="twin-dot-icon"> <span></span><span></span> </span>
+            <span>EVALUASI &amp; ANALISIS PEDAGOGIS KEBUGARAN JASMANI</span>
           </div>
-          <h3 style="font-size: 1.25rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.6rem;">
-            Aktivitas Kebugaran Jasmani (Circuit Training 5 Pos)
-          </h3>
-          <p style="font-size: 0.9rem; color: #64748B; line-height: 1.6; margin-bottom: 1.25rem;">
-            Praktik pembelajaran lapangan melatih 4 komponen kebugaran utama (daya tahan aerobik, kekuatan, kelincahan, kelenturan) berbasis station teaching dengan rasio kerja 45s / istirahat 30s.
+          <h2 class="section-agency-title">Refleksi &amp; Kajian Akademis Pembelajaran Kebugaran Jasmani</h2>
+          <p class="section-agency-subtitle">
+            Analisis komprehensif terhadap efektivitas manajemen stasiun circuit training, optimalisasi active learning time (ALT-PE), dan ketercapaian zona denyut nadi target peserta didik.
           </p>
-          <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; font-weight: 700; color: #0C0D10;">
-            <span style="color: #B45309;"><i class="fa-solid fa-heart-pulse"></i> Model: Station Teaching</span>
-            <i class="fa-solid fa-arrow-right" style="color: #FFC938;"></i>
-          </div>
         </div>
 
-        <!-- Card Siklus 3 -->
-        <div id="summary-card-3" class="uas-cycle-summary-card" onclick="switchUASVideo(3)">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-            <span class="badge-pill" style="background: rgba(255, 201, 56, 0.2); color: #B45309; font-weight: 800; font-size: 0.75rem; padding: 4px 10px; border-radius: 6px;">
-              SIKLUS 3 • UAS PPL
-            </span>
-            <span style="font-size: 0.82rem; color: #FF0000; font-weight: 700;">
-              <i class="fa-brands fa-youtube"></i> YouTube HD
-            </span>
-          </div>
-          <h3 style="font-size: 1.25rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.6rem;">
-            Variasi &amp; Taktik Bola Voli (Model TGfU)
-          </h3>
-          <p style="font-size: 0.9rem; color: #64748B; line-height: 1.6; margin-bottom: 1.25rem;">
-            Praktik mengajar pergeseran paradigma teknis ke taktis melalui model Teaching Games for Understanding dan Turnamen Mini Modifikasi 4 vs 4 dengan regulasi sentuhan dinamis.
-          </p>
-          <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; font-weight: 700; color: #0C0D10;">
-            <span style="color: #B45309;"><i class="fa-solid fa-volleyball"></i> Model: TGfU Berdiferensiasi</span>
-            <i class="fa-solid fa-arrow-right" style="color: #FFC938;"></i>
-          </div>
-        </div>
-      </div>
-
-      <!-- =============================================================
-         C. COMPREHENSIVE ACADEMIC ANALYSIS: SIKLUS 2
-         ============================================================= -->
-      <div id="analysis-siklus-2" class="analysis-container active">
         <!-- Module 1: Manajemen Lapangan & Keselamatan Fisik Outdoor -->
         <article class="analysis-module-card">
           <div class="analysis-module-header">
@@ -806,9 +716,9 @@
           <div class="analysis-module-header">
             <div class="analysis-module-num">03</div>
             <div>
-              <h3 class="analysis-module-title">Catatan Refleksi Guru Pamong, DPL UNY &amp; Praktikan (Siklus 2)</h3>
+              <h3 class="analysis-module-title">Catatan Refleksi Guru Pamong, DPL UNY &amp; Praktikan</h3>
               <p class="analysis-module-desc">
-                Evaluasi komprehensif terhadap keberhasilan pengelolaan sirkuit dan rencana perbaikan berkelanjutan untuk siklus pembelajaran berikutnya.
+                Evaluasi komprehensif terhadap keberhasilan pengelolaan sirkuit kebugaran dan rencana pemeliharaan kebugaran jasmani mandiri berkelanjutan.
               </p>
             </div>
           </div>
@@ -830,130 +740,12 @@
               <ul style="font-size: 0.88rem; color: #64748B; line-height: 1.7; padding-left: 1.2rem; margin: 0;">
                 <li>Perlu penambahan cone penanda warna kontras pada pos shuttle run agar batas putaran lari lebih terlihat jelas.</li>
                 <li>Mengembangkan instrumen digital via form mobile untuk rekap denyut nadi real-time antarkelompok.</li>
-                <li>Menghubungkan kebugaran sirkuit sebagai modal fisik esensial menuju pembelajaran variasi taktik permainan bola voli pada Siklus 3.</li>
+                <li>Mendorong peserta didik membiasakan aktivitas fisik 30 menit setiap hari di lingkungan rumah (*active lifestyle*).</li>
               </ul>
             </div>
           </div>
         </article>
-      </div>
-
-      <!-- =============================================================
-         D. COMPREHENSIVE ACADEMIC ANALYSIS: SIKLUS 3
-         ============================================================= -->
-      <div id="analysis-siklus-3" class="analysis-container">
-        <!-- Module 1: Implementasi Model Teaching Games for Understanding (TGfU) -->
-        <article class="analysis-module-card">
-          <div class="analysis-module-header">
-            <div class="analysis-module-num">01</div>
-            <div>
-              <h3 class="analysis-module-title">Penerapan Pendekatan Taktis Model Teaching Games for Understanding (TGfU)</h3>
-              <p class="analysis-module-desc">
-                Pergeseran paradigma dari drill teknik passing terisolasi menuju pemecahan masalah taktis kontekstual melalui Turnamen Mini Modifikasi 4 vs 4 di lapangan bola voli SMK N 3 Kasihan.
-              </p>
-            </div>
-          </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-            <div style="background: #FFFFFF; border-radius: 20px; padding: 1.75rem; border: 1px solid #E2E8F0;">
-              <h4 style="font-size: 1.05rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.75rem;">
-                <i class="fa-solid fa-chess-board" style="color: #FFC938; margin-right: 6px;"></i> Game 1: Apperception Game
-              </h4>
-              <p style="font-size: 0.9rem; color: #64748B; line-height: 1.7; margin-bottom: 0;">
-                Siswa langsung diajak bermain game modifikasi 3 vs 3 lapangan sempit (6x6 meter) dengan bola voli busa lunak untuk menstimulasi kesadaran taktis: menemukan masalah penempatan bola di area kosong pertahanan lawan.
-              </p>
-            </div>
-            <div style="background: #FFFFFF; border-radius: 20px; padding: 1.75rem; border: 1px solid #E2E8F0;">
-              <h4 style="font-size: 1.05rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.75rem;">
-                <i class="fa-solid fa-comments" style="color: #FFC938; margin-right: 6px;"></i> Tactical Awareness Questioning
-              </h4>
-              <p style="font-size: 0.9rem; color: #64748B; line-height: 1.7; margin-bottom: 0;">
-                Guru memfasilitasi dialog taktis interaktif: <em>"Di mana ruang kosong lawan saat lawan berada di posisi depan?"</em>, mendorong siswa menyimpulkan kebutuhan mengarahkan passing atas melambung ke ruang belakang.
-              </p>
-            </div>
-            <div style="background: #FFFFFF; border-radius: 20px; padding: 1.75rem; border: 1px solid #E2E8F0;">
-              <h4 style="font-size: 1.05rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.75rem;">
-                <i class="fa-solid fa-trophy" style="color: #FFC938; margin-right: 6px;"></i> Turnamen Mini Modifikasi 4 vs 4
-              </h4>
-              <p style="font-size: 0.9rem; color: #64748B; line-height: 1.7; margin-bottom: 0;">
-                Pelaksanaan turnamen setengah kompetisi dengan regulasi sentuhan wajib 3 kali (passing bawah penerima servis &rarr; passing atas toser &rarr; penempatan bola taktis) yang membangun kerja sama tim nyata.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Module 2: Asesmen Autentik GPAI (Game Performance Assessment Instrument) -->
-        <article class="analysis-module-card">
-          <div class="analysis-module-header">
-            <div class="analysis-module-num">02</div>
-            <div>
-              <h3 class="analysis-module-title">Asesmen Autentik GPAI &amp; Pengamatan Pengambilan Keputusan Real-Time</h3>
-              <p class="analysis-module-desc">
-                Penilaian komprehensif performa bermain autentik menggunakan instrumen GPAI terstandar internasional dalam mengukur kecerdasan taktis gerak peserta didik.
-              </p>
-            </div>
-          </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-            <div style="background: #FFFFFF; border-radius: 20px; padding: 1.75rem; border: 1px solid #E2E8F0;">
-              <h4 style="font-size: 1.05rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.75rem;">
-                <i class="fa-solid fa-brain" style="color: #FFC938; margin-right: 6px;"></i> Decision Making (DM) Index
-              </h4>
-              <p style="font-size: 0.9rem; color: #64748B; line-height: 1.7; margin-bottom: 0;">
-                Mengukur ketepatan pilihan siswa saat memutuskan apakah bola harus dipassing bawah ke toser atau langsung dialirkan ke area kosong lawan berdasarkan posisi bola dan blocking lawan.
-              </p>
-            </div>
-            <div style="background: #FFFFFF; border-radius: 20px; padding: 1.75rem; border: 1px solid #E2E8F0;">
-              <h4 style="font-size: 1.05rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.75rem;">
-                <i class="fa-solid fa-crosshairs" style="color: #FFC938; margin-right: 6px;"></i> Skill Execution (SE) Index
-              </h4>
-              <p style="font-size: 0.9rem; color: #64748B; line-height: 1.7; margin-bottom: 0;">
-                Mengukur persentase keberhasilan teknis mekanika gerak passing (ketinggian parabola bola dan akurasi jatuhnya bola ke arah rekan setim tanpa menghasilkan fault bola mati).
-              </p>
-            </div>
-            <div style="background: #FFFFFF; border-radius: 20px; padding: 1.75rem; border: 1px solid #E2E8F0;">
-              <h4 style="font-size: 1.05rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.75rem;">
-                <i class="fa-solid fa-hands-holding-child" style="color: #FFC938; margin-right: 6px;"></i> Support &amp; Base Recovery
-              </h4>
-              <p style="font-size: 0.9rem; color: #64748B; line-height: 1.7; margin-bottom: 0;">
-                Menilai kesiapsiagaan gerak tanpa bola (off-the-ball movement): bergerak mendekat untuk meng-cover rekan yang sedang passing dan segera kembali ke posisi home base siap bertahan.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Module 3: Catatan Refleksi & Evaluasi Guru Model -->
-        <article class="analysis-module-card">
-          <div class="analysis-module-header">
-            <div class="analysis-module-num">03</div>
-            <div>
-              <h3 class="analysis-module-title">Catatan Refleksi Siklus 3: Penumbuhan Nilai Sportivitas &amp; TPSR Hellison</h3>
-              <p class="analysis-module-desc">
-                Evaluasi afektif terhadap penumbuhan tanggung jawab sosial dan personal (Teaching Personal and Social Responsibility) melalui turnamen mini bola voli.
-              </p>
-            </div>
-          </div>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-            <div style="background: #FFFFFF; border-radius: 20px; padding: 1.75rem; border: 1px solid #E2E8F0;">
-              <h4 style="font-size: 1.05rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.75rem;">
-                <i class="fa-solid fa-handshake" style="color: #FFC938; margin-right: 6px;"></i> Internalisasi Level 3 &amp; 4 TPSR
-              </h4>
-              <ul style="font-size: 0.88rem; color: #64748B; line-height: 1.7; padding-left: 1.2rem; margin: 0;">
-                <li>Siswa menunjukkan Level 3 (Self-Direction): mampu memimpin pemanasan taktis mandiri tanpa harus terus diteriaki guru.</li>
-                <li>Terwujudnya Level 4 (Caring): saling memberi semangat saat rekan tim gagal melakukan servis atau passing meleset tanpa celaan verbal.</li>
-                <li>Kejujuran panggilan garis (in/out call) pada turnamen mini yang dijalankan dengan sistem self-refereeing.</li>
-              </ul>
-            </div>
-            <div style="background: #FFFFFF; border-radius: 20px; padding: 1.75rem; border: 1px solid #E2E8F0;">
-              <h4 style="font-size: 1.05rem; font-weight: 800; color: #0C0D10; margin-bottom: 0.75rem;">
-                <i class="fa-solid fa-graduation-cap" style="color: #FFC938; margin-right: 6px;"></i> Kesimpulan Portofolio PPL Terbimbing
-              </h4>
-              <ul style="font-size: 0.88rem; color: #64748B; line-height: 1.7; padding-left: 1.2rem; margin: 0;">
-                <li>Rangkaian Siklus 1, 2, dan 3 berhasil membuktikan perkembangan pedagogik utuh seorang Guru PJOK Profesional.</li>
-                <li>Integrasi asesmen diagnostik, TPACK digital, station training kebugaran, dan pendekatan TGfU mencerminkan Kurikulum Merdeka yang humanis dan berpusat pada peserta didik.</li>
-                <li>Menjadi fondasi kokoh bagi Rahmat Irnandi, S.Or. dalam mengikuti Uji Kinerja (UKin) PPG Calon Guru Universitas Negeri Yogyakarta.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-      </div>
+      </section>
     </main>
 
     <!-- =================================================================
@@ -977,7 +769,7 @@
           <a href="../index.html">Beranda</a>
           <a href="../profil.html">Profil</a>
           <a href="../UTS/rancangan.html">Siklus 1 (UTS)</a>
-          <a href="rancangan.html" class="active">Siklus 2 &amp; 3 (UAS)</a>
+          <a href="rancangan.html" class="active">UAS (Praktik Mandiri)</a>
           <a href="../non-mengajar.html">Non-Mengajar</a>
           <a href="../dokumentasi.html">Dokumentasi</a>
         </nav>
@@ -1005,145 +797,7 @@
     <!-- Toast Notification Element -->
     <div id="toast" class="toast" role="alert" aria-live="polite"></div>
 
-    <!-- JAVASCRIPT SWITCHER FOR UAS VIDEOS -->
     <script>
-      const uasVideoData = {
-        2: {
-          title: "Video Praktik: Aktivitas Kebugaran Jasmani - Circuit Training (Siklus 2)",
-          sub: "Praktikan: <strong>Rahmat Irnandi, S.Or.</strong> • Model: Station Teaching 5 Pos • Fase E SMK N 3 Kasihan • Lapangan Terbuka",
-          embedUrl: "https://www.youtube.com/embed/AQ9FbNC42ck?rel=0&modestbranding=1",
-          directUrl: "https://youtu.be/AQ9FbNC42ck",
-          fullscreenUrl: "https://www.youtube.com/watch?v=AQ9FbNC42ck",
-          modelBadge: "Circuit Training 5 Pos",
-          timeline: [
-            {
-              badge: "Fase 1",
-              title: "Pendahuluan & Apersepsi Fisiologis",
-              desc: "Presensi, doa bersama, cek kesiapan fisik, tes denyut nadi istirahat mandiri, dan pemanasan dinamis terstruktur."
-            },
-            {
-              badge: "Fase 2",
-              title: "Demonstrasi Pos 1–5 & Pengondisian Sirkuit",
-              desc: "Guru mendemonstrasikan mekanika benar shuttle run, push-up lutut, zig-zag cone, crunch perut, dan skipping tali."
-            },
-            {
-              badge: "Fase 3",
-              title: "Pelaksanaan Putaran 1 & Umpan Balik Gerak",
-              desc: "Siswa berotasi 45s kerja / 30s istirahat. Guru memberikan koreksi postural pada pos kekuatan dan kelincahan."
-            },
-            {
-              badge: "Fase 4",
-              title: "Pelaksanaan Putaran 2 (Puncak Beban Aerobik)",
-              desc: "Intensitas dinaikkan untuk mencapai Target Heart Rate 60–80% HRmax, diiringi motivasi verbal suportif antarkelompok."
-            },
-            {
-              badge: "Fase 5",
-              title: "Pendinginan, Hitung Nadi & Refleksi LKPD",
-              desc: "Pendinginan statis perlahan, pengukuran denyut nadi pemulihan, pengisian LKPD kebugaran, dan doa penutup."
-            }
-          ]
-        },
-        3: {
-          title: "Video Praktik: Variasi & Taktik Bola Voli Model TGfU (Siklus 3)",
-          sub: "Praktikan: <strong>Rahmat Irnandi, S.Or.</strong> • Model: Teaching Games for Understanding • Fase E SMK N 3 Kasihan • Lapangan Olahraga",
-          embedUrl: "https://www.youtube.com/embed/CrtXwV8Y36A?rel=0&modestbranding=1",
-          directUrl: "https://youtu.be/CrtXwV8Y36A",
-          fullscreenUrl: "https://www.youtube.com/watch?v=CrtXwV8Y36A",
-          modelBadge: "TGfU Mini Turnamen 4v4",
-          timeline: [
-            {
-              badge: "Fase 1",
-              title: "Apperception Game 3 vs 3",
-              desc: "Siswa langsung bermain bola voli mini lapangan kecil untuk menemukan problem taktis penempatan bola dan ruang kosong."
-            },
-            {
-              badge: "Fase 2",
-              title: "Tactical Awareness Questioning",
-              desc: "Tanya jawab kritis guru-siswa membedah kapan menggunakan passing bawah vs passing atas untuk membangun serangan."
-            },
-            {
-              badge: "Fase 3",
-              title: "Skill Execution & Transition Practice",
-              desc: "Drill singkat gerak passing variatif sesuai kebutuhan taktis yang diidentifikasi dari sesi permainan awal."
-            },
-            {
-              badge: "Fase 4",
-              title: "Turnamen Mini 4 vs 4 Modifikasi Regulasi",
-              desc: "Kompetisi mini setengah turnamen dengan aturan wajib 3 kali sentuhan dan rotasi taktis antarpemain."
-            },
-            {
-              badge: "Fase 5",
-              title: "Asesmen GPAI, Refleksi Sportivitas & Penutup",
-              desc: "Evaluasi autentik pengambilan keputusan (decision making), refleksi nilai sportivitas tim, dan penutupan kelas."
-            }
-          ]
-        }
-      };
-
-      function renderTimeline(timelineData) {
-        const container = document.getElementById('uas-timeline-container');
-        if (!container || !timelineData) return;
-        
-        container.innerHTML = timelineData.map((item, index) => `
-          <div class="timeline-item ${index === 0 ? 'active' : ''}">
-            <span class="time-badge">${item.badge}</span>
-            <div>
-              <span class="timeline-title">${item.title}</span>
-              <span class="timeline-desc">${item.desc}</span>
-            </div>
-          </div>
-        `).join('');
-      }
-
-      function switchUASVideo(cycle) {
-        const data = uasVideoData[cycle];
-        if (!data) return;
-
-        // Update Tab Buttons
-        document.querySelectorAll('.uas-tab-btn').forEach(btn => btn.classList.remove('active'));
-        const activeBtn = document.getElementById('tab-btn-' + cycle);
-        if (activeBtn) activeBtn.classList.add('active');
-
-        // Update Summary Cards
-        document.querySelectorAll('.uas-cycle-summary-card').forEach(card => card.classList.remove('active-card'));
-        const activeCard = document.getElementById('summary-card-' + cycle);
-        if (activeCard) activeCard.classList.add('active-card');
-
-        // Update Video Elements
-        const frame = document.getElementById('uas-video-frame');
-        const title = document.getElementById('uas-video-title');
-        const sub = document.getElementById('uas-video-sub');
-        const modelBadge = document.getElementById('uas-model-badge');
-        const ytBtn = document.getElementById('uas-youtube-btn');
-        const fsBtn = document.getElementById('uas-fullscreen-btn');
-        const sidebarBtn = document.getElementById('uas-sidebar-btn');
-        const fallback = document.getElementById('uas-fallback-link');
-
-        if (frame) frame.src = data.embedUrl;
-        if (title) title.textContent = data.title;
-        if (sub) sub.innerHTML = data.sub;
-        if (modelBadge) modelBadge.textContent = data.modelBadge;
-        if (ytBtn) ytBtn.href = data.directUrl;
-        if (fsBtn) fsBtn.href = data.fullscreenUrl;
-        if (sidebarBtn) sidebarBtn.href = data.directUrl;
-        if (fallback) fallback.href = data.directUrl;
-
-        // Render Timeline
-        renderTimeline(data.timeline);
-
-        // Toggle Academic Analysis Containers
-        document.querySelectorAll('.analysis-container').forEach(c => c.classList.remove('active'));
-        const activeAnalysis = document.getElementById('analysis-siklus-' + cycle);
-        if (activeAnalysis) activeAnalysis.classList.add('active');
-
-        showToast('Menampilkan Video Siklus ' + cycle + ': ' + (cycle === 2 ? 'Kebugaran Jasmani (Circuit Training)' : 'Variasi & Taktik Bola Voli (TGfU)'));
-      }
-
-      // Initial Timeline Render
-      document.addEventListener('DOMContentLoaded', function() {
-        renderTimeline(uasVideoData[2].timeline);
-      });
-
       // Toast notification helper
       function showToast(message) {
         let toast = document.getElementById('toast');
